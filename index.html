@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimal Soft Chat - iPhone 6</title>
+    <title>Pink Minimal iPhone 11 Chat Mockup</title>
     <!-- ไอคอนจาก FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- ฟอนต์ Google Fonts (Prompt) -->
@@ -18,7 +18,7 @@
         }
 
         body {
-            background-color: #f7f4ee; /* พื้นหลังสีครีมอ่อนๆ สไตล์มินิมอล */
+            background-color: #fcf6f8; /* พื้นหลังสีชมพูอ่อนจางๆ */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,65 +26,87 @@
             padding: 20px;
         }
 
-        /* --- ตัวเครื่อง iPhone 6 (โทนสตาร์ไลท์/เงินละมุน) --- */
+        /* --- ตัวเครื่อง iPhone 11 (ขนาดสเกลสมจริง & สีชมพูพาสเทลละมุน) --- */
         .iphone-device {
             position: relative;
-            width: 395px;
-            height: 790px;
-            background: linear-gradient(135deg, #f0eee9 0%, #dedad3 100%);
-            border-radius: 44px;
+            width: 415px;
+            height: 855px;
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+            border-radius: 54px;
             box-shadow: 
-                0 25px 50px rgba(180, 175, 165, 0.25),
+                0 25px 50px rgba(244, 143, 177, 0.3),
                 inset 0 0 2px 2px rgba(255, 255, 255, 0.9),
-                inset 0 0 0 4px #cfccc6;
+                inset 0 0 0 5px #f48fb1;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        /* ปุ่มด้านข้าง */
+        /* ปุ่มด้านข้าง iPhone 11 */
         .side-button {
             position: absolute;
-            background: #c5c2bc;
-            border-radius: 2px;
+            background: #f06292;
+            border-radius: 3px;
         }
-        .volume-up { left: -6px; top: 155px; width: 3px; height: 28px; }
-        .volume-down { left: -6px; top: 198px; width: 3px; height: 28px; }
-        .silent-switch { left: -6px; top: 115px; width: 3px; height: 18px; }
-        .power-button { right: -6px; top: 165px; width: 3px; height: 45px; }
+        .volume-up { left: -8px; top: 165px; width: 4px; height: 32px; }
+        .volume-down { left: -8px; top: 215px; width: 4px; height: 32px; }
+        .power-button { right: -8px; top: 190px; width: 4px; height: 65px; }
 
-        /* กรอบหน้าจอ */
+        /* กรอบหน้าจอสีขาวขอบมน (iPhone 11 Screen) */
         .iphone-screen-frame {
             position: relative;
-            width: 367px;
-            height: 745px;
+            width: 387px;
+            height: 827px;
             background-color: #ffffff;
-            border-radius: 36px;
+            border-radius: 46px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            border: 3px solid #222222;
+            border: 4px solid #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
         }
 
-        /* หัวเครื่อง iPhone 6 */
-        .iphone-header-sensor {
+        /* รอยบาก iPhone 11 (Notch) ขอบขาว */
+        .notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 155px;
+            height: 28px;
             background-color: #ffffff;
-            height: 40px;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            z-index: 100;
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative;
-            border-bottom: 1px solid #f7f5f0;
-            flex-shrink: 0;
-            z-index: 100;
         }
-        .speaker-i6 { width: 45px; height: 4px; background-color: #e0deda; border-radius: 2px; position: absolute; top: 16px; }
-        .camera-i6 { width: 8px; height: 8px; background-color: #333; border-radius: 50%; position: absolute; top: 14px; left: 125px; }
 
-        /* --- หน้าจอแชท --- */
+        .speaker {
+            width: 50px;
+            height: 4px;
+            background-color: #e0deda;
+            border-radius: 3px;
+            position: absolute;
+            top: 8px;
+        }
+
+        .camera {
+            width: 10px;
+            height: 10px;
+            background-color: #222;
+            border-radius: 50%;
+            position: absolute;
+            top: 7px;
+            right: 32px;
+        }
+
+        /* --- หน้าจอแชทโทนชมพูพาสเทล --- */
         .chat-screen {
-            background-color: #fbf9f5; /* พื้นหลังแชทสีขาวครีมนวลๆ */
+            background-color: #fff9fb;
             flex: 1;
+            margin-top: 28px; /* เว้นระยะใต้รอยบาก */
             display: flex;
             flex-direction: column;
             overflow-y: auto;
@@ -100,7 +122,7 @@
             display: flex;
             align-items: center;
             padding: 12px 16px;
-            border-bottom: 1px solid #f0ece4;
+            border-bottom: 1px solid #fce4ec;
             background: #ffffff;
             position: sticky;
             top: 0;
@@ -113,7 +135,7 @@
             height: 38px;
             border-radius: 50%;
             overflow: hidden;
-            border: 1px solid #f0ece4;
+            border: 1.5px solid #f8bbd0;
         }
         .chat-avatar img {
             width: 100%;
@@ -124,11 +146,11 @@
         .chat-user-meta .name {
             font-size: 13px;
             font-weight: 600;
-            color: #4a453f;
+            color: #4a3b42;
         }
         .chat-user-meta .status {
             font-size: 11px;
-            color: #a39b90;
+            color: #b08d9b;
             display: flex;
             align-items: center;
             gap: 4px;
@@ -137,7 +159,7 @@
             content: '';
             width: 6px;
             height: 6px;
-            background-color: #a8d5ba; /* จุดเขียวออนไลน์พาสเทล */
+            background-color: #a8d5ba;
             border-radius: 50%;
             display: inline-block;
         }
@@ -147,7 +169,7 @@
             padding: 16px 14px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             flex: 1;
         }
 
@@ -167,38 +189,40 @@
 
         .message.received {
             background: #ffffff;
-            color: #4a453f;
+            color: #4a3b42;
             align-self: flex-start;
-            border: 1px solid #f0ece4;
+            border: 1px solid #fce4ec;
             border-bottom-left-radius: 6px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            box-shadow: 0 2px 5px rgba(244, 143, 177, 0.05);
         }
 
         .message.sent {
-            background: #f3ece1; /* สีชาไทยนมละมุนๆ */
-            color: #4a4238;
+            background: #fce4ec; /* ชมพูอ่อนพาสเทล */
+            color: #5c3b48;
             align-self: flex-end;
             border-bottom-right-radius: 6px;
             font-weight: 400;
         }
 
-        /* การ์ดข้อมูลบัญชีและ QR Code มินิมอล */
-        .payment-box {
+        /* กล่อง QR Code แยกเป็นข้อความอิสระ */
+        .qr-message-box {
             background: #ffffff;
-            border: 1px solid #ede7df;
+            border: 1px solid #fce4ec;
             border-radius: 16px;
-            padding: 14px;
-            margin-top: 6px;
-            box-shadow: 0 4px 12px rgba(180, 170, 160, 0.08);
+            padding: 12px;
+            align-self: flex-start;
+            max-width: 82%;
+            box-shadow: 0 4px 12px rgba(244, 143, 177, 0.08);
+            animation: fadeIn 0.35s ease;
         }
 
         .qr-container {
             width: 115px;
             height: 115px;
-            margin: 0 auto 12px auto;
+            margin: 0 auto 10px auto;
             background: #fff;
             padding: 6px;
-            border: 1.5px dashed #dcd4cc;
+            border: 1.5px dashed #f8bbd0;
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -213,7 +237,7 @@
         }
 
         .bank-item {
-            background: #faf8f5;
+            background: #fff5f8;
             padding: 9px 11px;
             border-radius: 10px;
             margin-bottom: 8px;
@@ -221,12 +245,12 @@
             justify-content: space-between;
             align-items: center;
             font-size: 12px;
-            border: 1px solid #f4f0eb;
+            border: 1px solid #fde2ec;
         }
 
         .bank-info .title {
             font-weight: 500;
-            color: #6c635b;
+            color: #8c6373;
             font-size: 11.5px;
             margin-bottom: 1px;
         }
@@ -234,25 +258,25 @@
             font-family: monospace;
             font-size: 13px;
             font-weight: 600;
-            color: #3b352f;
+            color: #4a3b42;
             letter-spacing: 0.5px;
         }
 
-        /* ปุ่มคัดลอกสไตล์มินิมอล */
+        /* ปุ่มคัดลอกโทนชมพู */
         .copy-btn {
-            background: #e8dccb;
+            background: #f8bbd0;
             border: none;
             padding: 5px 10px;
             border-radius: 7px;
             font-size: 11px;
-            color: #4a4238;
+            color: #5c3b48;
             cursor: pointer;
             font-family: 'Prompt', sans-serif;
             transition: all 0.2s;
             font-weight: 500;
         }
         .copy-btn:active {
-            background: #d8ccc0;
+            background: #f48fb1;
             transform: scale(0.95);
         }
 
@@ -260,16 +284,16 @@
         .chat-footer {
             padding: 12px 14px;
             background: #ffffff;
-            border-top: 1px solid #f0ece4;
+            border-top: 1px solid #fce4ec;
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
 
         .quick-reply-btn {
-            background: #fcfaf7;
-            border: 1.5px solid #e8decb;
-            color: #5c5248;
+            background: #fff5f8;
+            border: 1.5px solid #f8bbd0;
+            color: #734858;
             padding: 9px 14px;
             border-radius: 20px;
             font-size: 12px;
@@ -280,19 +304,18 @@
             align-items: center;
             transition: 0.2s;
             font-family: 'Prompt', sans-serif;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            box-shadow: 0 2px 6px rgba(244, 143, 177, 0.05);
         }
 
         .quick-reply-btn:hover {
-            background: #f5efe6;
-            border-color: #dfd2be;
+            background: #fce4ec;
         }
 
         .chat-input-bar {
             display: flex;
             align-items: center;
             gap: 10px;
-            background: #f7f4ee;
+            background: #fff5f8;
             padding: 6px 12px;
             border-radius: 20px;
         }
@@ -304,12 +327,12 @@
             font-size: 12px;
             outline: none;
             font-family: 'Prompt', sans-serif;
-            color: #6c635b;
+            color: #734858;
         }
 
         .chat-input-bar i {
             font-size: 15px;
-            color: #b5aba1;
+            color: #f48fb1;
             cursor: pointer;
         }
 
@@ -318,49 +341,35 @@
             display: none;
         }
 
-        /* ปุ่ม Home วงกลม iPhone 6 ด้านล่าง */
-        .iphone-home-footer {
-            height: 50px;
-            background-color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-top: 1px solid #f7f5f0;
-            flex-shrink: 0;
-        }
-
-        .home-button {
-            width: 34px;
-            height: 34px;
-            border: 2px solid #dedad3;
-            border-radius: 50%;
-            background: #fff;
-            position: relative;
-        }
-        .home-button::after {
-            content: '';
+        /* Home Indicator (ขีดสีเทาจางๆ ด้านล่างจอไอโฟน 11) */
+        .home-indicator {
+            width: 130px;
+            height: 4px;
+            background-color: #d8d8d8;
+            border-radius: 100px;
             position: absolute;
-            top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 12px; height: 12px;
-            border: 1.5px solid #dedad3;
-            border-radius: 3px;
+            bottom: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
         }
     </style>
 </head>
 <body>
 
-    <!-- บอดี้ตัวเครื่อง iPhone 6 -->
+    <!-- บอดี้ตัวเครื่อง iPhone 11 -->
     <div class="iphone-device">
-        <div class="side-button silent-switch"></div>
+        <!-- ปุ่มข้างเครื่อง -->
         <div class="side-button volume-up"></div>
         <div class="side-button volume-down"></div>
         <div class="side-button power-button"></div>
 
-        <!-- กรอบหน้าจอ -->
+        <!-- กรอบหน้าจอไอโฟน 11 -->
         <div class="iphone-screen-frame">
-            <div class="iphone-header-sensor">
-                <div class="speaker-i6"></div>
-                <div class="camera-i6"></div>
+            <!-- Notch (รอยบาก) ด้านบน -->
+            <div class="notch">
+                <div class="speaker"></div>
+                <div class="camera"></div>
             </div>
 
             <!-- หน้าจอแชทภายใน -->
@@ -384,35 +393,35 @@
 
                     <!-- ข้อความที่จะโผล่มาเมื่อกดปุ่ม -->
                     <div id="paymentReply">
-                        <div class="message sent" style="margin-bottom: 10px;">
+                        <div class="message sent" style="margin-bottom: 8px;">
                             ขอเลขบัญชีหน่อยค้าบ 🌷
                         </div>
-                        <div class="message received">
+                        <div class="message received" style="margin-bottom: 8px;">
                             ได้เลยค่ะคุณลูกค้า 😊 ช่องทางการชำระเงินตามนี้เลยน้า 👇
-                            
-                            <div class="payment-box">
-                                <!-- รูป QR Code -->
-                                <div class="qr-container">
-                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=1234567890" alt="QR Code">
-                                </div>
+                        </div>
 
-                                <!-- บัญชีธนาคาร -->
-                                <div class="bank-item">
-                                    <div class="bank-info">
-                                        <div class="title"><i class="fas fa-university" style="color:#7892c4;"></i> กสิกรไทย (KBANK)</div>
-                                        <div class="num" id="kbankNum">123-4-56789-0</div>
-                                    </div>
-                                    <button class="copy-btn" onclick="copyText('1234567890', this)">คัดลอก</button>
-                                </div>
+                        <!-- แยกส่งรูป QR Code และบัญชีออกมาเป็นอีก 1 ข้อความ -->
+                        <div class="qr-message-box">
+                            <div class="qr-container">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=1234567890" alt="QR Code">
+                            </div>
 
-                                <!-- TrueMoney Wallet -->
-                                <div class="bank-item" style="margin-bottom: 0;">
-                                    <div class="bank-info">
-                                        <div class="title"><i class="fas fa-wallet" style="color:#f2a144;"></i> TrueMoney Wallet</div>
-                                        <div class="num" id="walletNum">081-234-5678</div>
-                                    </div>
-                                    <button class="copy-btn" onclick="copyText('0812345678', this)">คัดลอก</button>
+                            <!-- บัญชีธนาคาร -->
+                            <div class="bank-item">
+                                <div class="bank-info">
+                                    <div class="title"><i class="fas fa-university" style="color:#7892c4;"></i> กสิกรไทย (KBANK)</div>
+                                    <div class="num" id="kbankNum">123-4-56789-0</div>
                                 </div>
+                                <button class="copy-btn" onclick="copyText('1234567890', this)">คัดลอก</button>
+                            </div>
+
+                            <!-- TrueMoney Wallet -->
+                            <div class="bank-item" style="margin-bottom: 0;">
+                                <div class="bank-info">
+                                    <div class="title"><i class="fas fa-wallet" style="color:#f2a144;"></i> TrueMoney Wallet</div>
+                                    <div class="num" id="walletNum">081-234-5678</div>
+                                </div>
+                                <button class="copy-btn" onclick="copyText('0812345678', this)">คัดลอก</button>
                             </div>
                         </div>
                     </div>
@@ -422,7 +431,7 @@
                 <div class="chat-footer">
                     <button class="quick-reply-btn" onclick="showPayment()">
                         <span>💬 ขอเลขบัญชีหน่อยค้าบ</span>
-                        <i class="fas fa-paper-plane" style="font-size: 11px; color: #b5aba1;"></i>
+                        <i class="fas fa-paper-plane" style="font-size: 11px; color: #f48fb1;"></i>
                     </button>
                     
                     <div class="chat-input-bar">
@@ -433,10 +442,8 @@
                 </div>
             </div>
 
-            <!-- ปุ่ม Home วงกลม iPhone 6 -->
-            <div class="iphone-home-footer">
-                <div class="home-button"></div>
-            </div>
+            <!-- Home Indicator ขีดด้านล่างจอไอโฟน 11 -->
+            <div class="home-indicator"></div>
         </div>
     </div>
 
@@ -454,10 +461,12 @@
             navigator.clipboard.writeText(text).then(() => {
                 let originalText = btn.innerText;
                 btn.innerText = 'คัดลอกแล้ว!';
-                btn.style.background = '#d2c2b0';
+                btn.style.background = '#f48fb1';
+                btn.style.color = '#fff';
                 setTimeout(() => {
                     btn.innerText = originalText;
-                    btn.style.background = '#e8dccb';
+                    btn.style.background = '#f8bbd0';
+                    btn.style.color = '#5c3b48';
                 }, 1500);
             });
         }
