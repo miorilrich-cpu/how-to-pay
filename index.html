@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Realistic Instagram DM Chat Mockup</title>
+    <title>Instagram DM Mockup - Correct Flow</title>
     <!-- ไอคอนจาก FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- ฟอนต์ Google Fonts (Prompt) -->
@@ -253,7 +253,7 @@
             word-wrap: break-word;
         }
 
-        /* ฟองข้อความฝั่งขวา (ตัวเราเอง - ไล่สี Gradient แบบ IG หรือสีฟ้าฟ้าเข้ม) */
+        /* ฟองข้อความฝั่งขวา (ตัวเราเอง - ไล่สี Gradient แบบ IG) */
         .message.sent {
             background: linear-gradient(135deg, #0095f6 0%, #ad00ff 100%);
             color: #ffffff;
@@ -270,7 +270,13 @@
             word-wrap: break-word;
         }
 
-        /* กล่องรูปภาพโปรโมชันในแชท */
+        /* กล่องรูปภาพโปรโมชันในแชท (ซ่อนไว้ก่อนจนกว่าจะกดส่ง) */
+        #interactiveContent {
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+        }
+
         .image-message-box {
             background: #efefef;
             border-radius: 18px;
@@ -344,7 +350,7 @@
             transform: scale(0.95);
         }
 
-        /* แถบช่องพิมพ์ข้อความด้านล่างสไตล์ IG DM */
+        /* แถบช่องพิมพ์ข้อความด้านล่างสไตล์ Instagram DM */
         .chat-footer {
             padding: 8px 12px 12px 12px;
             background: #ffffff;
@@ -377,17 +383,30 @@
             flex-shrink: 0;
         }
 
-        .chat-input-bar {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .chat-input-bar span {
+        .chat-input-field {
             flex: 1;
             font-size: 13px;
-            color: #8e8e8e;
+            color: #262626;
+            outline: none;
+            border: none;
+            background: transparent;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        /* ปุ่มส่งข้อความแบบ IG (ลูกศรพุ่งขวา หรือคำว่า ส่ง) */
+        .send-btn {
+            background: transparent;
+            border: none;
+            color: #0095f6;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            font-family: 'Prompt', sans-serif;
+            padding: 2px 6px;
+            transition: opacity 0.2s;
+        }
+        .send-btn:active {
+            opacity: 0.6;
         }
 
         .footer-right-icons {
@@ -396,13 +415,6 @@
             color: #262626;
             font-size: 18px;
             align-items: center;
-        }
-
-        /* ซ่อนข้อมูลบัญชีก่อนกดปุ่ม */
-        #paymentReply {
-            display: none;
-            flex-direction: column;
-            gap: 12px;
         }
 
         /* Home Indicator (ขีดด้านล่างจอ iPhone) */
@@ -462,26 +474,38 @@
 
                     <!-- ข้อความแชท -->
                     <div class="chat-body" id="chatBody">
-                        <!-- ข้อความรูปภาพเริ่มต้น (ฝั่งซ้าย มีรูปโปรไฟล์) -->
+                        <!-- ข้อความต้อนรับเริ่มต้นจากร้านค้า -->
                         <div class="message-row-received">
                             <div class="chat-avatar-msg">
                                 <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
                             </div>
-                            <div class="image-message-box">
-                                <div class="image-container">
-                                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&fit=crop" alt="Shared Image">
+                            <div class="received-content-group">
+                                <div class="message received">
+                                    สวัสดีค่ะคุณลูกค้า สนใจบริการตัวแทนดันกลุ่มสอบถามรายละเอียดได้เลยนะคะ น้า 🌷✨
                                 </div>
                             </div>
                         </div>
 
-                        <!-- ข้อความที่จะโผล่มาเมื่อกดจำลองส่งข้อความ -->
-                        <div id="paymentReply">
-                            <!-- ข้อความที่เราส่งเอง (อยู่ฝั่งขวาสุด สีไล่ระดับแบบ IG ไม่มีรูปโปรไฟล์) -->
-                            <div class="message sent">
-                                ขอเลขบัญชีหน่อยค้าบ 🌷
+                        <!-- ส่วนที่จะแสดงผลหลังจากกดปุ่มส่งข้อความ -->
+                        <div id="interactiveContent">
+                            <!-- ข้อความที่เราส่งออกไปฝั่งขวา -->
+                            <div class="message sent" id="sentMessageBubble">
+                                ขอช่องทางการโอนหน่อยค้าบ
                             </div>
 
-                            <!-- ข้อความร้านค้าตอบกลับ (ฝั่งซ้าย มีรูปโปรไฟล์วงกลมด้านข้าง) -->
+                            <!-- รูปภาพโปรโมชันที่โผล่มาหลังจากกดส่ง -->
+                            <div class="message-row-received">
+                                <div class="chat-avatar-msg">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
+                                </div>
+                                <div class="image-message-box">
+                                    <div class="image-container">
+                                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&fit=crop" alt="Shared Image">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ข้อความร้านค้าตอบกลับพร้อมเลขบัญชี -->
                             <div class="message-row-received">
                                 <div class="chat-avatar-msg">
                                     <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
@@ -519,13 +543,11 @@
                             <div class="camera-circle-btn">
                                 <i class="fas fa-camera"></i>
                             </div>
-                            <div class="chat-input-bar" onclick="showPayment()">
-                                <span>ส่งข้อความ... (คลิกเพื่อจำลองแชท)</span>
-                            </div>
-                            <div class="footer-right-icons">
-                                <i class="far fa-image"></i>
-                                <i class="far fa-heart"></i>
-                            </div>
+                            <!-- ช่องพิมพ์ที่มีข้อความค้างไว้ตามที่คุณต้องการ -->
+                            <input type="text" id="chatInput" class="chat-input-field" value="ขอช่องทางการโอนหน่อยค้าบ">
+                            
+                            <!-- ปุ่มส่งแบบไอจี (คลิกเพื่อส่งและแสดงรูป) -->
+                            <button class="send-btn" onclick="sendMessage()">ส่ง</button>
                         </div>
                     </div>
                 </div>
@@ -536,12 +558,25 @@
         </div>
     </div>
 
-    <!-- Script ควบคุมการกดปุ่มและคัดลอก -->
+    <!-- Script ควบคุมการกดปุ่มส่งและคัดลอก -->
     <script>
-        function showPayment() {
-            const paymentReply = document.getElementById('paymentReply');
-            paymentReply.style.display = 'flex';
+        function sendMessage() {
+            const inputField = document.getElementById('chatInput');
+            const textValue = inputField.value.trim();
             
+            if(textValue === "") return;
+
+            // อัปเดตข้อความในฟองฝั่งขวาตามที่อยู่ในช่องพิมพ์
+            document.getElementById('sentMessageBubble').innerText = textValue;
+
+            // แสดงส่วนรูปภาพและเลขบัญชี
+            const interactiveContent = document.getElementById('interactiveContent');
+            interactiveContent.style.display = 'flex';
+            
+            // ล้างข้อความในช่องพิมพ์
+            inputField.value = '';
+            
+            // เลื่อนหน้าจอแชทลงมาด้านล่างสุดอัตโนมัติ
             const chatBody = document.getElementById('chatBody');
             chatBody.scrollTop = chatBody.scrollHeight;
         }
