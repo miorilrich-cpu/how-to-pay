@@ -26,14 +26,13 @@
             padding: 20px;
         }
 
-        /* --- ตัวเครื่อง iPhone 11 สมจริง (สัดส่วน 19.5:9 โค้งมนละมุน) --- */
+        /* --- ตัวเครื่อง iPhone 11 สมจริง --- */
         .iphone-device {
             position: relative;
             width: 410px;
             height: 840px;
             background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
             border-radius: 52px;
-            /* เพิ่มมิติเงาและขอบโลหะชั้นนอกให้เหมือนเครื่องจริง */
             box-shadow: 
                 0 30px 60px rgba(244, 143, 177, 0.35),
                 inset 0 0 0 2px rgba(255, 255, 255, 0.8),
@@ -53,7 +52,7 @@
         .volume-down { left: -9px; top: 215px; width: 4px; height: 34px; }
         .power-button { right: -9px; top: 190px; width: 4px; height: 70px; }
 
-        /* กรอบหน้าจอสีดำด้านใน (Bezel) ให้สมจริงยิ่งขึ้น */
+        /* กรอบหน้าจอสีดำด้านใน (Bezel) */
         .iphone-screen-frame {
             position: relative;
             width: 386px;
@@ -63,11 +62,11 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            padding: 10px; /* จำลองขอบดำรอบจอ */
+            padding: 10px;
             box-shadow: inset 0 0 4px rgba(255,255,255,0.2);
         }
 
-        /* หน้าจอแสดงผลด้านในสุด (สีขาว) */
+        /* หน้าจอแสดงผลด้านในสุด */
         .screen-content-area {
             position: relative;
             width: 100%;
@@ -79,7 +78,7 @@
             flex-direction: column;
         }
 
-        /* รอยบาก iPhone 11 (Notch) แนบติดขอบบนสุดของจอจริง */
+        /* Notch (รอยบาก) ด้านบน */
         .notch {
             position: absolute;
             top: 0;
@@ -120,7 +119,7 @@
         .chat-screen {
             background-color: #fff9fb;
             flex: 1;
-            margin-top: 25px; /* เว้นระยะใต้รอยบาก */
+            margin-top: 25px;
             display: flex;
             flex-direction: column;
             overflow-y: auto;
@@ -144,14 +143,14 @@
             gap: 12px;
         }
 
-        .chat-avatar {
+        .chat-avatar-header {
             width: 38px;
             height: 38px;
             border-radius: 50%;
             overflow: hidden;
             border: 1.5px solid #f8bbd0;
         }
-        .chat-avatar img {
+        .chat-avatar-header img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -183,21 +182,39 @@
             padding: 16px 14px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
             flex: 1;
         }
 
-        /* ฟองข้อความปรับความกว้างพอดีตัวหนังสือ (Fit-content) */
-        .message {
-            max-width: 82%;
-            width: fit-content;
-            width: -webkit-fit-content;
-            padding: 10px 14px;
-            border-radius: 16px;
-            font-size: 13px;
-            line-height: 1.5;
+        /* จัดกลุ่มข้อความฝั่งซ้าย (มีรูปโปรไฟล์วงกลมด้านข้าง) */
+        .message-row-received {
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            align-self: flex-start;
+            max-width: 85%;
             animation: fadeIn 0.35s ease;
-            word-wrap: break-word;
+        }
+
+        .chat-avatar-msg {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 1px solid #f8bbd0;
+            flex-shrink: 0;
+            margin-bottom: 2px;
+        }
+        .chat-avatar-msg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .received-content-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         @keyframes fadeIn {
@@ -205,34 +222,48 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* ฟองข้อความฝั่งซ้าย (ผู้ขาย) */
         .message.received {
             background: #ffffff;
             color: #4a3b42;
-            align-self: flex-start;
-            border: 1px solid #fce4ec;
+            padding: 10px 14px;
+            border-radius: 16px;
             border-bottom-left-radius: 6px;
+            border: 1px solid #fce4ec;
+            font-size: 13px;
+            line-height: 1.5;
+            width: fit-content;
+            width: -webkit-fit-content;
             box-shadow: 0 2px 5px rgba(244, 143, 177, 0.05);
+            word-wrap: break-word;
         }
 
+        /* ฟองข้อความฝั่งขวา (ตัวเราเอง ส่งออกไป) */
         .message.sent {
             background: #fce4ec;
             color: #5c3b48;
-            align-self: flex-end;
+            padding: 10px 14px;
+            border-radius: 16px;
             border-bottom-right-radius: 6px;
+            font-size: 13px;
+            line-height: 1.5;
+            align-self: flex-end;
+            width: fit-content;
+            width: -webkit-fit-content;
             font-weight: 400;
+            animation: fadeIn 0.35s ease;
+            word-wrap: break-word;
         }
 
-        /* กล่อง QR Code แยกเป็นฟองแชทเดี่ยว */
+        /* กล่อง QR Code ฝั่งซ้าย */
         .qr-message-box {
             background: #ffffff;
             border: 1px solid #fce4ec;
             border-radius: 16px;
             border-bottom-left-radius: 6px;
             padding: 12px;
-            align-self: flex-start;
             width: fit-content;
             box-shadow: 0 4px 12px rgba(244, 143, 177, 0.08);
-            animation: fadeIn 0.35s ease;
         }
 
         .qr-container {
@@ -255,17 +286,15 @@
             border-radius: 8px;
         }
 
-        /* ฟองแชทแยกสำหรับธนาคารแต่ละช่องทาง */
+        /* ฟองธนาคารฝั่งซ้าย */
         .bank-message-box {
             background: #ffffff;
             border: 1px solid #fce4ec;
             border-radius: 16px;
             border-bottom-left-radius: 6px;
             padding: 10px 12px;
-            align-self: flex-start;
             width: fit-content;
             box-shadow: 0 4px 12px rgba(244, 143, 177, 0.08);
-            animation: fadeIn 0.35s ease;
             display: flex;
             gap: 15px;
             align-items: center;
@@ -346,9 +375,11 @@
         /* ซ่อนข้อมูลบัญชีก่อนกดปุ่ม */
         #paymentReply {
             display: none;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        /* Home Indicator (ขีดสีเทาด้านล่างจอ iPhone) */
+        /* Home Indicator (ขีดด้านล่างจอ iPhone) */
         .home-indicator {
             width: 120px;
             height: 4px;
@@ -385,7 +416,7 @@
                 <div class="chat-screen">
                     <!-- Header แชท -->
                     <div class="chat-header">
-                        <div class="chat-avatar">
+                        <div class="chat-avatar-header">
                             <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
                         </div>
                         <div class="chat-user-meta">
@@ -396,42 +427,58 @@
 
                     <!-- ข้อความแชท -->
                     <div class="chat-body" id="chatBody">
-                        <div class="message received">
-                            สวัสดีค่ะคุณลูกค้า สนใจสินค้าชิ้นไหนสอบถามได้เลยนะคะ 🤍✨
+                        <!-- ข้อความร้านค้าต้อนรับ (ฝั่งซ้าย มีรูปโปรไฟล์) -->
+                        <div class="message-row-received">
+                            <div class="chat-avatar-msg">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
+                            </div>
+                            <div class="message received">
+                                สวัสดีค่ะคุณลูกค้า สนใจสินค้าชิ้นไหนสอบถามได้เลยนะคะ 🤍✨
+                            </div>
                         </div>
 
                         <!-- ข้อความที่จะโผล่มาเมื่อกดปุ่ม -->
                         <div id="paymentReply">
-                            <div class="message sent" style="margin-bottom: 8px;">
+                            <!-- ข้อความที่เราส่งเอง (อยู่ฝั่งขวาสุด ไม่มีรูปโปรไฟล์) -->
+                            <div class="message sent">
                                 ขอเลขบัญชีหน่อยค้าบ 🌷
                             </div>
-                            <div class="message received" style="margin-bottom: 8px;">
-                                ได้เลยค่ะคุณลูกค้า 😊 ช่องทางการชำระเงินตามนี้เลยน้า 👇
-                            </div>
 
-                            <!-- 1. ฟองแชทรูป QR Code เดี่ยวๆ -->
-                            <div class="qr-message-box" style="margin-bottom: 8px;">
-                                <div class="qr-container">
-                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=1234567890" alt="QR Code">
+                            <!-- ข้อความร้านค้าตอบกลับ (ฝั่งซ้าย มีรูปโปรไฟล์) -->
+                            <div class="message-row-received">
+                                <div class="chat-avatar-msg">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
                                 </div>
-                            </div>
+                                <div class="received-content-group">
+                                    <div class="message received">
+                                        ได้เลยค่ะคุณลูกค้า 😊 ช่องทางการชำระเงินตามนี้เลยน้า 👇
+                                    </div>
 
-                            <!-- 2. ฟองแชทบัญชีธนาคารกสิกรไทย เดี่ยวๆ -->
-                            <div class="bank-message-box" style="margin-bottom: 8px;">
-                                <div class="bank-info">
-                                    <div class="title"><i class="fas fa-university" style="color:#7892c4;"></i> กสิกรไทย (KBANK)</div>
-                                    <div class="num" id="kbankNum">123-4-56789-0</div>
-                                </div>
-                                <button class="copy-btn" onclick="copyText('1234567890', this)">คัดลอก</button>
-                            </div>
+                                    <!-- 1. ฟองแชทรูป QR Code เดี่ยวๆ -->
+                                    <div class="qr-message-box">
+                                        <div class="qr-container">
+                                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=1234567890" alt="QR Code">
+                                        </div>
+                                    </div>
 
-                            <!-- 3. ฟองแชท TrueMoney Wallet เดี่ยวๆ -->
-                            <div class="bank-message-box">
-                                <div class="bank-info">
-                                    <div class="title"><i class="fas fa-wallet" style="color:#f2a144;"></i> TrueMoney Wallet</div>
-                                    <div class="num" id="walletNum">081-234-5678</div>
+                                    <!-- 2. ฟองแชทบัญชีธนาคารกสิกรไทย เดี่ยวๆ -->
+                                    <div class="bank-message-box">
+                                        <div class="bank-info">
+                                            <div class="title"><i class="fas fa-university" style="color:#7892c4;"></i> กสิกรไทย (KBANK)</div>
+                                            <div class="num" id="kbankNum">123-4-56789-0</div>
+                                        </div>
+                                        <button class="copy-btn" onclick="copyText('1234567890', this)">คัดลอก</button>
+                                    </div>
+
+                                    <!-- 3. ฟองแชท TrueMoney Wallet เดี่ยวๆ -->
+                                    <div class="bank-message-box">
+                                        <div class="bank-info">
+                                            <div class="title"><i class="fas fa-wallet" style="color:#f2a144;"></i> TrueMoney Wallet</div>
+                                            <div class="num" id="walletNum">081-234-5678</div>
+                                        </div>
+                                        <button class="copy-btn" onclick="copyText('0812345678', this)">คัดลอก</button>
+                                    </div>
                                 </div>
-                                <button class="copy-btn" onclick="copyText('0812345678', this)">คัดลอก</button>
                             </div>
                         </div>
                     </div>
@@ -455,7 +502,7 @@
     <script>
         function showPayment() {
             const paymentReply = document.getElementById('paymentReply');
-            paymentReply.style.display = 'block';
+            paymentReply.style.display = 'flex';
             
             const chatBody = document.getElementById('chatBody');
             chatBody.scrollTop = chatBody.scrollHeight;
