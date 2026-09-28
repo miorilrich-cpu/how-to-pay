@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Realistic Messenger Light Mode Chat Mockup</title>
+    <title>Realistic Instagram DM Chat Mockup</title>
     <!-- ไอคอนจาก FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- ฟอนต์ Google Fonts (Prompt) -->
@@ -18,7 +18,7 @@
         }
 
         body {
-            background-color: #f0f2f5;
+            background-color: #fafafa;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -31,11 +31,11 @@
             position: relative;
             width: 410px;
             height: 840px;
-            background: linear-gradient(135deg, #e4e6eb 0%, #bcc0c4 100%);
+            background: linear-gradient(135deg, #e4e4e4 0%, #a8a8a8 100%);
             border-radius: 52px;
             box-shadow: 
-                0 30px 60px rgba(0, 0, 0, 0.2),
-                inset 0 0 0 2px rgba(255, 255, 255, 0.8),
+                0 30px 60px rgba(0, 0, 0, 0.15),
+                inset 0 0 0 2px rgba(255, 255, 255, 0.9),
                 inset 0 0 0 6px #d1d5db;
             display: flex;
             justify-content: center;
@@ -66,7 +66,7 @@
             box-shadow: inset 0 0 4px rgba(255,255,255,0.2);
         }
 
-        /* หน้าจอแสดงผลด้านในสุด (สีขาว) */
+        /* หน้าจอแสดงผลด้านในสุด (สีขาวสไตล์ IG) */
         .screen-content-area {
             position: relative;
             width: 100%;
@@ -115,7 +115,7 @@
             border: 1px solid #222;
         }
 
-        /* --- หน้าจอแชทสไตล์ Messenger (Light Mode) --- */
+        /* --- หน้าจอแชทสไตล์ Instagram DM --- */
         .chat-screen {
             background-color: #ffffff;
             flex: 1;
@@ -130,17 +130,17 @@
             display: none;
         }
 
-        /* Header แชท Messenger (พื้นหลังขาว) */
+        /* Header แชท Instagram */
         .chat-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px 12px;
+            padding: 10px 14px;
             background: #ffffff;
             position: sticky;
             top: 0;
             z-index: 10;
-            border-bottom: 1px solid #f0f2f5;
+            border-bottom: 0.5px solid #dbdbdb;
         }
 
         .chat-header-left {
@@ -150,17 +150,18 @@
         }
 
         .back-icon {
-            color: #0084ff;
-            font-size: 18px;
+            color: #262626;
+            font-size: 16px;
             cursor: pointer;
         }
 
         .chat-avatar-header {
-            width: 36px;
-            height: 36px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             overflow: hidden;
-            background: #e4e6eb;
+            background: #efefef;
+            flex-shrink: 0;
         }
         .chat-avatar-header img {
             width: 100%;
@@ -169,17 +170,17 @@
         }
 
         .chat-user-meta .name {
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 600;
-            color: #050505;
+            color: #262626;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             max-width: 170px;
         }
         .chat-user-meta .status {
-            font-size: 11px;
-            color: #65676b;
+            font-size: 10px;
+            color: #8e8e8e;
         }
 
         .chat-header-right {
@@ -189,21 +190,21 @@
         }
 
         .chat-header-right i {
-            color: #0084ff;
+            color: #262626;
             font-size: 18px;
             cursor: pointer;
         }
 
         /* กล่องข้อความในแชท */
         .chat-body {
-            padding: 12px 12px;
+            padding: 14px 12px;
             display: flex;
             flex-direction: column;
             gap: 12px;
             flex: 1;
         }
 
-        /* จัดกลุ่มข้อความฝั่งซ้าย (มีรูปโปรไฟล์วงกลมด้านข้าง) */
+        /* จัดกลุ่มข้อความฝั่งซ้าย (มีรูปโปรไฟล์วงกลมด้านข้างสไตล์ IG) */
         .message-row-received {
             display: flex;
             align-items: flex-end;
@@ -214,8 +215,8 @@
         }
 
         .chat-avatar-msg {
-            width: 28px;
-            height: 28px;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
             overflow: hidden;
             flex-shrink: 0;
@@ -238,10 +239,10 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ฟองข้อความฝั่งซ้าย (ผู้ขาย - สีเทาอ่อน Messenger) */
+        /* ฟองข้อความฝั่งซ้าย (ผู้ขาย - สีเทาอ่อน IG) */
         .message.received {
-            background: #f0f2f5;
-            color: #050505;
+            background: #efefef;
+            color: #262626;
             padding: 10px 14px;
             border-radius: 18px;
             border-bottom-left-radius: 4px;
@@ -252,9 +253,9 @@
             word-wrap: break-word;
         }
 
-        /* ฟองข้อความฝั่งขวา (ตัวเราเอง - สีฟ้า Messenger) */
+        /* ฟองข้อความฝั่งขวา (ตัวเราเอง - ไล่สี Gradient แบบ IG หรือสีฟ้าฟ้าเข้ม) */
         .message.sent {
-            background: #0084ff;
+            background: linear-gradient(135deg, #0095f6 0%, #ad00ff 100%);
             color: #ffffff;
             padding: 10px 14px;
             border-radius: 18px;
@@ -269,9 +270,9 @@
             word-wrap: break-word;
         }
 
-        /* กล่องรูปภาพในแชท */
+        /* กล่องรูปภาพโปรโมชันในแชท */
         .image-message-box {
-            background: #f0f2f5;
+            background: #efefef;
             border-radius: 18px;
             border-bottom-left-radius: 4px;
             padding: 6px;
@@ -286,7 +287,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #e4e6eb;
+            background: #ffffff;
         }
 
         .image-container img {
@@ -298,7 +299,7 @@
 
         /* ฟองธนาคารฝั่งซ้าย */
         .bank-message-box {
-            background: #f0f2f5;
+            background: #efefef;
             border-radius: 18px;
             border-bottom-left-radius: 4px;
             padding: 10px 14px;
@@ -311,7 +312,7 @@
 
         .bank-info .title {
             font-weight: 500;
-            color: #65676b;
+            color: #8e8e8e;
             font-size: 11.5px;
             margin-bottom: 2px;
         }
@@ -319,18 +320,18 @@
             font-family: monospace;
             font-size: 13px;
             font-weight: 600;
-            color: #050505;
+            color: #262626;
             letter-spacing: 0.5px;
         }
 
-        /* ปุ่มคัดลอกโหมดสว่าง */
+        /* ปุ่มคัดลอกสไตล์ IG */
         .copy-btn {
-            background: #e4e6eb;
+            background: #dbdbdb;
             border: none;
             padding: 6px 12px;
-            border-radius: 12px;
+            border-radius: 10px;
             font-size: 11px;
-            color: #050505;
+            color: #262626;
             cursor: pointer;
             font-family: 'Prompt', sans-serif;
             transition: all 0.2s;
@@ -338,49 +339,63 @@
             white-space: nowrap;
         }
         .copy-btn:active {
-            background: #0084ff;
+            background: #0095f6;
             color: #fff;
             transform: scale(0.95);
         }
 
-        /* แถบช่องพิมพ์ข้อความด้านล่าง */
+        /* แถบช่องพิมพ์ข้อความด้านล่างสไตล์ IG DM */
         .chat-footer {
             padding: 8px 12px 12px 12px;
             background: #ffffff;
             display: flex;
             align-items: center;
             gap: 10px;
-            border-top: 1px solid #f0f2f5;
         }
 
-        .footer-icons {
+        .chat-input-wrapper {
+            flex: 1;
             display: flex;
-            gap: 12px;
-            color: #0084ff;
-            font-size: 18px;
             align-items: center;
+            background: #ffffff;
+            border: 1px solid #dbdbdb;
+            border-radius: 22px;
+            padding: 6px 12px;
+            gap: 10px;
+        }
+
+        .camera-circle-btn {
+            width: 28px;
+            height: 28px;
+            background: #0095f6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 12px;
+            flex-shrink: 0;
         }
 
         .chat-input-bar {
             flex: 1;
             display: flex;
             align-items: center;
-            background: #f0f2f5;
-            padding: 8px 14px;
-            border-radius: 20px;
             cursor: pointer;
-            transition: 0.2s;
         }
 
         .chat-input-bar span {
             flex: 1;
             font-size: 13px;
-            color: #65676b;
+            color: #8e8e8e;
         }
 
-        .chat-input-bar i {
-            font-size: 16px;
-            color: #0084ff;
+        .footer-right-icons {
+            display: flex;
+            gap: 12px;
+            color: #262626;
+            font-size: 18px;
+            align-items: center;
         }
 
         /* ซ่อนข้อมูลบัญชีก่อนกดปุ่ม */
@@ -426,7 +441,7 @@
 
                 <!-- หน้าจอแชทภายใน -->
                 <div class="chat-screen">
-                    <!-- Header แชท Messenger -->
+                    <!-- Header แชท Instagram DM -->
                     <div class="chat-header">
                         <div class="chat-header-left">
                             <i class="fas fa-chevron-left back-icon"></i>
@@ -434,14 +449,14 @@
                                 <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
                             </div>
                             <div class="chat-user-meta">
-                                <div class="name">ตัวแทนดันกลุ่ม wish (สัญญา 1 เดือนน)</div>
-                                <div class="status">Wongsuda เพิ่งใช้งานเมื่อ 5 นาทีที่แล้ว</div>
+                                <div class="name">wongsuda_shop</div>
+                                <div class="status">Active 5m ago</div>
                             </div>
                         </div>
                         <div class="chat-header-right">
-                            <i class="fas fa-phone-alt"></i>
+                            <i class="fas fa-phone"></i>
                             <i class="fas fa-video"></i>
-                            <i class="fas fa-info-circle"></i>
+                            <i class="fas fa-circle-info"></i>
                         </div>
                     </div>
 
@@ -459,14 +474,14 @@
                             </div>
                         </div>
 
-                        <!-- ข้อความที่จะโผล่มาเมื่อกดปุ่ม -->
+                        <!-- ข้อความที่จะโผล่มาเมื่อกดจำลองส่งข้อความ -->
                         <div id="paymentReply">
-                            <!-- ข้อความที่เราส่งเอง (อยู่ฝั่งขวาสุด สีฟ้า Messenger) -->
+                            <!-- ข้อความที่เราส่งเอง (อยู่ฝั่งขวาสุด สีไล่ระดับแบบ IG ไม่มีรูปโปรไฟล์) -->
                             <div class="message sent">
                                 ขอเลขบัญชีหน่อยค้าบ 🌷
                             </div>
 
-                            <!-- ข้อความร้านค้าตอบกลับ (ฝั่งซ้าย มีรูปโปรไฟล์) -->
+                            <!-- ข้อความร้านค้าตอบกลับ (ฝั่งซ้าย มีรูปโปรไฟล์วงกลมด้านข้าง) -->
                             <div class="message-row-received">
                                 <div class="chat-avatar-msg">
                                     <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
@@ -498,16 +513,19 @@
                         </div>
                     </div>
 
-                    <!-- แถบช่องพิมพ์ข้อความด้านล่างสไตล์ Messenger -->
+                    <!-- แถบช่องพิมพ์ข้อความด้านล่างสไตล์ Instagram DM -->
                     <div class="chat-footer">
-                        <div class="footer-icons">
-                            <i class="fas fa-circle-plus"></i>
-                            <i class="fas fa-image"></i>
-                            <i class="fas fa-microphone"></i>
-                        </div>
-                        <div class="chat-input-bar" onclick="showPayment()">
-                            <span>ขอเลขบัญชีหน่อยค้าบ</span>
-                            <i class="fas fa-thumbs-up"></i>
+                        <div class="chat-input-wrapper">
+                            <div class="camera-circle-btn">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <div class="chat-input-bar" onclick="showPayment()">
+                                <span>ส่งข้อความ... (คลิกเพื่อจำลองแชท)</span>
+                            </div>
+                            <div class="footer-right-icons">
+                                <i class="far fa-image"></i>
+                                <i class="far fa-heart"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -532,12 +550,12 @@
             navigator.clipboard.writeText(text).then(() => {
                 let originalText = btn.innerText;
                 btn.innerText = 'คัดลอกแล้ว!';
-                btn.style.background = '#0084ff';
+                btn.style.background = '#0095f6';
                 btn.style.color = '#fff';
                 setTimeout(() => {
                     btn.innerText = originalText;
-                    btn.style.background = '#e4e6eb';
-                    btn.style.color = '#050505';
+                    btn.style.background = '#dbdbdb';
+                    btn.style.color = '#262626';
                 }, 1500);
             });
         }
