@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pink Minimal iPhone 11 Chat Mockup</title>
+    <title>Realistic Pink Minimal iPhone 11 Chat Mockup</title>
     <!-- ไอคอนจาก FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- ฟอนต์ Google Fonts (Prompt) -->
@@ -18,7 +18,7 @@
         }
 
         body {
-            background-color: #fcf6f8; /* พื้นหลังสีชมพูอ่อนจางๆ */
+            background-color: #fcf6f8;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,17 +26,18 @@
             padding: 20px;
         }
 
-        /* --- ตัวเครื่อง iPhone 11 (ขนาดสเกลสมจริง & สีชมพูพาสเทลละมุน) --- */
+        /* --- ตัวเครื่อง iPhone 11 สมจริง (สัดส่วน 19.5:9 โค้งมนละมุน) --- */
         .iphone-device {
             position: relative;
-            width: 415px;
-            height: 855px;
+            width: 410px;
+            height: 840px;
             background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
-            border-radius: 54px;
+            border-radius: 52px;
+            /* เพิ่มมิติเงาและขอบโลหะชั้นนอกให้เหมือนเครื่องจริง */
             box-shadow: 
-                0 25px 50px rgba(244, 143, 177, 0.3),
-                inset 0 0 2px 2px rgba(255, 255, 255, 0.9),
-                inset 0 0 0 5px #f48fb1;
+                0 30px 60px rgba(244, 143, 177, 0.35),
+                inset 0 0 0 2px rgba(255, 255, 255, 0.8),
+                inset 0 0 0 6px #f48fb1;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -45,38 +46,50 @@
         /* ปุ่มด้านข้าง iPhone 11 */
         .side-button {
             position: absolute;
-            background: #f06292;
-            border-radius: 3px;
+            background: #ec407a;
+            border-radius: 4px;
         }
-        .volume-up { left: -8px; top: 165px; width: 4px; height: 32px; }
-        .volume-down { left: -8px; top: 215px; width: 4px; height: 32px; }
-        .power-button { right: -8px; top: 190px; width: 4px; height: 65px; }
+        .volume-up { left: -9px; top: 165px; width: 4px; height: 34px; }
+        .volume-down { left: -9px; top: 215px; width: 4px; height: 34px; }
+        .power-button { right: -9px; top: 190px; width: 4px; height: 70px; }
 
-        /* กรอบหน้าจอสีขาวขอบมน (iPhone 11 Screen) */
+        /* กรอบหน้าจอสีดำด้านใน (Bezel) ให้สมจริงยิ่งขึ้น */
         .iphone-screen-frame {
             position: relative;
-            width: 387px;
-            height: 827px;
-            background-color: #ffffff;
-            border-radius: 46px;
+            width: 386px;
+            height: 816px;
+            background-color: #000000;
+            border-radius: 42px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            border: 4px solid #ffffff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            padding: 10px; /* จำลองขอบดำรอบจอ */
+            box-shadow: inset 0 0 4px rgba(255,255,255,0.2);
         }
 
-        /* รอยบาก iPhone 11 (Notch) ขอบขาว */
+        /* หน้าจอแสดงผลด้านในสุด (สีขาว) */
+        .screen-content-area {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            border-radius: 35px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* รอยบาก iPhone 11 (Notch) แนบติดขอบบนสุดของจอจริง */
         .notch {
             position: absolute;
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 155px;
-            height: 28px;
-            background-color: #ffffff;
-            border-bottom-left-radius: 16px;
-            border-bottom-right-radius: 16px;
+            width: 150px;
+            height: 25px;
+            background-color: #000000;
+            border-bottom-left-radius: 14px;
+            border-bottom-right-radius: 14px;
             z-index: 100;
             display: flex;
             justify-content: center;
@@ -84,29 +97,30 @@
         }
 
         .speaker {
-            width: 50px;
+            width: 45px;
             height: 4px;
-            background-color: #e0deda;
+            background-color: #333333;
             border-radius: 3px;
             position: absolute;
-            top: 8px;
+            top: 7px;
         }
 
         .camera {
             width: 10px;
             height: 10px;
-            background-color: #222;
+            background-color: #111111;
             border-radius: 50%;
             position: absolute;
-            top: 7px;
+            top: 6px;
             right: 32px;
+            border: 1px solid #222;
         }
 
         /* --- หน้าจอแชทโทนชมพูพาสเทล --- */
         .chat-screen {
             background-color: #fff9fb;
             flex: 1;
-            margin-top: 28px; /* เว้นระยะใต้รอยบาก */
+            margin-top: 25px; /* เว้นระยะใต้รอยบาก */
             display: flex;
             flex-direction: column;
             overflow-y: auto;
@@ -173,13 +187,17 @@
             flex: 1;
         }
 
+        /* ฟองข้อความปรับความกว้างพอดีตัวหนังสือ (Fit-content) */
         .message {
             max-width: 82%;
+            width: fit-content;
+            width: -webkit-fit-content;
             padding: 10px 14px;
             border-radius: 16px;
             font-size: 13px;
             line-height: 1.5;
             animation: fadeIn 0.35s ease;
+            word-wrap: break-word;
         }
 
         @keyframes fadeIn {
@@ -197,21 +215,22 @@
         }
 
         .message.sent {
-            background: #fce4ec; /* ชมพูอ่อนพาสเทล */
+            background: #fce4ec;
             color: #5c3b48;
             align-self: flex-end;
             border-bottom-right-radius: 6px;
             font-weight: 400;
         }
 
-        /* กล่อง QR Code แยกเป็นข้อความอิสระ */
+        /* กล่อง QR Code แยกเป็นฟองแชทเดี่ยว */
         .qr-message-box {
             background: #ffffff;
             border: 1px solid #fce4ec;
             border-radius: 16px;
+            border-bottom-left-radius: 6px;
             padding: 12px;
             align-self: flex-start;
-            max-width: 82%;
+            width: fit-content;
             box-shadow: 0 4px 12px rgba(244, 143, 177, 0.08);
             animation: fadeIn 0.35s ease;
         }
@@ -219,7 +238,7 @@
         .qr-container {
             width: 115px;
             height: 115px;
-            margin: 0 auto 10px auto;
+            margin: 0 auto;
             background: #fff;
             padding: 6px;
             border: 1.5px dashed #f8bbd0;
@@ -236,16 +255,21 @@
             border-radius: 8px;
         }
 
-        .bank-item {
-            background: #fff5f8;
-            padding: 9px 11px;
-            border-radius: 10px;
-            margin-bottom: 8px;
+        /* ฟองแชทแยกสำหรับธนาคารแต่ละช่องทาง */
+        .bank-message-box {
+            background: #ffffff;
+            border: 1px solid #fce4ec;
+            border-radius: 16px;
+            border-bottom-left-radius: 6px;
+            padding: 10px 12px;
+            align-self: flex-start;
+            width: fit-content;
+            box-shadow: 0 4px 12px rgba(244, 143, 177, 0.08);
+            animation: fadeIn 0.35s ease;
             display: flex;
-            justify-content: space-between;
+            gap: 15px;
             align-items: center;
             font-size: 12px;
-            border: 1px solid #fde2ec;
         }
 
         .bank-info .title {
@@ -274,13 +298,14 @@
             font-family: 'Prompt', sans-serif;
             transition: all 0.2s;
             font-weight: 500;
+            white-space: nowrap;
         }
         .copy-btn:active {
             background: #f48fb1;
             transform: scale(0.95);
         }
 
-        /* แถบกดส่งข้อความ / ปุ่มเลือกคำถาม */
+        /* แถบช่องพิมพ์ข้อความด้านล่าง */
         .chat-footer {
             padding: 12px 14px;
             background: #ffffff;
@@ -290,60 +315,42 @@
             gap: 8px;
         }
 
-        .quick-reply-btn {
-            background: #fff5f8;
-            border: 1.5px solid #f8bbd0;
-            color: #734858;
-            padding: 9px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            cursor: pointer;
-            text-align: left;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: 0.2s;
-            font-family: 'Prompt', sans-serif;
-            box-shadow: 0 2px 6px rgba(244, 143, 177, 0.05);
-        }
-
-        .quick-reply-btn:hover {
-            background: #fce4ec;
-        }
-
         .chat-input-bar {
             display: flex;
             align-items: center;
             gap: 10px;
             background: #fff5f8;
-            padding: 6px 12px;
+            padding: 8px 14px;
             border-radius: 20px;
+            border: 1.5px solid #f8bbd0;
+            cursor: pointer;
+            transition: 0.2s;
         }
 
-        .chat-input-bar input {
+        .chat-input-bar:hover {
+            background: #fce4ec;
+        }
+
+        .chat-input-bar span {
             flex: 1;
-            background: transparent;
-            border: none;
             font-size: 12px;
-            outline: none;
-            font-family: 'Prompt', sans-serif;
             color: #734858;
+            font-weight: 400;
         }
 
         .chat-input-bar i {
-            font-size: 15px;
+            font-size: 14px;
             color: #f48fb1;
-            cursor: pointer;
         }
 
-        /* ซ่อนกล่องข้อมูลบัญชีก่อนกดปุ่ม */
+        /* ซ่อนข้อมูลบัญชีก่อนกดปุ่ม */
         #paymentReply {
             display: none;
         }
 
-        /* Home Indicator (ขีดสีเทาจางๆ ด้านล่างจอไอโฟน 11) */
+        /* Home Indicator (ขีดสีเทาด้านล่างจอ iPhone) */
         .home-indicator {
-            width: 130px;
+            width: 120px;
             height: 4px;
             background-color: #d8d8d8;
             border-radius: 100px;
@@ -357,57 +364,60 @@
 </head>
 <body>
 
-    <!-- บอดี้ตัวเครื่อง iPhone 11 -->
+    <!-- บอดี้ตัวเครื่อง iPhone 11 สมจริง -->
     <div class="iphone-device">
         <!-- ปุ่มข้างเครื่อง -->
         <div class="side-button volume-up"></div>
         <div class="side-button volume-down"></div>
         <div class="side-button power-button"></div>
 
-        <!-- กรอบหน้าจอไอโฟน 11 -->
+        <!-- กรอบหน้าจอสีดำ (Bezel) -->
         <div class="iphone-screen-frame">
-            <!-- Notch (รอยบาก) ด้านบน -->
-            <div class="notch">
-                <div class="speaker"></div>
-                <div class="camera"></div>
-            </div>
-
-            <!-- หน้าจอแชทภายใน -->
-            <div class="chat-screen">
-                <!-- Header แชท -->
-                <div class="chat-header">
-                    <div class="chat-avatar">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
-                    </div>
-                    <div class="chat-user-meta">
-                        <div class="name">sananthachat_shop ☁️</div>
-                        <div class="status">Active now</div>
-                    </div>
+            <!-- พื้นที่หน้าจอแสดงผล -->
+            <div class="screen-content-area">
+                <!-- Notch (รอยบาก) ด้านบน -->
+                <div class="notch">
+                    <div class="speaker"></div>
+                    <div class="camera"></div>
                 </div>
 
-                <!-- ข้อความแชท -->
-                <div class="chat-body" id="chatBody">
-                    <div class="message received">
-                        สวัสดีค่ะคุณลูกค้า สนใจสินค้าชิ้นไหนสอบถามได้เลยนะคะ 🤍✨
+                <!-- หน้าจอแชทภายใน -->
+                <div class="chat-screen">
+                    <!-- Header แชท -->
+                    <div class="chat-header">
+                        <div class="chat-avatar">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
+                        </div>
+                        <div class="chat-user-meta">
+                            <div class="name">sananthachat_shop ☁️</div>
+                            <div class="status">Active now</div>
+                        </div>
                     </div>
 
-                    <!-- ข้อความที่จะโผล่มาเมื่อกดปุ่ม -->
-                    <div id="paymentReply">
-                        <div class="message sent" style="margin-bottom: 8px;">
-                            ขอเลขบัญชีหน่อยค้าบ 🌷
-                        </div>
-                        <div class="message received" style="margin-bottom: 8px;">
-                            ได้เลยค่ะคุณลูกค้า 😊 ช่องทางการชำระเงินตามนี้เลยน้า 👇
+                    <!-- ข้อความแชท -->
+                    <div class="chat-body" id="chatBody">
+                        <div class="message received">
+                            สวัสดีค่ะคุณลูกค้า สนใจสินค้าชิ้นไหนสอบถามได้เลยนะคะ 🤍✨
                         </div>
 
-                        <!-- แยกส่งรูป QR Code และบัญชีออกมาเป็นอีก 1 ข้อความ -->
-                        <div class="qr-message-box">
-                            <div class="qr-container">
-                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=1234567890" alt="QR Code">
+                        <!-- ข้อความที่จะโผล่มาเมื่อกดปุ่ม -->
+                        <div id="paymentReply">
+                            <div class="message sent" style="margin-bottom: 8px;">
+                                ขอเลขบัญชีหน่อยค้าบ 🌷
+                            </div>
+                            <div class="message received" style="margin-bottom: 8px;">
+                                ได้เลยค่ะคุณลูกค้า 😊 ช่องทางการชำระเงินตามนี้เลยน้า 👇
                             </div>
 
-                            <!-- บัญชีธนาคาร -->
-                            <div class="bank-item">
+                            <!-- 1. ฟองแชทรูป QR Code เดี่ยวๆ -->
+                            <div class="qr-message-box" style="margin-bottom: 8px;">
+                                <div class="qr-container">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=1234567890" alt="QR Code">
+                                </div>
+                            </div>
+
+                            <!-- 2. ฟองแชทบัญชีธนาคารกสิกรไทย เดี่ยวๆ -->
+                            <div class="bank-message-box" style="margin-bottom: 8px;">
                                 <div class="bank-info">
                                     <div class="title"><i class="fas fa-university" style="color:#7892c4;"></i> กสิกรไทย (KBANK)</div>
                                     <div class="num" id="kbankNum">123-4-56789-0</div>
@@ -415,8 +425,8 @@
                                 <button class="copy-btn" onclick="copyText('1234567890', this)">คัดลอก</button>
                             </div>
 
-                            <!-- TrueMoney Wallet -->
-                            <div class="bank-item" style="margin-bottom: 0;">
+                            <!-- 3. ฟองแชท TrueMoney Wallet เดี่ยวๆ -->
+                            <div class="bank-message-box">
                                 <div class="bank-info">
                                     <div class="title"><i class="fas fa-wallet" style="color:#f2a144;"></i> TrueMoney Wallet</div>
                                     <div class="num" id="walletNum">081-234-5678</div>
@@ -425,25 +435,19 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- แถบกดเลือกข้อความด่วน -->
-                <div class="chat-footer">
-                    <button class="quick-reply-btn" onclick="showPayment()">
-                        <span>💬 ขอเลขบัญชีหน่อยค้าบ</span>
-                        <i class="fas fa-paper-plane" style="font-size: 11px; color: #f48fb1;"></i>
-                    </button>
-                    
-                    <div class="chat-input-bar">
-                        <i class="far fa-image"></i>
-                        <input type="text" placeholder="พิมพ์ข้อความ..." readonly>
-                        <i class="far fa-smile"></i>
+                    <!-- แถบช่องพิมพ์ข้อความด้านล่าง -->
+                    <div class="chat-footer">
+                        <div class="chat-input-bar" onclick="showPayment()">
+                            <span>ขอเลขบัญชีหน่อยค้าบ</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Home Indicator ขีดด้านล่างจอไอโฟน 11 -->
-            <div class="home-indicator"></div>
+                <!-- Home Indicator ขีดด้านล่างจอไอโฟน -->
+                <div class="home-indicator"></div>
+            </div>
         </div>
     </div>
 
