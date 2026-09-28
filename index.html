@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gorgeous Instagram Mockup - iPhone 11</title>
+    <title>Minimal Cute Instagram Mockup</title>
     <!-- ไอคอนจาก FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- ฟอนต์ Google Fonts (Prompt) -->
@@ -18,7 +18,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            background-color: #f7f5f2; /* พื้นหลังสีครีมเบจ สไตล์มินิมอล */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,27 +26,26 @@
             padding: 20px;
         }
 
-        /* --- ตัวเครื่อง iPhone 11 (สีม่วงลาเวนเดอร์พรีเมียม หรูหรา) --- */
+        /* --- ตัวเครื่อง iPhone 11 สไตล์ Minimal Starlight --- */
         .iphone-device {
             position: relative;
-            width: 420px;
-            height: 865px;
-            background: linear-gradient(145deg, #d4c5e2 0%, #a89bc2 50%, #8778a8 100%);
-            border-radius: 56px;
+            width: 415px;
+            height: 855px;
+            background: linear-gradient(135deg, #e8e6e1 0%, #d4d1cb 100%);
+            border-radius: 54px;
             box-shadow: 
-                0 30px 60px rgba(120, 100, 150, 0.25),
-                0 10px 20px rgba(0, 0, 0, 0.1),
-                inset 0 0 3px 2px rgba(255, 255, 255, 0.5),
-                inset 0 0 0 5px #746596;
+                0 25px 50px rgba(180, 175, 165, 0.3),
+                inset 0 0 2px 2px rgba(255, 255, 255, 0.8),
+                inset 0 0 0 5px #c5c2bc;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        /* ปุ่มกดด้านข้างเครื่อง (เงางาม) */
+        /* ปุ่มกดด้านข้างเครื่อง */
         .side-button {
             position: absolute;
-            background: #625384;
+            background: #b5b2ac;
             border-radius: 3px;
         }
         .volume-up {
@@ -71,15 +70,14 @@
         /* --- กรอบหน้าจอข้างใน --- */
         .iphone-screen-frame {
             position: relative;
-            width: 390px;
-            height: 835px;
-            background-color: #000000;
-            border-radius: 48px;
+            width: 387px;
+            height: 827px;
+            background-color: #ffffff;
+            border-radius: 46px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            border: 3px solid #1a1a1a;
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+            border: 4px solid #fff;
         }
 
         /* รอยบาก iPhone 11 (Notch) */
@@ -88,11 +86,11 @@
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 160px;
-            height: 30px;
-            background-color: #000000;
-            border-bottom-left-radius: 18px;
-            border-bottom-right-radius: 18px;
+            width: 155px;
+            height: 28px;
+            background-color: #ffffff;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
             z-index: 100;
             display: flex;
             justify-content: center;
@@ -100,30 +98,29 @@
         }
 
         .speaker {
-            width: 55px;
+            width: 50px;
             height: 4px;
-            background-color: #2c2c2e;
+            background-color: #e0e0e0;
             border-radius: 3px;
             position: absolute;
             top: 8px;
         }
 
         .camera {
-            width: 11px;
-            height: 11px;
-            background-color: #111;
-            border: 2px solid #222;
+            width: 10px;
+            height: 10px;
+            background-color: #222;
             border-radius: 50%;
             position: absolute;
             top: 7px;
-            right: 35px;
+            right: 32px;
         }
 
         /* --- ส่วนแสดงผลแอพ Instagram --- */
         .app-screen {
             background-color: #ffffff;
             flex: 1;
-            margin-top: 30px;
+            margin-top: 28px;
             display: flex;
             flex-direction: column;
             overflow-y: auto;
@@ -134,15 +131,14 @@
             display: none;
         }
 
-        /* Header ของ IG */
+        /* Header ของ IG แบบคลีนๆ */
         .ig-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 14px 16px;
-            border-bottom: 1px solid #efefef;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #f2f2f2;
+            background: #fff;
             position: sticky;
             top: 0;
             z-index: 10;
@@ -150,26 +146,24 @@
 
         .ig-logo {
             font-weight: 600;
-            font-size: 22px;
+            font-size: 20px;
             font-family: cursive, sans-serif;
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #333333;
             letter-spacing: 0.5px;
         }
 
         .ig-header-icons i {
-            font-size: 20px;
-            margin-left: 18px;
+            font-size: 19px;
+            margin-left: 16px;
             cursor: pointer;
-            color: #262626;
+            color: #444;
         }
 
         /* โพสต์สไตล์ IG */
         .ig-post {
             background: #fff;
             margin-bottom: 15px;
-            border-bottom: 1px solid #efefef;
+            border-bottom: 1px solid #f8f8f8;
         }
 
         /* ข้อมูลโปรไฟล์หัวโพสต์ */
@@ -187,10 +181,10 @@
         }
 
         .post-avatar {
-            width: 36px;
-            height: 36px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            background: #e2dfdc;
             padding: 2px;
             display: flex;
             align-items: center;
@@ -207,13 +201,13 @@
 
         .post-username {
             font-size: 13px;
-            font-weight: 600;
-            color: #262626;
+            font-weight: 500;
+            color: #333;
         }
 
         .post-more {
             font-size: 14px;
-            color: #262626;
+            color: #666;
             cursor: pointer;
         }
 
@@ -221,7 +215,7 @@
         .post-image-container {
             width: 100%;
             aspect-ratio: 1 / 1;
-            background-color: #fafafa;
+            background-color: #faf9f6;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -247,30 +241,25 @@
         }
 
         .post-actions i {
-            font-size: 22px;
+            font-size: 21px;
             cursor: pointer;
-            color: #262626;
-            transition: transform 0.2s;
-        }
-
-        .post-actions i:hover {
-            transform: scale(1.1);
+            color: #333;
         }
 
         .post-actions i.fa-heart {
-            color: #ed4956;
+            color: #e05656; /* หัวใจสีแดงละมุน */
         }
 
         /* ยอดไลก์ */
         .post-likes {
             padding: 0 14px;
             font-size: 13px;
-            font-weight: 600;
-            color: #262626;
+            font-weight: 500;
+            color: #333;
             margin-bottom: 6px;
         }
 
-        /* ส่วนคอมเมนต์และบัญชีโอนเงินแบบการ์ดพรีเมียม */
+        /* ส่วนคอมเมนต์และการ์ดบัญชีสไตล์มินิมอล */
         .post-comments {
             padding: 0 14px 14px 14px;
             font-size: 13px;
@@ -279,55 +268,52 @@
         .comment-item {
             margin-bottom: 8px;
             line-height: 1.4;
-            color: #262626;
+            color: #555;
         }
 
         .comment-user {
-            font-weight: 600;
-            color: #262626;
+            font-weight: 500;
+            color: #333;
             margin-right: 6px;
         }
 
-        /* การ์ดเลขบัญชี */
+        /* การ์ดเลขบัญชีมินิมอล ละมุนตา */
         .payment-card {
-            background: linear-gradient(135deg, #f6f8fb 0%, #edf1f7 100%);
-            border: 1px solid #dce3ee;
-            border-left: 4px solid #0066ff;
-            padding: 10px 14px;
-            border-radius: 10px;
+            background: #faf8f5;
+            border: 1px solid #eee8e2;
+            padding: 10px 12px;
+            border-radius: 12px;
             margin-top: 8px;
             font-size: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
         }
 
         .payment-card.wallet {
-            border-left-color: #ff6600;
-            background: linear-gradient(135deg, #fffaf5 0%, #fff3ec 100%);
-            border-color: #fce1d3;
+            background: #fdfaf6;
+            border-color: #f3eae0;
         }
 
         .payment-title {
-            font-weight: 600;
-            color: #1a202c;
-            margin-bottom: 4px;
+            font-weight: 500;
+            color: #4a453f;
+            margin-bottom: 3px;
             display: flex;
             align-items: center;
             gap: 6px;
-            font-size: 13px;
+            font-size: 12px;
         }
 
         .payment-detail {
-            color: #2d3748;
+            color: #2c2825;
             font-family: monospace;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
-            letter-spacing: 0.8px;
+            letter-spacing: 0.5px;
         }
 
         .payment-name {
             font-size: 11px;
-            color: #718096;
-            margin-top: 3px;
+            color: #8c8278;
+            margin-top: 2px;
         }
 
         /* แถบเมนูด้านล่างสุดของ IG */
@@ -335,8 +321,8 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
-            height: 52px;
-            border-top: 1px solid #efefef;
+            height: 50px;
+            border-top: 1px solid #f2f2f2;
             background: #fff;
             position: sticky;
             bottom: 0;
@@ -345,19 +331,19 @@
 
         .ig-navbar i {
             font-size: 20px;
-            color: #262626;
+            color: #555;
             cursor: pointer;
         }
-
+        
         .ig-navbar i.active {
-            color: #000;
+            color: #222;
         }
 
         /* Home Indicator ขีดด้านล่างจอไอโฟน */
         .home-indicator {
-            width: 134px;
-            height: 5px;
-            background-color: #000;
+            width: 130px;
+            height: 4px;
+            background-color: #d8d8d8;
             border-radius: 100px;
             position: absolute;
             bottom: 6px;
@@ -369,7 +355,7 @@
 </head>
 <body>
 
-    <!-- บอดี้ตัวเครื่อง iPhone 11 สีม่วงพรีเมียม -->
+    <!-- บอดี้ตัวเครื่อง iPhone 11 สไตล์ Minimal -->
     <div class="iphone-device">
         <!-- ปุ่มข้างเครื่อง -->
         <div class="side-button volume-up"></div>
@@ -402,7 +388,7 @@
                             <div class="post-avatar">
                                 <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
                             </div>
-                            <span class="post-username">sananthachat_shop</span>
+                            <span class="post-username">sananthachat_shop ☁️</span>
                         </div>
                         <div class="post-more"><i class="fas fa-ellipsis-h"></i></div>
                     </div>
@@ -427,13 +413,13 @@
 
                     <div class="post-comments">
                         <div class="comment-item">
-                            <span class="comment-user">sananthachat_shop</span>ช่องทางการชำระเงินค่าสินค้าค่ะ สนับสนุนร้านเราได้เลยน้า 👇✨
+                            <span class="comment-user">sananthachat_shop</span>ช่องทางการชำระเงินนะคะ 🤍✨
                         </div>
 
                         <!-- ธนาคาร -->
                         <div class="payment-card">
                             <div class="payment-title">
-                                <i class="fas fa-university" style="color: #0066ff;"></i> ธนาคารกสิกรไทย (KBANK)
+                                <i class="fas fa-university" style="color: #6c88c4;"></i> ธนาคารกสิกรไทย (KBANK)
                             </div>
                             <div class="payment-detail">123-4-56789-0</div>
                             <div class="payment-name">ชื่อบัญชี: น.ส. สนันธัช พลเยี่ยม</div>
@@ -442,7 +428,7 @@
                         <!-- วอเลท -->
                         <div class="payment-card wallet">
                             <div class="payment-title">
-                                <i class="fas fa-wallet" style="color: #ff6600;"></i> TrueMoney Wallet
+                                <i class="fas fa-wallet" style="color: #f0932b;"></i> TrueMoney Wallet
                             </div>
                             <div class="payment-detail">081-234-5678</div>
                             <div class="payment-name">ชื่อบัญชี: สนันธัช พลเยี่ยม</div>
