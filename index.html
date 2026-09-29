@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classic iPhone 6 - IG DM (With Status Bar)</title>
+    <title>Classic iPhone 6 - IG DM (Accurate Status Bar Position)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -64,60 +64,19 @@
             box-shadow: inset 0 0 6px rgba(0,0,0,0.06);
         }
 
-        /* ขอบบน iPhone 6 (เพิ่ม Status Bar ด้านบนสุด + กล้องลำโพง) */
+        /* ขอบบน iPhone 6 (กล้อง + ลำโพง อยู่บนสุด) */
         .iphone6-top-bezel {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 95px;
+            height: 60px;
             background-color: #ffffff;
             z-index: 120;
             display: flex;
-            flex-direction: column;
-            border-bottom: 0.5px solid #f0f0f0;
-        }
-
-        /* แถบสถานะด้านบน (สัญญาณ, เวลา, แบต) */
-        .status-bar {
-            width: 100%;
-            height: 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 16px;
-            font-size: 11px;
-            font-weight: 500;
-            color: #111111;
-        }
-
-        .status-left {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .status-right {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .battery-box {
-            display: flex;
-            align-items: center;
-            gap: 3px;
-        }
-
-        /* ส่วนกล้องและลำโพง */
-        .sensor-container {
-            width: 100%;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            border-bottom: 0.5px solid #f0f0f0;
         }
 
         .sensor-row {
@@ -141,12 +100,49 @@
             border-radius: 3px;
         }
 
-        /* พื้นที่แสดงผลแชท (ปรับระยะเผื่อ Status Bar ด้านบน) */
+        /* แถบสถานะด้านบน (อยู่ใต้กล้อง/ลำโพง พอดีเหมือนรูปตัวอย่าง) */
+        .status-bar {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            height: 24px;
+            background-color: #ffffff;
+            z-index: 119;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 16px;
+            font-size: 11px;
+            font-weight: 500;
+            color: #111111;
+            border-bottom: 0.5px solid #f0f0f0;
+        }
+
+        .status-left {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .status-right {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .battery-box {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        /* พื้นที่แสดงผลแชท (ปรับระยะเผื่อขอบบนรวม Status Bar) */
         .screen-content-area {
             position: relative;
             width: 100%;
             flex: 1;
-            margin-top: 95px;
+            margin-top: 84px; /* 60px (bezel) + 24px (status bar) */
             margin-bottom: 75px;
             background-color: #ffffff;
             overflow: hidden;
@@ -475,31 +471,28 @@
         <!-- กรอบหน้าจอโทรศัพท์ -->
         <div class="iphone-screen-frame">
             
-            <!-- ขอบบน iPhone 6 (Status Bar + กล้อง/ลำโพง) -->
+            <!-- ขอบบน iPhone 6 (กล้อง + ลำโพง อยู่บนสุด) -->
             <div class="iphone6-top-bezel">
-                <!-- แถบสถานะด้านบนสุด -->
-                <div class="status-bar">
-                    <div class="status-left">
-                        <i class="fas fa-signal" style="font-size: 10px;"></i>
-                        <span>AIS</span>
-                        <i class="fas fa-wifi" style="font-size: 10px; margin-left: 2px;"></i>
-                    </div>
-                    <div class="status-center">
-                        <span>07:25</span>
-                    </div>
-                    <div class="status-right">
-                        <div class="battery-box">
-                            <span>66%</span>
-                            <i class="fas fa-battery-three-quarters" style="font-size: 12px;"></i>
-                        </div>
-                    </div>
+                <div class="sensor-row">
+                    <div class="camera-dot"></div>
+                    <div class="speaker-slot"></div>
                 </div>
+            </div>
 
-                <!-- เซนเซอร์และลำโพง -->
-                <div class="sensor-container">
-                    <div class="sensor-row">
-                        <div class="camera-dot"></div>
-                        <div class="speaker-slot"></div>
+            <!-- แถบสถานะด้านบน (อยู่ใต้กล้อง/ลำโพง พอดี) -->
+            <div class="status-bar">
+                <div class="status-left">
+                    <i class="fas fa-signal" style="font-size: 10px;"></i>
+                    <span>AIS</span>
+                    <i class="fas fa-wifi" style="font-size: 10px; margin-left: 2px;"></i>
+                </div>
+                <div class="status-center">
+                    <span>07:25</span>
+                </div>
+                <div class="status-right">
+                    <div class="battery-box">
+                        <span>66%</span>
+                        <i class="fas fa-battery-three-quarters" style="font-size: 12px;"></i>
                     </div>
                 </div>
             </div>
