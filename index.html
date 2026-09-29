@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classic iPhone 6 - IG DM (Accurate Status Bar Position)</title>
+    <title>Classic iPhone 6 - IG DM (Perfect Fit Chat Body)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -100,7 +100,7 @@
             border-radius: 3px;
         }
 
-        /* แถบสถานะด้านบน (อยู่ใต้กล้อง/ลำโพง พอดีเหมือนรูปตัวอย่าง) */
+        /* แถบสถานะด้านบน (อยู่ใต้กล้อง/ลำโพง พอดี) */
         .status-bar {
             position: absolute;
             top: 60px;
@@ -137,12 +137,12 @@
             gap: 3px;
         }
 
-        /* พื้นที่แสดงผลแชท (ปรับระยะเผื่อขอบบนรวม Status Bar) */
+        /* พื้นที่แสดงผลแชท */
         .screen-content-area {
             position: relative;
             width: 100%;
             flex: 1;
-            margin-top: 84px; /* 60px (bezel) + 24px (status bar) */
+            margin-top: 84px; 
             margin-bottom: 75px;
             background-color: #ffffff;
             overflow: hidden;
@@ -223,15 +223,21 @@
             cursor: pointer;
         }
 
-        /* จัดเรียงข้อความเริ่มต้นจากด้านบนลงล่างตามธรรมชาติแชทจริง */
+        /* จัดระเบียบเนื้อหาแชทให้กระจายเต็มพื้นที่หน้าจอพอดี (Space Between) */
         .chat-body {
-            padding: 10px 12px;
+            padding: 12px;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            justify-content: space-between; 
             flex: 1;
-            justify-content: flex-start; 
             overflow: hidden;
+        }
+
+        .chat-flow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
         }
 
         .message-row-received {
@@ -298,7 +304,8 @@
         #interactiveContent {
             display: none;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
+            width: 100%;
         }
 
         .image-message-box {
@@ -306,7 +313,7 @@
             border-radius: 16px;
             border-bottom-left-radius: 4px;
             padding: 5px;
-            width: 170px;
+            width: 160px;
             overflow: hidden;
         }
 
@@ -323,7 +330,7 @@
         .image-container img {
             width: 100%;
             height: auto;
-            max-height: 90px;
+            max-height: 85px;
             object-fit: cover;
             display: block;
         }
@@ -520,60 +527,65 @@
 
                     <div class="chat-body" id="chatBody">
                         <!-- ข้อความทักทายจากร้านค้า (อยู่บนสุด) -->
-                        <div class="message-row-received">
-                            <div class="chat-avatar-msg">
-                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
-                            </div>
-                            <div class="received-content-group">
-                                <div class="message received">
-                                    สวัสดีค่ะคุณลูกค้า สนใจบริการตัวแทนดันกลุ่ม สอบถามรายละเอียดได้เลยน้า 💖🌷
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="interactiveContent">
-                            <div class="message sent" id="sentMessageBubble">
-                                ขอช่องทางการโอนหน่อยค้าบ
-                            </div>
-
-                            <div class="message-row-received">
-                                <div class="chat-avatar-msg">
-                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
-                                </div>
-                                <div class="image-message-box">
-                                    <div class="image-container">
-                                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&fit=crop" alt="Shared Image">
-                                    </div>
-                                </div>
-                            </div>
-
+                        <div class="chat-flow-container">
                             <div class="message-row-received">
                                 <div class="chat-avatar-msg">
                                     <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
                                 </div>
                                 <div class="received-content-group">
                                     <div class="message received">
-                                        ได้เลยค่ะคุณลูกค้า 😊 ช่องทางการชำระเงินตามนี้เลยนะค้าบ 👇
+                                        สวัสดีค่ะคุณลูกค้า สนใจบริการตัวแทนดันกลุ่ม สอบถามรายละเอียดได้เลยน้า 💖🌷
                                     </div>
+                                </div>
+                            </div>
 
-                                    <div class="bank-message-box">
-                                        <div class="bank-info">
-                                            <div class="title"><i class="fas fa-university" style="color:#2563eb;"></i> กสิกรไทย (KBANK)</div>
-                                            <div class="num">123-4-56789-0</div>
-                                        </div>
-                                        <button class="copy-btn" onclick="copyText('1234567890', this)">คัดลอก</button>
+                            <div id="interactiveContent">
+                                <div class="message sent" id="sentMessageBubble">
+                                    ขอช่องทางการโอนหน่อยค้าบ
+                                </div>
+
+                                <div class="message-row-received">
+                                    <div class="chat-avatar-msg">
+                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
                                     </div>
-
-                                    <div class="bank-message-box">
-                                        <div class="bank-info">
-                                            <div class="title"><i class="fas fa-wallet" style="color:#f97316;"></i> TrueMoney Wallet</div>
-                                            <div class="num">081-234-5678</div>
+                                    <div class="image-message-box">
+                                        <div class="image-container">
+                                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&fit=crop" alt="Shared Image">
                                         </div>
-                                        <button class="copy-btn" onclick="copyText('0812345678', this)">คัดลอก</button>
+                                    </div>
+                                </div>
+
+                                <div class="message-row-received">
+                                    <div class="chat-avatar-msg">
+                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
+                                    </div>
+                                    <div class="received-content-group">
+                                        <div class="message received">
+                                            ได้เลยค่ะคุณลูกค้า 😊 ช่องทางการชำระเงินตามนี้เลยนะค้าบ 👇
+                                        </div>
+
+                                        <div class="bank-message-box">
+                                            <div class="bank-info">
+                                                <div class="title"><i class="fas fa-university" style="color:#2563eb;"></i> กสิกรไทย (KBANK)</div>
+                                                <div class="num">123-4-56789-0</div>
+                                            </div>
+                                            <button class="copy-btn" onclick="copyText('1234567890', this)">คัดลอก</button>
+                                        </div>
+
+                                        <div class="bank-message-box">
+                                            <div class="bank-info">
+                                                <div class="title"><i class="fas fa-wallet" style="color:#f97316;"></i> TrueMoney Wallet</div>
+                                                <div class="num">081-234-5678</div>
+                                            </div>
+                                            <button class="copy-btn" onclick="copyText('0812345678', this)">คัดลอก</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- ตัวเว้นพื้นที่ด้านล่างให้สมดุลพอดีหน้าจอ -->
+                        <div></div>
                     </div>
 
                     <div class="chat-footer">
