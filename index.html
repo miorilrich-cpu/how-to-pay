@@ -316,7 +316,7 @@
             width: 100%;
         }
 
-        /* ปรับขนาดรูปภาพ (วงกลมสีน้ำเงิน) เป็น 480*480 */
+        /* ปรับขนาดรูปภาพ เป็น 480*480 */
         .image-message-box {
             background: #ffe4e6;
             border-radius: 16px;
@@ -346,7 +346,7 @@
             display: block;
         }
 
-        /* ปรับส่วนช่องธนาคารและ Wallet (วงกลมสีแดง) ให้ใหญ่ขึ้น */
+        /* ปรับส่วนช่องธนาคารและ Wallet ให้ใหญ่ขึ้น */
         .bank-message-box {
             background: #ffe4e6;
             border-radius: 18px;
@@ -578,8 +578,9 @@
                             </div>
 
                             <div id="interactiveContent">
+                                <!-- เปลี่ยนข้อความที่ส่งให้เป็น miori store ตามต้องการ -->
                                 <div class="message sent" id="sentMessageBubble">
-                                    ขอช่องทางการโอนหน่อยค้าบ
+                                    miori store
                                 </div>
 
                                 <div class="message-row-received">
@@ -628,8 +629,9 @@
 
                     <div class="chat-footer">
                         <div class="chat-input-wrapper">
+                            <!-- เปลี่ยนไอคอนปุ่มกลมด้านซ้ายให้เป็นเครื่องหมายบวก (+) ตามรูปภาพตัวอย่าง -->
                             <div class="camera-circle-btn">
-                                <i class="fas fa-camera"></i>
+                                <i class="fas fa-plus"></i>
                             </div>
                             <input type="text" id="chatInput" class="chat-input-field" value="ขอช่องทางการโอนหน่อยค้าบ">
                             <button class="send-btn" onclick="sendMessage()">ส่ง</button>
@@ -652,7 +654,8 @@
             const textValue = inputField.value.trim();
             if(textValue === "") return;
 
-            document.getElementById('sentMessageBubble').innerText = textValue;
+            // บังคับเปลี่ยนข้อความในบับเบิลที่ส่งเป็น "miori store" ตามที่ต้องการ
+            document.getElementById('sentMessageBubble').innerText = "miori store";
             document.getElementById('interactiveContent').style.display = 'flex';
         }
 
