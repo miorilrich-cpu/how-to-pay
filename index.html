@@ -310,7 +310,7 @@
         }
 
         #interactiveContent {
-            display: flex; /* แสดงผลข้อความที่ส่งทันที */
+            display: flex;
             flex-direction: column;
             gap: 10px;
             width: 100%;
@@ -578,7 +578,7 @@
                             </div>
 
                             <div id="interactiveContent">
-                                <!-- บัฟเบิลข้อความที่ส่งเปลี่ยนเป็น "ขอช่องทางการโอนหน่อยค้าบ" -->
+                                <!-- บับเบิลข้อความที่ส่งถูกเปลี่ยนเป็น "ขอช่องทางการโอนหน่อยค้าบ" -->
                                 <div class="message sent" id="sentMessageBubble">
                                     ขอช่องทางการโอนหน่อยค้าบ
                                 </div>
@@ -632,7 +632,7 @@
                             <div class="camera-circle-btn">
                                 <i class="fas fa-plus"></i>
                             </div>
-                            <!-- ช่องพิมพ์ข้อความด้านล่างเปลี่ยนเป็น "miori store" -->
+                            <!-- ช่องพิมพ์ข้อความด้านล่างถูกเปลี่ยนเป็น "miori store" -->
                             <input type="text" id="chatInput" class="chat-input-field" value="miori store">
                             <button class="send-btn" onclick="sendMessage()">ส่ง</button>
                         </div>
@@ -654,7 +654,6 @@
             const textValue = inputField.value.trim();
             if(textValue === "") return;
 
-            // นำข้อความจากช่องพิมพ์มาแสดงในบับเบิลข้อความที่ส่งทันที
             document.getElementById('sentMessageBubble').innerText = textValue;
             document.getElementById('interactiveContent').style.display = 'flex';
         }
