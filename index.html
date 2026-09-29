@@ -578,9 +578,9 @@
                             </div>
 
                             <div id="interactiveContent">
-                                <!-- เปลี่ยนข้อความที่ส่งให้เป็นขอช่องทางการโอนหน่อยค้าบ ตามต้องการ -->
+                                <!-- เปลี่ยนข้อความที่ส่งให้เป็น miori store ตามต้องการ -->
                                 <div class="message sent" id="sentMessageBubble">
-                                    ขอช่องทางการโอนหน่อยค้าบ
+                                    miori store
                                 </div>
 
                                 <div class="message-row-received">
@@ -633,7 +633,7 @@
                             <div class="camera-circle-btn">
                                 <i class="fas fa-plus"></i>
                             </div>
-                            <input type="text" id="chatInput" class="chat-input-field" value="miori store">
+                            <input type="text" id="chatInput" class="chat-input-field" value="ขอช่องทางการโอนหน่อยค้าบ">
                             <button class="send-btn" onclick="sendMessage()">ส่ง</button>
                         </div>
                     </div>
@@ -654,8 +654,8 @@
             const textValue = inputField.value.trim();
             if(textValue === "") return;
 
-            // บังคับเปลี่ยนข้อความในบับเบิลที่ส่งเป็น "ขอช่องทางการโอนหน่อยค้าบ" ตามที่ต้องการ
-            document.getElementById('sentMessageBubble').innerText = "ขอช่องทางการโอนหน่อยค้าบ";
+            // บังคับเปลี่ยนข้อความในบับเบิลที่ส่งเป็น "miori store" ตามที่ต้องการ
+            document.getElementById('sentMessageBubble').innerText = "miori store";
             document.getElementById('interactiveContent').style.display = 'flex';
         }
 
