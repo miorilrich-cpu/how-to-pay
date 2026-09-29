@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classic iPhone 6 - IG DM (Perfect Fit Chat Body)</title>
+    <title>Classic iPhone 6 - IG DM (Perfect Fit)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -100,7 +100,7 @@
             border-radius: 3px;
         }
 
-        /* แถบสถานะด้านบน (อยู่ใต้กล้อง/ลำโพง พอดี) */
+        /* แถบสถานะด้านบน */
         .status-bar {
             position: absolute;
             top: 60px;
@@ -119,13 +119,7 @@
             border-bottom: 0.5px solid #f0f0f0;
         }
 
-        .status-left {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .status-right {
+        .status-left, .status-right {
             display: flex;
             align-items: center;
             gap: 5px;
@@ -150,7 +144,6 @@
             flex-direction: column;
         }
 
-        /* หน้าจอแชทภายใน */
         .chat-screen {
             background-color: #ffffff;
             flex: 1;
@@ -223,9 +216,9 @@
             cursor: pointer;
         }
 
-        /* จัดระเบียบเนื้อหาแชทให้กระจายเต็มพื้นที่หน้าจอพอดี (Space Between) */
+        /* ส่วนเนื้อหาแชท: ใช้ space-between ให้กระจายตัวเต็มพื้นที่จอพอดีสวยงาม */
         .chat-body {
-            padding: 12px;
+            padding: 10px 12px;
             display: flex;
             flex-direction: column;
             justify-content: space-between; 
@@ -236,7 +229,7 @@
         .chat-flow-container {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
             width: 100%;
         }
 
@@ -246,7 +239,6 @@
             gap: 6px;
             align-self: flex-start;
             max-width: 85%;
-            animation: fadeIn 0.35s ease;
         }
 
         .chat-avatar-msg {
@@ -269,18 +261,13 @@
             gap: 4px;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .message.received {
             background: #efefef;
             color: #262626;
-            padding: 8px 12px;
+            padding: 7px 11px;
             border-radius: 16px;
             border-bottom-left-radius: 4px;
-            font-size: 12px;
+            font-size: 11.5px;
             line-height: 1.35;
             width: fit-content;
             word-wrap: break-word;
@@ -289,31 +276,22 @@
         .message.sent {
             background: #0095f6;
             color: #ffffff;
-            padding: 8px 12px;
+            padding: 7px 11px;
             border-radius: 16px;
             border-bottom-right-radius: 4px;
-            font-size: 12px;
+            font-size: 11.5px;
             line-height: 1.35;
             align-self: flex-end;
             width: fit-content;
-            font-weight: 400;
-            animation: fadeIn 0.35s ease;
             word-wrap: break-word;
-        }
-
-        #interactiveContent {
-            display: none;
-            flex-direction: column;
-            gap: 10px;
-            width: 100%;
         }
 
         .image-message-box {
             background: #efefef;
             border-radius: 16px;
             border-bottom-left-radius: 4px;
-            padding: 5px;
-            width: 160px;
+            padding: 4px;
+            width: 145px;
             overflow: hidden;
         }
 
@@ -330,7 +308,7 @@
         .image-container img {
             width: 100%;
             height: auto;
-            max-height: 85px;
+            max-height: 75px;
             object-fit: cover;
             display: block;
         }
@@ -339,23 +317,23 @@
             background: #efefef;
             border-radius: 16px;
             border-bottom-left-radius: 4px;
-            padding: 8px 12px;
+            padding: 7px 10px;
             width: fit-content;
             display: flex;
-            gap: 10px;
+            gap: 8px;
             align-items: center;
-            font-size: 11px;
+            font-size: 10.5px;
         }
 
         .bank-info .title {
             font-weight: 500;
             color: #262626;
-            font-size: 10px;
+            font-size: 9.5px;
             margin-bottom: 1px;
         }
         .bank-info .num {
             font-family: monospace;
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 600;
             color: #262626;
             letter-spacing: 0.5px;
@@ -364,13 +342,12 @@
         .copy-btn {
             background: #dbdbdb;
             border: none;
-            padding: 5px 8px;
-            border-radius: 10px;
-            font-size: 10px;
+            padding: 4px 7px;
+            border-radius: 8px;
+            font-size: 9.5px;
             color: #262626;
             cursor: pointer;
             font-family: 'Prompt', sans-serif;
-            transition: all 0.2s;
             font-weight: 500;
             white-space: nowrap;
         }
@@ -433,7 +410,7 @@
             padding: 2px 4px;
         }
 
-        /* ขอบล่าง iPhone 6 พร้อมปุ่มโฮมเกลี้ยงๆ */
+        /* ขอบล่าง iPhone 6 พร้อมปุ่มโฮม */
         .iphone6-bottom-bezel {
             position: absolute;
             bottom: 0;
@@ -459,26 +436,19 @@
             align-items: center;
             justify-content: center;
             box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
-            transition: background 0.1s;
-        }
-        .home-button-ring:active {
-            background: #f3f4f6;
         }
     </style>
 </head>
 <body>
 
     <div class="iphone-device">
-        <!-- ปุ่มข้างตัวเครื่อง -->
         <div class="side-button silent-switch"></div>
         <div class="side-button volume-up"></div>
         <div class="side-button volume-down"></div>
         <div class="side-button power-button"></div>
 
-        <!-- กรอบหน้าจอโทรศัพท์ -->
         <div class="iphone-screen-frame">
             
-            <!-- ขอบบน iPhone 6 (กล้อง + ลำโพง อยู่บนสุด) -->
             <div class="iphone6-top-bezel">
                 <div class="sensor-row">
                     <div class="camera-dot"></div>
@@ -486,7 +456,6 @@
                 </div>
             </div>
 
-            <!-- แถบสถานะด้านบน (อยู่ใต้กล้อง/ลำโพง พอดี) -->
             <div class="status-bar">
                 <div class="status-left">
                     <i class="fas fa-signal" style="font-size: 10px;"></i>
@@ -504,7 +473,6 @@
                 </div>
             </div>
 
-            <!-- พื้นที่เนื้อหาแชท -->
             <div class="screen-content-area">
                 <div class="chat-screen">
                     <div class="chat-header">
@@ -525,9 +493,10 @@
                         </div>
                     </div>
 
-                    <div class="chat-body" id="chatBody">
-                        <!-- ข้อความทักทายจากร้านค้า (อยู่บนสุด) -->
+                    <!-- พื้นที่เนื้อหาแชทแบบกระจายตัวพอดีหน้าจอ -->
+                    <div class="chat-body">
                         <div class="chat-flow-container">
+                            <!-- ข้อความทักทาย -->
                             <div class="message-row-received">
                                 <div class="chat-avatar-msg">
                                     <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
@@ -539,52 +508,53 @@
                                 </div>
                             </div>
 
-                            <div id="interactiveContent">
-                                <div class="message sent" id="sentMessageBubble">
-                                    ขอช่องทางการโอนหน่อยค้าบ
+                            <!-- ข้อความฝั่งเราส่ง -->
+                            <div class="message sent">
+                                ขอช่องทางการโอนหน่อยค้าบ
+                            </div>
+
+                            <!-- รูปภาพ QR / สลิป -->
+                            <div class="message-row-received">
+                                <div class="chat-avatar-msg">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
                                 </div>
-
-                                <div class="message-row-received">
-                                    <div class="chat-avatar-msg">
-                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
-                                    </div>
-                                    <div class="image-message-box">
-                                        <div class="image-container">
-                                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&fit=crop" alt="Shared Image">
-                                        </div>
+                                <div class="image-message-box">
+                                    <div class="image-container">
+                                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&fit=crop" alt="Shared Image">
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="message-row-received">
-                                    <div class="chat-avatar-msg">
-                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
+                            <!-- ข้อความแจ้งบัญชีธนาคาร -->
+                            <div class="message-row-received">
+                                <div class="chat-avatar-msg">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
+                                </div>
+                                <div class="received-content-group">
+                                    <div class="message received">
+                                        ได้เลยค่ะคุณลูกค้า 😊 ช่องทางการชำระเงินตามนี้เลยนะค้าบ 👇
                                     </div>
-                                    <div class="received-content-group">
-                                        <div class="message received">
-                                            ได้เลยค่ะคุณลูกค้า 😊 ช่องทางการชำระเงินตามนี้เลยนะค้าบ 👇
-                                        </div>
 
-                                        <div class="bank-message-box">
-                                            <div class="bank-info">
-                                                <div class="title"><i class="fas fa-university" style="color:#2563eb;"></i> กสิกรไทย (KBANK)</div>
-                                                <div class="num">123-4-56789-0</div>
-                                            </div>
-                                            <button class="copy-btn" onclick="copyText('1234567890', this)">คัดลอก</button>
+                                    <div class="bank-message-box">
+                                        <div class="bank-info">
+                                            <div class="title"><i class="fas fa-university" style="color:#2563eb;"></i> กสิกรไทย (KBANK)</div>
+                                            <div class="num">123-4-56789-0</div>
                                         </div>
+                                        <button class="copy-btn" onclick="copyText('1234567890', this)">คัดลอก</button>
+                                    </div>
 
-                                        <div class="bank-message-box">
-                                            <div class="bank-info">
-                                                <div class="title"><i class="fas fa-wallet" style="color:#f97316;"></i> TrueMoney Wallet</div>
-                                                <div class="num">081-234-5678</div>
-                                            </div>
-                                            <button class="copy-btn" onclick="copyText('0812345678', this)">คัดลอก</button>
+                                    <div class="bank-message-box">
+                                        <div class="bank-info">
+                                            <div class="title"><i class="fas fa-wallet" style="color:#f97316;"></i> TrueMoney Wallet</div>
+                                            <div class="num">081-234-5678</div>
                                         </div>
+                                        <button class="copy-btn" onclick="copyText('0812345678', this)">คัดลอก</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- ตัวเว้นพื้นที่ด้านล่างให้สมดุลพอดีหน้าจอ -->
+                        <!-- ตัวเว้นพื้นที่ด้านล่างให้สมดุล -->
                         <div></div>
                     </div>
 
@@ -593,31 +563,21 @@
                             <div class="camera-circle-btn">
                                 <i class="fas fa-camera"></i>
                             </div>
-                            <input type="text" id="chatInput" class="chat-input-field" value="ขอช่องทางการโอนหน่อยค้าบ">
-                            <button class="send-btn" onclick="sendMessage()">ส่ง</button>
+                            <input type="text" class="chat-input-field" value="ขอช่องทางการโอนหน่อยค้าบ">
+                            <button class="send-btn">ส่ง</button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- ขอบล่าง iPhone 6 พร้อมปุ่มโฮมเกลี้ยงๆ -->
             <div class="iphone6-bottom-bezel">
-                <div class="home-button-ring" onclick="sendMessage()"></div>
+                <div class="home-button-ring"></div>
             </div>
 
         </div>
     </div>
 
     <script>
-        function sendMessage() {
-            const inputField = document.getElementById('chatInput');
-            const textValue = inputField.value.trim();
-            if(textValue === "") return;
-
-            document.getElementById('sentMessageBubble').innerText = textValue;
-            document.getElementById('interactiveContent').style.display = 'flex';
-        }
-
         function copyText(text, btn) {
             navigator.clipboard.writeText(text).then(() => {
                 let originalText = btn.innerText;
