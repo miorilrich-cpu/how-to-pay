@@ -310,7 +310,7 @@
         }
 
         #interactiveContent {
-            display: none;
+            display: flex; /* แสดงผลข้อความที่ส่งทันที */
             flex-direction: column;
             gap: 10px;
             width: 100%;
@@ -578,9 +578,9 @@
                             </div>
 
                             <div id="interactiveContent">
-                                <!-- เปลี่ยนข้อความที่ส่งให้เป็น miori store ตามต้องการ -->
+                                <!-- บัฟเบิลข้อความที่ส่งเปลี่ยนเป็น "ขอช่องทางการโอนหน่อยค้าบ" -->
                                 <div class="message sent" id="sentMessageBubble">
-                                    miori store
+                                    ขอช่องทางการโอนหน่อยค้าบ
                                 </div>
 
                                 <div class="message-row-received">
@@ -629,11 +629,11 @@
 
                     <div class="chat-footer">
                         <div class="chat-input-wrapper">
-                            <!-- เปลี่ยนไอคอนปุ่มกลมด้านซ้ายให้เป็นเครื่องหมายบวก (+) ตามรูปภาพตัวอย่าง -->
                             <div class="camera-circle-btn">
                                 <i class="fas fa-plus"></i>
                             </div>
-                            <input type="text" id="chatInput" class="chat-input-field" value="ขอช่องทางการโอนหน่อยค้าบ">
+                            <!-- ช่องพิมพ์ข้อความด้านล่างเปลี่ยนเป็น "miori store" -->
+                            <input type="text" id="chatInput" class="chat-input-field" value="miori store">
                             <button class="send-btn" onclick="sendMessage()">ส่ง</button>
                         </div>
                     </div>
@@ -654,8 +654,8 @@
             const textValue = inputField.value.trim();
             if(textValue === "") return;
 
-            // บังคับเปลี่ยนข้อความในบับเบิลที่ส่งเป็น "miori store" ตามที่ต้องการ
-            document.getElementById('sentMessageBubble').innerText = "miori store";
+            // นำข้อความจากช่องพิมพ์มาแสดงในบับเบิลข้อความที่ส่งทันที
+            document.getElementById('sentMessageBubble').innerText = textValue;
             document.getElementById('interactiveContent').style.display = 'flex';
         }
 
