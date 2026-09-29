@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cute Cat Ear iPhone Case - IG DM</title>
+    <title>Cute IG DM - Precise iPhone 6 Layout</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -24,27 +24,28 @@
             padding: 30px 20px;
         }
 
-        /* --- ตัวเครื่อง iPhone ใส่เคสหูแมวและอุ้งเท้า --- */
         .iphone-case-container {
             position: relative;
-            margin-left: 30px; /* เว้นพื้นที่ให้พวงกุญแจอุ้งเท้าด้านข้าง */
+            margin-left: 30px;
         }
 
+        /* โครงตัวเครื่อง iPhone 6 สีเงินละมุนตามเรฟ */
         .iphone-device {
             position: relative;
             width: 375px;
-            height: 740px;
-            background: #ffffff; /* เคสซิลิโคนสีขาวละมุน */
-            border-radius: 46px;
+            height: 750px;
+            background: linear-gradient(135deg, #f5f5f7 0%, #e4e4e7 100%);
+            border-radius: 48px;
             box-shadow: 
-                0 25px 50px rgba(255, 182, 193, 0.45),
-                inset 0 0 0 2px #ffe4e1;
+                0 25px 50px rgba(255, 182, 193, 0.4),
+                inset 0 0 0 2px #ffffff,
+                inset 0 0 0 4px #d1d5db;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        /* หูแมว 2 ข้างด้านบนเคส */
+        /* หูแมวและอุ้งเท้าด้านข้าง (สไตล์ที่คุณเลือกก่อนหน้า) */
         .cat-ear {
             position: absolute;
             top: -22px;
@@ -63,7 +64,7 @@
             content: '';
             width: 30px;
             height: 22px;
-            background: #ffb6c1; /* ด้านในหูสีชมพู */
+            background: #ffb6c1;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
             margin-top: 6px;
@@ -71,7 +72,6 @@
         .cat-ear.left { left: 45px; transform: rotate(-8deg); }
         .cat-ear.right { right: 45px; transform: rotate(8deg); }
 
-        /* อุ้งเท้าแมวที่มุมล่างซ้าย-ขวาของเคส */
         .cat-paw-corner {
             position: absolute;
             bottom: 12px;
@@ -82,7 +82,6 @@
         .paw-bottom-left { left: 16px; transform: rotate(-25deg); }
         .paw-bottom-right { right: 16px; transform: rotate(25deg); }
 
-        /* สายห้อยจี้อุ้งเท้าห้อยอยู่ด้านซ้าย */
         .charm-strap {
             position: absolute;
             left: -48px;
@@ -109,7 +108,6 @@
             border: 2px solid #ffffff;
             position: relative;
         }
-        /* ดีไซน์ปุ่มอุ้งเท้าแมว 3 มิติ */
         .paw-pad-main {
             width: 20px;
             height: 17px;
@@ -130,55 +128,53 @@
         .paw-toe-2 { left: 18.5px; top: 5px; }
         .paw-toe-3 { right: 9px; }
 
-        /* ปุ่มด้านข้าง */
         .side-button {
             position: absolute;
-            background: #ffb6c1;
+            background: #d1d5db;
             border-radius: 2px;
         }
         .volume-up { left: -4px; top: 130px; width: 3px; height: 32px; }
         .volume-down { left: -4px; top: 175px; width: 3px; height: 32px; }
         .power-button { right: -4px; top: 135px; width: 3px; height: 45px; }
 
-        /* กรอบหน้าจอภายใน */
+        /* กรอบหน้าจอสีขาวด้านในแบบ iPhone 6 (ตามเรฟเป๊ะๆ) */
         .iphone-screen-frame {
             position: relative;
             width: 345px;
-            height: 712px;
+            height: 726px;
             background-color: #ffffff;
-            border-radius: 38px;
+            border-radius: 36px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             box-shadow: inset 0 0 6px rgba(0,0,0,0.06);
         }
 
-        /* ขอบบนเครื่อง (ลำโพงและกล้อง) */
+        /* --- ขอบบน (Bezel) สัดส่วนตามเรฟ --- */
         .iphone6-top-bezel {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 56px;
+            height: 75px;
             background-color: #ffffff;
             z-index: 120;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            padding-top: 6px;
-            border-bottom: 0.5px solid #fce4e4;
+            justify-content: center;
+            border-bottom: 0.5px solid #f0f0f0;
         }
 
-        .sensor-container {
+        .sensor-row {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            margin-bottom: 5px;
+            gap: 12px;
+            margin-bottom: 8px;
         }
 
-        .camera-hole {
+        .camera-dot {
             width: 9px;
             height: 9px;
             background-color: #3b3b3b;
@@ -186,41 +182,34 @@
         }
 
         .speaker-slot {
-            width: 48px;
+            width: 50px;
             height: 4px;
             background-color: #d1d1d1;
             border-radius: 3px;
         }
 
-        .status-bar-top {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 18px;
-            font-size: 11px;
-            color: #666666;
-            font-weight: 500;
+        .sensor-circle {
+            width: 8px;
+            height: 8px;
+            background-color: #3b3b3b;
+            border-radius: 50%;
+            display: none; /* ปรับตามเรฟที่มีรูปร่างเรียบสะอาด */
         }
 
-        .status-right {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
+        /* พื้นที่หน้าจอแสดงผลแชท (จำกัดกรอบให้อยู่ระหว่างขอบบนและขอบล่างตามเรฟ) */
         .screen-content-area {
             position: relative;
             width: 100%;
             flex: 1;
-            margin-top: 56px;
-            margin-bottom: 54px;
+            margin-top: 75px;
+            margin-bottom: 75px;
             background-color: #fff9fb;
             overflow: hidden;
             display: flex;
             flex-direction: column;
         }
 
-        /* --- หน้าจอแชท (ข้อมูลเดิมของคุณครบถ้วน ไม่ถูกเปลี่ยน) --- */
+        /* --- หน้าจอแชทภายใน (เนื้อหาของคุณครบถ้วน) --- */
         .chat-screen {
             background-color: #fff9fb;
             flex: 1;
@@ -504,25 +493,25 @@
             padding: 2px 4px;
         }
 
-        /* ขอบล่างพร้อมปุ่มโฮมกลมๆ และลายอุ้งเท้า */
+        /* --- ขอบล่าง (Bezel) พร้อมปุ่มโฮมกลมๆ ตามเรฟ --- */
         .iphone6-bottom-bezel {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 54px;
+            height: 75px;
             background-color: #ffffff;
             z-index: 120;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-top: 0.5px solid #fce4e4;
+            border-top: 0.5px solid #f0f0f0;
         }
 
         .home-button-ring {
-            width: 38px;
-            height: 38px;
-            border: 2px solid #ffb6c1;
+            width: 44px;
+            height: 44px;
+            border: 2px solid #d1d5db;
             border-radius: 50%;
             background: #ffffff;
             cursor: pointer;
@@ -533,25 +522,25 @@
             transition: background 0.1s;
         }
         .home-button-ring:active {
-            background: #fff0f5;
+            background: #f3f4f6;
         }
 
         .home-inner-square {
-            width: 12px;
-            height: 12px;
-            border: 1.5px solid #ffb6c1;
-            border-radius: 3px;
+            width: 14px;
+            height: 14px;
+            border: 1.5px solid #9ca3af;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
 
     <div class="iphone-case-container">
-        <!-- หูแมวด้านบนเคส -->
+        <!-- หูแมว -->
         <div class="cat-ear left"></div>
         <div class="cat-ear right"></div>
 
-        <!-- สายห้อยจี้อุ้งเท้าด้านข้าง -->
+        <!-- สายห้อยพวงกุญแจอุ้งเท้า -->
         <div class="charm-strap">
             <div class="chain-dots"></div>
             <div class="paw-pendant">
@@ -563,35 +552,27 @@
         </div>
 
         <div class="iphone-device">
-            <!-- ปุ่มข้างเครื่อง -->
+            <!-- ปุ่มข้างตัวเครื่อง -->
             <div class="side-button volume-up"></div>
             <div class="side-button volume-down"></div>
             <div class="side-button power-button"></div>
 
-            <!-- อุ้งเท้าที่มุมล่างเคส -->
+            <!-- อุ้งเท้าที่มุมล่าง -->
             <div class="cat-paw-corner paw-bottom-left">🐾</div>
             <div class="cat-paw-corner paw-bottom-right">🐾</div>
 
-            <!-- หน้าจอภายในกรอบ -->
+            <!-- กรอบหน้าจอโทรศัพท์ -->
             <div class="iphone-screen-frame">
                 
-                <!-- ขอบบน -->
+                <!-- ขอบบน iPhone 6 ตามเรฟ (กล้อง + ลำโพงรี) -->
                 <div class="iphone6-top-bezel">
-                    <div class="sensor-container">
-                        <div class="camera-hole"></div>
+                    <div class="sensor-row">
+                        <div class="camera-dot"></div>
                         <div class="speaker-slot"></div>
-                    </div>
-                    <div class="status-bar-top">
-                        <span>14:49</span>
-                        <div class="status-right">
-                            <i class="fas fa-signal" style="font-size: 10px;"></i>
-                            <i class="fas fa-wifi" style="font-size: 10px;"></i>
-                            <span>46% <i class="fas fa-battery-three-quarters"></i></span>
-                        </div>
                     </div>
                 </div>
 
-                <!-- พื้นที่เนื้อหา -->
+                <!-- พื้นที่เนื้อหาแชท -->
                 <div class="screen-content-area">
                     <div class="chat-screen">
                         <div class="chat-header">
@@ -681,7 +662,7 @@
                     </div>
                 </div>
 
-                <!-- ขอบล่างพร้อมปุ่มโฮม -->
+                <!-- ขอบล่าง iPhone 6 พร้อมปุ่มโฮมกลมๆ ตามเรฟ -->
                 <div class="iphone6-bottom-bezel">
                     <div class="home-button-ring" onclick="sendMessage()">
                         <div class="home-inner-square"></div>
