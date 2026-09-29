@@ -547,7 +547,7 @@
 
                             <div id="interactiveContent">
                                 <div class="message sent" id="sentMessageBubble">
-                                    <!-- ข้อความที่พิมพ์จะแสดงที่นี่ และจะถูกรีเซ็ตให้ว่างเมื่อกดส่ง -->
+                                    ขอช่องการโอน เจ้ามิ หน่อย💖
                                 </div>
 
                                 <div class="message-row-received">
@@ -605,7 +605,7 @@
             </div>
 
             <div class="iphone6-bottom-bezel">
-                <div class="home-button-ring"></div>
+                <div class="home-button-ring" onclick="sendMessage()"></div>
             </div>
 
         </div>
@@ -613,34 +613,20 @@
 
     <script>
         function sendMessage() {
-            const inputField = document.getElementById('chatInput');
-            const textValue = inputField.value.trim();
-            if(textValue === "") return;
-
-            // นำข้อความที่พิมพ์ไปแสดงในบับเบิลฝั่งส่ง
+            // เมื่อกดส่ง ให้ลบข้อความในบับเบิลฝั่งส่งออก (ทำให้ว่างเปล่า)
             const sentBubble = document.getElementById('sentMessageBubble');
-            sentBubble.innerText = textValue;
+            sentBubble.innerText = "";
             
-            // แสดงส่วนเนื้อหาที่ซ่อนไว้
+            // แสดงส่วนเนื้อหาที่ซ่อนไว้ (รูปภาพและเลขบัญชีที่ร้านค้าตอบกลับมา)
             document.getElementById('interactiveContent').style.display = 'flex';
             
             // เลื่อนหน้าจอแชทลงมาด้านล่างสุด
             const chatBody = document.getElementById('chatBody');
             chatBody.scrollTop = chatBody.scrollHeight;
 
-            // 1. เคลียร์ข้อความในช่องพิมพ์ด้านล่างให้ว่างเปล่า
-            inputField.value = "";
-
-            // 2. เคลียร์ข้อความในบับเบิลส่งให้หายไป (หากต้องการให้เคลียร์ข้อความในกล่องแชทหลังจากส่งแล้ว)
-            // ถ้าคุณหมายถึงกล่องข้อความพิมพ์ด้านล่างหายไป บรรทัดบน inputField.value = "" จัดการให้เรียบร้อยแล้วค่ะ
+            // เคลียร์ช่องพิมพ์ข้อความด้านล่างให้ว่าง
+            document.getElementById('chatInput').value = "";
         }
-
-        // รองรับการกดปุ่ม Enter เพื่อส่งข้อความ
-        document.getElementById('chatInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                sendMessage();
-            }
-        });
 
         function copyText(text, btn) {
             navigator.clipboard.writeText(text).then(() => {
