@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classic iPhone 6 - IG DM (Perfect Fit Chat Body)</title>
+    <title>Classic iPhone 6 - IG DM (Minimal Pastel)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -16,7 +16,7 @@
         }
 
         body {
-            background-color: #fff0f3;
+            background-color: #f7f4f2;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -25,32 +25,30 @@
             overflow: hidden;
         }
 
-        /* โครงตัวเครื่อง iPhone 6 คลาสสิก (เพิ่มแอนิเมชันส่ายไปมา) */
         .iphone-device {
             position: relative;
             width: 375px;
             height: 750px;
-            background: linear-gradient(135deg, #fff0f5 0%, #ffcbf2 100%);
+            background: linear-gradient(145deg, #ffffff 0%, #f3ece9 100%);
             border-radius: 48px;
             box-shadow: 
-                0 25px 50px rgba(255, 182, 193, 0.3),
+                0 20px 40px rgba(180, 160, 150, 0.15),
                 inset 0 0 0 2px #ffffff,
-                inset 0 0 0 4px #ffb3c6;
+                inset 0 0 0 4px #e8ded8;
             display: flex;
             justify-content: center;
             align-items: center;
-            animation: softSwing 4s ease-in-out infinite;
+            animation: softSwing 5s ease-in-out infinite;
         }
 
         @keyframes softSwing {
             0%, 100% { transform: rotate(0deg); }
-            50% { transform: rotate(2deg); }
+            50% { transform: rotate(1.5deg); }
         }
 
-        /* ปุ่มด้านข้างตัวเครื่อง */
         .side-button {
             position: absolute;
-            background: #ffb3c6;
+            background: #d8ccc4;
             border-radius: 2px;
         }
         .silent-switch { left: -4px; top: 90px; width: 3px; height: 18px; }
@@ -58,32 +56,30 @@
         .volume-down { left: -4px; top: 175px; width: 3px; height: 32px; }
         .power-button { right: -4px; top: 135px; width: 3px; height: 45px; }
 
-        /* กรอบหน้าจอสีขาวด้านในแบบ iPhone 6 */
         .iphone-screen-frame {
             position: relative;
             width: 345px;
             height: 726px;
-            background-color: #fff9fb;
+            background-color: #ffffff;
             border-radius: 36px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            box-shadow: inset 0 0 6px rgba(255, 192, 203, 0.2);
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.03);
         }
 
-        /* ขอบบน iPhone 6 (กล้อง + ลำโพง อยู่บนสุด) */
         .iphone6-top-bezel {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 60px;
-            background-color: #fff9fb;
+            background-color: #ffffff;
             z-index: 120;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-bottom: 0.5px solid #ffe4e6;
+            border-bottom: 0.5px solid #f0eae6;
         }
 
         .sensor-row {
@@ -94,27 +90,26 @@
         }
 
         .camera-dot {
-            width: 9px;
-            height: 9px;
-            background-color: #ff8fab;
+            width: 8px;
+            height: 8px;
+            background-color: #d8ccc4;
             border-radius: 50%;
         }
 
         .speaker-slot {
-            width: 50px;
+            width: 45px;
             height: 4px;
-            background-color: #ffb3c6;
+            background-color: #e8ded8;
             border-radius: 3px;
         }
 
-        /* แถบสถานะด้านบน (อยู่ใต้กล้อง/ลำโพง พอดี) */
         .status-bar {
             position: absolute;
             top: 60px;
             left: 0;
             width: 100%;
             height: 24px;
-            background-color: #fff9fb;
+            background-color: #ffffff;
             z-index: 119;
             display: flex;
             justify-content: space-between;
@@ -122,17 +117,11 @@
             padding: 0 16px;
             font-size: 11px;
             font-weight: 500;
-            color: #d81159;
-            border-bottom: 0.5px solid #ffe4e6;
+            color: #8c7b75;
+            border-bottom: 0.5px solid #f0eae6;
         }
 
-        .status-left {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .status-right {
+        .status-left, .status-right {
             display: flex;
             align-items: center;
             gap: 5px;
@@ -144,22 +133,20 @@
             gap: 3px;
         }
 
-        /* พื้นที่แสดงผลแชท */
         .screen-content-area {
             position: relative;
             width: 100%;
             flex: 1;
             margin-top: 84px; 
             margin-bottom: 75px;
-            background-color: #fff9fb;
+            background-color: #ffffff;
             overflow: hidden;
             display: flex;
             flex-direction: column;
         }
 
-        /* หน้าจอแชทภายใน */
         .chat-screen {
-            background-color: #fff9fb;
+            background-color: #ffffff;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -171,10 +158,10 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 8px 14px;
+            padding: 10px 14px;
             background: #ffffff;
             z-index: 10;
-            border-bottom: 1px solid #ffe4e6;
+            border-bottom: 1px solid #f5eff0;
             flex-shrink: 0;
         }
 
@@ -185,8 +172,8 @@
         }
 
         .back-icon {
-            color: #ff758c;
-            font-size: 15px;
+            color: #b5a49d;
+            font-size: 14px;
             cursor: pointer;
         }
 
@@ -195,7 +182,7 @@
             height: 32px;
             border-radius: 50%;
             overflow: hidden;
-            background: #ffccd5;
+            background: #f0eae6;
             flex-shrink: 0;
         }
         .chat-avatar-header img {
@@ -207,7 +194,7 @@
         .chat-user-meta .name {
             font-size: 12px;
             font-weight: 600;
-            color: #d81159;
+            color: #594a42;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -215,24 +202,23 @@
         }
         .chat-user-meta .status {
             font-size: 9px;
-            color: #ff758c;
+            color: #a6968e;
         }
 
         .chat-header-right {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
         }
 
         .chat-header-right i {
-            color: #ff758c;
-            font-size: 14px;
+            color: #b5a49d;
+            font-size: 13px;
             cursor: pointer;
         }
 
-        /* จัดระเบียบเนื้อหาแชทให้กระจายเต็มพื้นที่หน้าจอพอดี (Space Between) */
         .chat-body {
-            padding: 12px;
+            padding: 14px;
             display: flex;
             flex-direction: column;
             justify-content: space-between; 
@@ -244,7 +230,7 @@
         .chat-flow-container {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
             width: 100%;
         }
 
@@ -283,25 +269,25 @@
         }
 
         .message.received {
-            background: #ffe4e6;
-            color: #880e4f;
-            padding: 8px 12px;
+            background: #f4efed;
+            color: #594a42;
+            padding: 9px 13px;
             border-radius: 16px;
             border-bottom-left-radius: 4px;
-            font-size: 12px;
-            line-height: 1.35;
+            font-size: 11.5px;
+            line-height: 1.4;
             width: fit-content;
             word-wrap: break-word;
         }
 
         .message.sent {
-            background: #ff758c;
+            background: linear-gradient(135deg, #e3b5a4 0%, #d59f8c 100%);
             color: #ffffff;
-            padding: 8px 12px;
+            padding: 9px 13px;
             border-radius: 16px;
             border-bottom-right-radius: 4px;
-            font-size: 12px;
-            line-height: 1.35;
+            font-size: 11.5px;
+            line-height: 1.4;
             align-self: flex-end;
             width: fit-content;
             font-weight: 400;
@@ -316,19 +302,18 @@
             width: 100%;
         }
 
-        /* ปรับขนาดรูปภาพ เป็น 480*480 */
         .image-message-box {
-            background: #ffe4e6;
+            background: #f4efed;
             border-radius: 16px;
             border-bottom-left-radius: 4px;
             padding: 6px;
-            width: 200px;
+            width: 190px;
             overflow: hidden;
         }
 
         .image-container {
             width: 100%;
-            height: 200px;
+            height: 190px;
             border-radius: 12px;
             overflow: hidden;
             display: flex;
@@ -346,51 +331,49 @@
             display: block;
         }
 
-        /* ปรับส่วนช่องธนาคารและ Wallet ให้ใหญ่ขึ้น */
         .bank-message-box {
-            background: #ffe4e6;
-            border-radius: 18px;
+            background: #f4efed;
+            border-radius: 16px;
             border-bottom-left-radius: 4px;
-            padding: 12px 16px;
+            padding: 10px 14px;
             width: 100%;
             max-width: 240px;
             display: flex;
             justify-content: space-between;
-            gap: 12px;
+            gap: 10px;
             align-items: center;
-            font-size: 12px;
+            font-size: 11.5px;
         }
 
         .bank-info .title {
-            font-weight: 600;
-            color: #880e4f;
-            font-size: 11px;
-            margin-bottom: 3px;
+            font-weight: 500;
+            color: #735f55;
+            font-size: 10.5px;
+            margin-bottom: 2px;
         }
         .bank-info .num {
             font-family: monospace;
-            font-size: 13px;
-            font-weight: 700;
-            color: #d81159;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: #594a42;
             letter-spacing: 0.5px;
         }
 
         .copy-btn {
-            background: #ffb3c6;
+            background: #d8ccc4;
             border: none;
-            padding: 6px 12px;
-            border-radius: 12px;
-            font-size: 11px;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 10.5px;
             color: #ffffff;
             cursor: pointer;
             font-family: 'Prompt', sans-serif;
             transition: all 0.2s;
-            font-weight: 600;
+            font-weight: 500;
             white-space: nowrap;
         }
         .copy-btn:active {
-            background: #ff758c;
-            color: #fff;
+            background: #b5a49d;
         }
 
         .chat-footer {
@@ -399,7 +382,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            border-top: 1px solid #ffe4e6;
+            border-top: 1px solid #f5eff0;
             flex-shrink: 0;
         }
 
@@ -407,29 +390,29 @@
             flex: 1;
             display: flex;
             align-items: center;
-            background: #ffe4e6;
-            border-radius: 18px;
-            padding: 4px 10px;
-            gap: 6px;
+            background: #f7f4f2;
+            border-radius: 20px;
+            padding: 5px 10px;
+            gap: 8px;
         }
 
         .camera-circle-btn {
-            width: 24px;
-            height: 24px;
-            background: #ffb3c6;
+            width: 22px;
+            height: 22px;
+            background: #e8ded8;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #ffffff;
-            font-size: 10px;
+            font-size: 9px;
             flex-shrink: 0;
         }
 
         .chat-input-field {
             flex: 1;
-            font-size: 12px;
-            color: #880e4f;
+            font-size: 11.5px;
+            color: #594a42;
             outline: none;
             border: none;
             background: transparent;
@@ -439,84 +422,72 @@
         .send-btn {
             background: transparent;
             border: none;
-            color: #ff758c;
+            color: #d59f8c;
             font-weight: 600;
-            font-size: 12px;
+            font-size: 11.5px;
             cursor: pointer;
             font-family: 'Prompt', sans-serif;
             padding: 2px 4px;
         }
 
-        /* ขอบล่าง iPhone 6 พร้อมปุ่มโฮมเกลี้ยงๆ */
         .iphone6-bottom-bezel {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
             height: 75px;
-            background-color: #fff9fb;
+            background-color: #ffffff;
             z-index: 120;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-top: 0.5px solid #ffe4e6;
+            border-top: 0.5px solid #f0eae6;
         }
 
         .home-button-ring {
-            width: 44px;
-            height: 44px;
-            border: 2px solid #ffb3c6;
+            width: 42px;
+            height: 42px;
+            border: 2px solid #e8ded8;
             border-radius: 50%;
             background: #ffffff;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: inset 0 1px 3px rgba(255, 182, 193, 0.2);
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03);
             transition: background 0.1s;
         }
         .home-button-ring:active {
-            background: #ffe4e6;
+            background: #f7f4f2;
         }
 
-        /* เอฟเฟกต์ดาวโปรยปรายลงมา */
         .falling-star {
             position: absolute;
-            color: #ffb3c6;
-            font-size: 14px;
+            color: #e3b5a4;
+            font-size: 12px;
             animation: fallDown linear infinite;
             z-index: 130;
             pointer-events: none;
+            opacity: 0.6;
         }
 
         @keyframes fallDown {
-            0% {
-                transform: translateY(-20px) rotate(0deg);
-                opacity: 0;
-            }
-            20% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(750px) rotate(360deg);
-                opacity: 0;
-            }
+            0% { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.6; }
+            100% { transform: translateY(750px) rotate(360deg); opacity: 0; }
         }
     </style>
 </head>
 <body>
 
     <div class="iphone-device">
-        <!-- ปุ่มข้างตัวเครื่อง -->
         <div class="side-button silent-switch"></div>
         <div class="side-button volume-up"></div>
         <div class="side-button volume-down"></div>
         <div class="side-button power-button"></div>
 
-        <!-- กรอบหน้าจอโทรศัพท์ -->
         <div class="iphone-screen-frame" id="iphoneScreen">
             
-            <!-- ขอบบน iPhone 6 (กล้อง + ลำโพง อยู่บนสุด) -->
             <div class="iphone6-top-bezel">
                 <div class="sensor-row">
                     <div class="camera-dot"></div>
@@ -524,12 +495,11 @@
                 </div>
             </div>
 
-            <!-- แถบสถานะด้านบน (อยู่ใต้กล้อง/ลำโพง พอดี) -->
             <div class="status-bar">
                 <div class="status-left">
-                    <i class="fas fa-signal" style="font-size: 10px;"></i>
+                    <i class="fas fa-signal" style="font-size: 9px;"></i>
                     <span>AIS</span>
-                    <i class="fas fa-wifi" style="font-size: 10px; margin-left: 2px;"></i>
+                    <i class="fas fa-wifi" style="font-size: 9px; margin-left: 2px;"></i>
                 </div>
                 <div class="status-center">
                     <span>07:25</span>
@@ -537,12 +507,11 @@
                 <div class="status-right">
                     <div class="battery-box">
                         <span>66%</span>
-                        <i class="fas fa-battery-three-quarters" style="font-size: 12px;"></i>
+                        <i class="fas fa-battery-three-quarters" style="font-size: 11px;"></i>
                     </div>
                 </div>
             </div>
 
-            <!-- พื้นที่เนื้อหาแชท -->
             <div class="screen-content-area">
                 <div class="chat-screen">
                     <div class="chat-header">
@@ -552,7 +521,7 @@
                                 <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
                             </div>
                             <div class="chat-user-meta">
-                                <div class="name">wongsuda_shop ✨</div>
+                                <div class="name">wongsuda_shop ☁️</div>
                                 <div class="status">Active 5m ago</div>
                             </div>
                         </div>
@@ -564,7 +533,6 @@
                     </div>
 
                     <div class="chat-body" id="chatBody">
-                        <!-- ข้อความทักทายจากร้านค้า (อยู่บนสุด) -->
                         <div class="chat-flow-container">
                             <div class="message-row-received">
                                 <div class="chat-avatar-msg">
@@ -572,15 +540,15 @@
                                 </div>
                                 <div class="received-content-group">
                                     <div class="message received">
-                                        สวัสดีค่ะคุณลูกค้า สนใจบริการตัวแทนดันกลุ่ม สอบถามรายละเอียดได้เลยน้า 💖🌷
+                                        สวัสดีค่ะคุณลูกค้า สนใจบริการตัวแทนดันกลุ่ม สอบถามรายละเอียดได้เลยน้า 🤍✨
                                     </div>
                                 </div>
                             </div>
 
                             <div id="interactiveContent">
-                                <!-- เปลี่ยนข้อความที่ส่งให้เป็น miori store ตามต้องการ -->
+                                <!-- ข้อความบับเบิ้ลที่ส่งจะเปลี่ยนเป็นข้อความนี้เมื่อกดส่ง -->
                                 <div class="message sent" id="sentMessageBubble">
-                                    miori store
+                                    ขอช่องการโอน เจ้ามิ หน่อย💖
                                 </div>
 
                                 <div class="message-row-received">
@@ -605,7 +573,7 @@
 
                                         <div class="bank-message-box">
                                             <div class="bank-info">
-                                                <div class="title"><i class="fas fa-university" style="color:#d81159;"></i> กสิกรไทย (KBANK)</div>
+                                                <div class="title"><i class="fas fa-university" style="color:#8c7b75;"></i> กสิกรไทย (KBANK)</div>
                                                 <div class="num">123-4-56789-0</div>
                                             </div>
                                             <button class="copy-btn" onclick="copyText('1234567890', this)">คัดลอก</button>
@@ -613,7 +581,7 @@
 
                                         <div class="bank-message-box">
                                             <div class="bank-info">
-                                                <div class="title"><i class="fas fa-wallet" style="color:#ff758c;"></i> TrueMoney Wallet</div>
+                                                <div class="title"><i class="fas fa-wallet" style="color:#d59f8c;"></i> TrueMoney Wallet</div>
                                                 <div class="num">081-234-5678</div>
                                             </div>
                                             <button class="copy-btn" onclick="copyText('0812345678', this)">คัดลอก</button>
@@ -622,14 +590,11 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- ตัวเว้นพื้นที่ด้านล่างให้สมดุลพอดีหน้าจอ -->
                         <div></div>
                     </div>
 
                     <div class="chat-footer">
                         <div class="chat-input-wrapper">
-                            <!-- เปลี่ยนไอคอนปุ่มกลมด้านซ้ายให้เป็นเครื่องหมายบวก (+) ตามรูปภาพตัวอย่าง -->
                             <div class="camera-circle-btn">
                                 <i class="fas fa-plus"></i>
                             </div>
@@ -640,7 +605,6 @@
                 </div>
             </div>
 
-            <!-- ขอบล่าง iPhone 6 พร้อมปุ่มโฮมเกลี้ยงๆ -->
             <div class="iphone6-bottom-bezel">
                 <div class="home-button-ring" onclick="sendMessage()"></div>
             </div>
@@ -654,8 +618,9 @@
             const textValue = inputField.value.trim();
             if(textValue === "") return;
 
-            // บังคับเปลี่ยนข้อความในบับเบิลที่ส่งเป็น "miori store" ตามที่ต้องการ
-            document.getElementById('sentMessageBubble').innerText = "miori store";
+            // เปลี่ยนข้อความในบับเบิลให้เป็นข้อความที่คุณต้องการเมื่อกดส่ง
+            document.getElementById('sentMessageBubbleinnerText', 'ขอช่องการโอน เจ้ามิ หน่อย💖');
+            document.getElementById('sentMessageBubble').innerText = "ขอช่องการโอน เจ้ามิ หน่อย💖";
             document.getElementById('interactiveContent').style.display = 'flex';
         }
 
@@ -669,24 +634,22 @@
             });
         }
 
-        // ฟังก์ชันสร้างดาวโปรยปรายในหน้าจอ
         function createFallingStars() {
             const screenFrame = document.getElementById('iphoneScreen');
-            const starCount = 12;
+            const starCount = 10;
 
             for (let i = 0; i < starCount; i++) {
                 const star = document.createElement('div');
                 star.classList.add('falling-star', 'fa-solid', 'fa-star');
                 star.style.left = Math.random() * 320 + 'px';
                 star.style.top = -20 + 'px';
-                star.style.fontSize = (Math.random() * 8 + 8) + 'px';
-                star.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                star.style.fontSize = (Math.random() * 6 + 7) + 'px';
+                star.style.animationDuration = (Math.random() * 5 + 5) + 's';
                 star.style.animationDelay = (Math.random() * 5) + 's';
                 screenFrame.appendChild(star);
             }
         }
 
-        // เรียกใช้งานฟังก์ชันสร้างดาวเมื่อโหลดหน้าเว็บ
         window.onload = function() {
             createFallingStars();
         };
