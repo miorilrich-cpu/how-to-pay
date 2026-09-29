@@ -16,7 +16,7 @@
         }
 
         body {
-            background-color: #fff0f3; /* พื้นหลังรอบนอกชมพูพาสเทลอ่อนๆ */
+            background-color: #fff0f3;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -597,7 +597,8 @@
                             <div class="camera-circle-btn">
                                 <i class="fas fa-plus"></i>
                             </div>
-                            <input type="text" id="chatInput" class="chat-input-field" value="ขอช่องการโอน เจ้ามิ หน่อย💖">
+                            <!-- ช่องพิมพ์ข้อความเริ่มต้นตั้งค่าให้ว่างเปล่า พร้อมรองรับการพิมพ์ข้อความใหม่ -->
+                            <input type="text" id="chatInput" class="chat-input-field" placeholder="ส่งข้อความ..." autofocus>
                             <button class="send-btn" onclick="sendMessage()">ส่ง</button>
                         </div>
                     </div>
@@ -617,8 +618,12 @@
             const textValue = inputField.value.trim();
             if(textValue === "") return;
 
+            // นำข้อความที่พิมพ์ไปใส่ในบับเบิลฝั่งส่ง
             document.getElementById('sentMessageBubble').innerText = textValue;
             document.getElementById('interactiveContent').style.display = 'flex';
+            
+            // เคลียร์ข้อความในช่องพิมพ์ให้ว่างเปล่าหลังกดส่ง
+            inputField.value = "";
         }
 
         function copyText(text, btn) {
