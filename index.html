@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cute IG DM - iPhone 6 Style</title>
-    <!-- ไอคอนจาก FontAwesome -->
+    <title>Cute IG DM - Real iPhone 6 Style</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- ฟอนต์ Google Fonts (Prompt) -->
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
@@ -26,17 +24,17 @@
             padding: 20px;
         }
 
-        /* --- ตัวเครื่อง iPhone 6 (มีขอบบน-ล่าง และปุ่มโฮม) --- */
+        /* --- โครงสร้างตัวเครื่อง iPhone 6 (ขอบโค้งมน สมส่วนแบบรุ่นคลาสสิก) --- */
         .iphone-device {
             position: relative;
-            width: 395px;
-            height: 780px;
+            width: 375px;
+            height: 750px;
             background: linear-gradient(135deg, #ffd1dc 0%, #ffb6c1 100%);
-            border-radius: 48px;
+            border-radius: 52px; /* ขอบโค้งมนเด่นชัดแบบ iPhone 6 */
             box-shadow: 
-                0 30px 60px rgba(255, 182, 193, 0.4),
-                inset 0 0 0 2px rgba(255, 255, 255, 0.9),
-                inset 0 0 0 5px #ffc0cb;
+                0 25px 50px rgba(255, 182, 193, 0.4),
+                inset 0 0 0 2px rgba(255, 255, 255, 0.8),
+                inset 0 0 0 4px #ffb6c1;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -46,69 +44,71 @@
         .side-button {
             position: absolute;
             background: #ffb6c1;
-            border-radius: 3px;
+            border-radius: 2px;
         }
-        .volume-up { left: -7px; top: 140px; width: 3px; height: 30px; }
-        .volume-down { left: -7px; top: 185px; width: 3px; height: 30px; }
-        .silent-switch { left: -7px; top: 95px; width: 3px; height: 20px; }
-        .power-button { right: -7px; top: 150px; width: 3px; height: 45px; }
+        .silent-switch { left: -6px; top: 90px; width: 3px; height: 18px; }
+        .volume-up { left: -6px; top: 130px; width: 3px; height: 32px; }
+        .volume-down { left: -6px; top: 175px; width: 3px; height: 32px; }
+        .power-button { right: -6px; top: 135px; width: 3px; height: 45px; }
 
-        /* กรอบหน้าจอสีขาว/ดำด้านใน (Bezel ของ iPhone 6 ทรงดั้งเดิม) */
+        /* กรอบหน้าจอสีขาวด้านใน (Bezel) พร้อมขอบบน-ล่างอันเป็นเอกลักษณ์ */
         .iphone-screen-frame {
             position: relative;
-            width: 365px;
-            height: 752px;
+            width: 347px;
+            height: 726px;
             background-color: #ffffff;
-            border-radius: 36px;
+            border-radius: 42px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+            box-shadow: inset 0 0 8px rgba(0,0,0,0.08);
         }
 
-        /* ขอบลำโพงและกล้องหน้าด้านบนของ iPhone 6 */
-        .iphone6-top-speaker {
+        /* --- แผงขอบบน iPhone 6 (กล้องหน้า, ลำโพงยาวรี, และ Status Bar) --- */
+        .iphone6-top-bezel {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 48px;
+            height: 60px;
             background-color: #ffffff;
             z-index: 120;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            border-bottom: 0.5px solid #ffe4e1;
+            justify-content: flex-start;
+            padding-top: 8px;
+            border-bottom: 0.5px solid #fce4e4;
         }
 
-        .sensor-row {
+        .sensor-container {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 4px;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 6px;
         }
 
-        .camera-dot {
+        .camera-hole {
             width: 10px;
             height: 10px;
-            background-color: #333333;
+            background-color: #3b3b3b;
             border-radius: 50%;
         }
 
-        .speaker-slit {
-            width: 50px;
+        .speaker-slot {
+            width: 54px;
             height: 4px;
-            background-color: #cccccc;
+            background-color: #d1d1d1;
             border-radius: 3px;
         }
 
-        /* Status Bar จำลองตามเรฟเฟอเรนซ์ (ไอคอนเครือข่าย แบต 46%) */
+        /* Status Bar ด้านบนสุด */
         .status-bar-top {
             width: 100%;
             display: flex;
             justify-content: space-between;
-            padding: 0 16px;
+            padding: 0 20px;
             font-size: 11px;
             color: #666666;
             font-weight: 500;
@@ -120,20 +120,20 @@
             gap: 5px;
         }
 
-        /* หน้าจอแสดงผลด้านในสุด */
+        /* พื้นที่แสดงผลหน้าจอแชท */
         .screen-content-area {
             position: relative;
             width: 100%;
             flex: 1;
-            margin-top: 48px;
-            margin-bottom: 50px; /* เว้นที่ให้ปุ่มโฮมด้านล่าง */
+            margin-top: 60px;
+            margin-bottom: 58px; /* เว้นพื้นที่ให้ขอบล่างและปุ่มโฮม */
             background-color: #fff9fb;
             overflow: hidden;
             display: flex;
             flex-direction: column;
         }
 
-        /* --- หน้าจอแชท (ข้อมูลเดิมทั้งหมด 100% ไม่ถูกแก้) --- */
+        /* --- หน้าจอแชทภายใน (เนื้อหาเดิมของคุณทั้งหมด) --- */
         .chat-screen {
             background-color: #fff9fb;
             flex: 1;
@@ -168,18 +168,18 @@
 
         .back-icon {
             color: #ff69b4;
-            font-size: 16px;
+            font-size: 15px;
             cursor: pointer;
         }
 
         .chat-avatar-header {
-            width: 36px;
-            height: 36px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             overflow: hidden;
             background: #ffe4e1;
             flex-shrink: 0;
-            border: 1.5px solid #ffb6c1;
+            border: 1px solid #ffb6c1;
         }
         .chat-avatar-header img {
             width: 100%;
@@ -194,7 +194,7 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 170px;
+            max-width: 160px;
         }
         .chat-user-meta .status {
             font-size: 10px;
@@ -204,16 +204,16 @@
         .chat-header-right {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
         }
 
         .chat-header-right i {
             color: #ff69b4;
-            font-size: 16px;
+            font-size: 15px;
             cursor: pointer;
         }
 
-        /* กล่องข้อความในแชท */
+        /* กล่องข้อความแชท */
         .chat-body {
             padding: 14px 12px;
             display: flex;
@@ -222,7 +222,6 @@
             flex: 1;
         }
 
-        /* จัดกลุ่มข้อความฝั่งซ้าย */
         .message-row-received {
             display: flex;
             align-items: flex-end;
@@ -233,8 +232,8 @@
         }
 
         .chat-avatar-msg {
-            width: 26px;
-            height: 26px;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
             overflow: hidden;
             flex-shrink: 0;
@@ -258,7 +257,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ฟองข้อความฝั่งซ้าย */
         .message.received {
             background: #ffe4e1;
             color: #555555;
@@ -273,7 +271,6 @@
             box-shadow: 0 2px 5px rgba(255, 182, 193, 0.15);
         }
 
-        /* ฟองข้อความฝั่งขวา */
         .message.sent {
             background: linear-gradient(135deg, #ff8da1 0%, #d8b4fe 100%);
             color: #ffffff;
@@ -291,7 +288,6 @@
             box-shadow: 0 2px 5px rgba(255, 141, 161, 0.3);
         }
 
-        /* กล่องรูปภาพโปรโมชันในแชท (ซ่อนไว้ก่อน) */
         #interactiveContent {
             display: none;
             flex-direction: column;
@@ -303,7 +299,7 @@
             border-radius: 18px;
             border-bottom-left-radius: 4px;
             padding: 6px;
-            width: 210px;
+            width: 200px;
             overflow: hidden;
             box-shadow: 0 2px 5px rgba(255, 182, 193, 0.15);
         }
@@ -325,7 +321,6 @@
             display: block;
         }
 
-        /* ฟองธนาคารฝั่งซ้าย */
         .bank-message-box {
             background: #ffe4e1;
             border-radius: 18px;
@@ -333,7 +328,7 @@
             padding: 10px 14px;
             width: fit-content;
             display: flex;
-            gap: 15px;
+            gap: 14px;
             align-items: center;
             font-size: 12px;
             box-shadow: 0 2px 5px rgba(255, 182, 193, 0.15);
@@ -342,7 +337,7 @@
         .bank-info .title {
             font-weight: 500;
             color: #b76e79;
-            font-size: 11.5px;
+            font-size: 11px;
             margin-bottom: 2px;
         }
         .bank-info .num {
@@ -353,11 +348,10 @@
             letter-spacing: 0.5px;
         }
 
-        /* ปุ่มคัดลอก */
         .copy-btn {
             background: #ffb6c1;
             border: none;
-            padding: 6px 12px;
+            padding: 6px 10px;
             border-radius: 12px;
             font-size: 11px;
             color: #ffffff;
@@ -373,7 +367,6 @@
             transform: scale(0.95);
         }
 
-        /* แถบช่องพิมพ์ข้อความด้านล่าง */
         .chat-footer {
             padding: 8px 12px 14px 12px;
             background: #ffffff;
@@ -389,21 +382,21 @@
             align-items: center;
             background: #fff0f5;
             border: 1px solid #ffb6c1;
-            border-radius: 22px;
-            padding: 6px 12px;
-            gap: 10px;
+            border-radius: 20px;
+            padding: 5px 12px;
+            gap: 8px;
         }
 
         .camera-circle-btn {
-            width: 28px;
-            height: 28px;
+            width: 26px;
+            height: 26px;
             background: #ffb6c1;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #fff;
-            font-size: 12px;
+            font-size: 11px;
             flex-shrink: 0;
         }
 
@@ -425,57 +418,66 @@
             font-size: 13px;
             cursor: pointer;
             font-family: 'Prompt', sans-serif;
-            padding: 2px 6px;
-            transition: opacity 0.2s;
-        }
-        .send-btn:active {
-            opacity: 0.6;
+            padding: 2px 4px;
         }
 
-        /* ขอบล่าง iPhone 6 พร้อมปุ่มโฮมวงกลม */
-        .iphone6-bottom-bar {
+        /* --- แผงขอบล่าง iPhone 6 พร้อมปุ่มโฮมกลมๆ (Home Button) --- */
+        .iphone6-bottom-bezel {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 50px;
+            height: 58px;
             background-color: #ffffff;
             z-index: 120;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-top: 0.5px solid #ffe4e1;
+            border-top: 0.5px solid #fce4e4;
         }
 
-        .home-button-circle {
-            width: 36px;
-            height: 36px;
+        .home-button-ring {
+            width: 42px;
+            height: 42px;
             border: 2px solid #ffb6c1;
             border-radius: 50%;
-            background: #fff9fb;
+            background: #ffffff;
             cursor: pointer;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+            transition: background 0.1s;
+        }
+        .home-button-ring:active {
+            background: #fff0f5;
+        }
+
+        .home-inner-square {
+            width: 14px;
+            height: 14px;
+            border: 1.5px solid #ffb6c1;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
 
-    <!-- บอดี้ตัวเครื่อง iPhone 6 -->
     <div class="iphone-device">
-        <!-- ปุ่มข้างเครื่อง -->
+        <!-- ปุ่มข้างตัวเครื่อง -->
         <div class="side-button silent-switch"></div>
         <div class="side-button volume-up"></div>
         <div class="side-button volume-down"></div>
         <div class="side-button power-button"></div>
 
-        <!-- กรอบหน้าจอ (Bezel) -->
+        <!-- หน้าจอภายในกรอบโทรศัพท์ -->
         <div class="iphone-screen-frame">
             
-            <!-- ขอบบน iPhone 6 (ลำโพง กล้อง และ Status Bar) -->
-            <div class="iphone6-top-speaker">
-                <div class="sensor-row">
-                    <div class="camera-dot"></div>
-                    <div class="speaker-slit"></div>
+            <!-- ขอบบน iPhone 6 -->
+            <div class="iphone6-top-bezel">
+                <div class="sensor-container">
+                    <div class="camera-hole"></div>
+                    <div class="speaker-slot"></div>
                 </div>
                 <div class="status-bar-top">
                     <span>14:49</span>
@@ -487,10 +489,9 @@
                 </div>
             </div>
 
-            <!-- พื้นที่หน้าจอแสดงผลตรงกลาง -->
+            <!-- พื้นที่เนื้อหาภายใน -->
             <div class="screen-content-area">
                 <div class="chat-screen">
-                    <!-- Header แชท -->
                     <div class="chat-header">
                         <div class="chat-header-left">
                             <i class="fas fa-chevron-left back-icon"></i>
@@ -509,9 +510,7 @@
                         </div>
                     </div>
 
-                    <!-- ข้อความแชท -->
                     <div class="chat-body" id="chatBody">
-                        <!-- ข้อความต้อนรับเริ่มต้นจากร้านค้า -->
                         <div class="message-row-received">
                             <div class="chat-avatar-msg">
                                 <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
@@ -523,14 +522,11 @@
                             </div>
                         </div>
 
-                        <!-- ส่วนที่จะแสดงผลหลังจากกดปุ่มส่งข้อความ -->
                         <div id="interactiveContent">
-                            <!-- ข้อความที่เราส่งออกไปฝั่งขวา -->
                             <div class="message sent" id="sentMessageBubble">
                                 ขอช่องทางการโอนหน่อยค้าบ
                             </div>
 
-                            <!-- รูปภาพโปรโมชันที่โผล่มาหลังจากกดส่ง -->
                             <div class="message-row-received">
                                 <div class="chat-avatar-msg">
                                     <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
@@ -542,7 +538,6 @@
                                 </div>
                             </div>
 
-                            <!-- ข้อความร้านค้าตอบกลับพร้อมเลขบัญชี -->
                             <div class="message-row-received">
                                 <div class="chat-avatar-msg">
                                     <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
@@ -552,20 +547,18 @@
                                         ได้เลยค่ะคุณลูกค้า 😊 ช่องทางการชำระเงินตามนี้เลยนะค้าบ 👇
                                     </div>
 
-                                    <!-- บัญชีธนาคารกสิกรไทย -->
                                     <div class="bank-message-box">
                                         <div class="bank-info">
                                             <div class="title"><i class="fas fa-university" style="color:#2563eb;"></i> กสิกรไทย (KBANK)</div>
-                                            <div class="num" id="kbankNum">123-4-56789-0</div>
+                                            <div class="num">123-4-56789-0</div>
                                         </div>
                                         <button class="copy-btn" onclick="copyText('1234567890', this)">คัดลอก</button>
                                     </div>
 
-                                    <!-- TrueMoney Wallet -->
                                     <div class="bank-message-box">
                                         <div class="bank-info">
                                             <div class="title"><i class="fas fa-wallet" style="color:#f97316;"></i> TrueMoney Wallet</div>
-                                            <div class="num" id="walletNum">081-234-5678</div>
+                                            <div class="num">081-234-5678</div>
                                         </div>
                                         <button class="copy-btn" onclick="copyText('0812345678', this)">คัดลอก</button>
                                     </div>
@@ -574,7 +567,6 @@
                         </div>
                     </div>
 
-                    <!-- แถบช่องพิมพ์ข้อความด้านล่าง -->
                     <div class="chat-footer">
                         <div class="chat-input-wrapper">
                             <div class="camera-circle-btn">
@@ -587,26 +579,24 @@
                 </div>
             </div>
 
-            <!-- ขอบล่าง iPhone 6 พร้อมปุ่มโฮม (Home Button) -->
-            <div class="iphone6-bottom-bar">
-                <div class="home-button-circle" onclick="sendMessage()"></div>
+            <!-- ขอบล่าง iPhone 6 พร้อมปุ่มโฮมกลม -->
+            <div class="iphone6-bottom-bezel">
+                <div class="home-button-ring" onclick="sendMessage()">
+                    <div class="home-inner-square"></div>
+                </div>
             </div>
 
         </div>
     </div>
 
-    <!-- Script ควบคุมการทำงาน -->
     <script>
         function sendMessage() {
             const inputField = document.getElementById('chatInput');
             const textValue = inputField.value.trim();
-            
             if(textValue === "") return;
 
             document.getElementById('sentMessageBubble').innerText = textValue;
-            const interactiveContent = document.getElementById('interactiveContent');
-            interactiveContent.style.display = 'flex';
-            
+            document.getElementById('interactiveContent').style.display = 'flex';
             inputField.value = '';
             
             const chatBody = document.getElementById('chatBody');
