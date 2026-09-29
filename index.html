@@ -310,7 +310,7 @@
         }
 
         #interactiveContent {
-            display: flex;
+            display: none;
             flex-direction: column;
             gap: 10px;
             width: 100%;
@@ -578,7 +578,7 @@
                             </div>
 
                             <div id="interactiveContent">
-                                <!-- บับเบิลข้อความที่ส่งถูกเปลี่ยนเป็น "ขอช่องทางการโอนหน่อยค้าบ" -->
+                                <!-- เปลี่ยนข้อความที่ส่งให้เป็นขอช่องทางการโอนหน่อยค้าบ ตามต้องการ -->
                                 <div class="message sent" id="sentMessageBubble">
                                     ขอช่องทางการโอนหน่อยค้าบ
                                 </div>
@@ -629,10 +629,10 @@
 
                     <div class="chat-footer">
                         <div class="chat-input-wrapper">
+                            <!-- เปลี่ยนไอคอนปุ่มกลมด้านซ้ายให้เป็นเครื่องหมายบวก (+) ตามรูปภาพตัวอย่าง -->
                             <div class="camera-circle-btn">
                                 <i class="fas fa-plus"></i>
                             </div>
-                            <!-- ช่องพิมพ์ข้อความด้านล่างถูกเปลี่ยนเป็น "miori store" -->
                             <input type="text" id="chatInput" class="chat-input-field" value="miori store">
                             <button class="send-btn" onclick="sendMessage()">ส่ง</button>
                         </div>
@@ -654,7 +654,8 @@
             const textValue = inputField.value.trim();
             if(textValue === "") return;
 
-            document.getElementById('sentMessageBubble').innerText = textValue;
+            // บังคับเปลี่ยนข้อความในบับเบิลที่ส่งเป็น "ขอช่องทางการโอนหน่อยค้าบ" ตามที่ต้องการ
+            document.getElementById('sentMessageBubble').innerText = "ขอช่องทางการโอนหน่อยค้าบ";
             document.getElementById('interactiveContent').style.display = 'flex';
         }
 
