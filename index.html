@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classic iPhone 6 - IG DM (Fixed Screen)</title>
+    <title>Classic iPhone 6 - IG DM (Correct Order)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -101,7 +101,7 @@
             border-radius: 3px;
         }
 
-        /* พื้นที่แสดงผลแชท (ล็อกไม่ให้เลื่อนออกนอกกรอบ) */
+        /* พื้นที่แสดงผลแชท */
         .screen-content-area {
             position: relative;
             width: 100%;
@@ -109,7 +109,7 @@
             margin-top: 75px;
             margin-bottom: 75px;
             background-color: #ffffff;
-            overflow: hidden; /* ล็อกไม่ให้มี Scrollbar ภายนอก */
+            overflow: hidden;
             display: flex;
             flex-direction: column;
         }
@@ -120,7 +120,7 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            overflow: hidden; /* ปิดการเลื่อนหน้าจอ */
+            overflow: hidden;
             position: relative;
         }
 
@@ -187,14 +187,14 @@
             cursor: pointer;
         }
 
-        /* ตัวบอดี้แชท จัดระยะให้พอดีหน้าจอเป๊ะๆ */
+        /* จัดเรียงข้อความเริ่มต้นจากด้านบนลงล่างตามธรรมชาติแชทจริง */
         .chat-body {
             padding: 10px 12px;
             display: flex;
             flex-direction: column;
             gap: 8px;
             flex: 1;
-            justify-content: flex-end; /* ดันข้อความทั้งหมดให้เรียงขึ้นมาจากด้านล่างพอดีช่อง */
+            justify-content: flex-start; 
             overflow: hidden;
         }
 
@@ -287,7 +287,7 @@
         .image-container img {
             width: 100%;
             height: auto;
-            max-height: 100px;
+            max-height: 90px;
             object-fit: cover;
             display: block;
         }
@@ -465,6 +465,7 @@
                     </div>
 
                     <div class="chat-body" id="chatBody">
+                        <!-- ข้อความทักทายจากร้านค้า (อยู่บนสุด) -->
                         <div class="message-row-received">
                             <div class="chat-avatar-msg">
                                 <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
@@ -549,7 +550,6 @@
 
             document.getElementById('sentMessageBubble').innerText = textValue;
             document.getElementById('interactiveContent').style.display = 'flex';
-            inputField.value = '';
         }
 
         function copyText(text, btn) {
