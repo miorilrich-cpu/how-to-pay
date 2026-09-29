@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classic iPhone 6 - IG DM (Fixed Bottom Flow)</title>
+    <title>Classic iPhone 6 - IG DM (Perfect Fit)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -16,34 +16,44 @@
         }
 
         body {
-            background-color: #f0f2f5;
+            background-color: #fff0f5;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 30px 20px;
+            overflow: hidden;
         }
 
-        /* โครงตัวเครื่อง iPhone 6 คลาสสิก */
+        /* โครงตัวเครื่อง iPhone 6 คลาสสิก - เพิ่มแอนิเมชันจอส่ายไปมาเบาๆ */
         .iphone-device {
             position: relative;
             width: 375px;
             height: 750px;
-            background: linear-gradient(135deg, #f5f5f7 0%, #d1d5db 100%);
+            background: linear-gradient(135deg, #fff0f5 0%, #ffc0cb 100%);
             border-radius: 48px;
             box-shadow: 
-                0 25px 50px rgba(0, 0, 0, 0.15),
+                0 25px 50px rgba(255, 182, 193, 0.4),
                 inset 0 0 0 2px #ffffff,
-                inset 0 0 0 4px #c0c4cc;
+                inset 0 0 0 4px #ffb6c1;
             display: flex;
             justify-content: center;
             align-items: center;
+            animation: gentleSway 4s ease-in-out infinite;
+        }
+
+        @keyframes gentleSway {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(-1.5deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(1.5deg); }
+            100% { transform: rotate(0deg); }
         }
 
         /* ปุ่มด้านข้างตัวเครื่อง */
         .side-button {
             position: absolute;
-            background: #c0c4cc;
+            background: #ffb6c1;
             border-radius: 2px;
         }
         .silent-switch { left: -4px; top: 90px; width: 3px; height: 18px; }
@@ -56,12 +66,12 @@
             position: relative;
             width: 345px;
             height: 726px;
-            background-color: #ffffff;
+            background-color: #fff9fb;
             border-radius: 36px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            box-shadow: inset 0 0 6px rgba(0,0,0,0.06);
+            box-shadow: inset 0 0 6px rgba(255,182,193,0.2);
         }
 
         /* ขอบบน iPhone 6 (กล้อง + ลำโพง อยู่บนสุด) */
@@ -71,12 +81,12 @@
             left: 0;
             width: 100%;
             height: 60px;
-            background-color: #ffffff;
+            background-color: #fff9fb;
             z-index: 120;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-bottom: 0.5px solid #f0f0f0;
+            border-bottom: 0.5px solid #ffe4e1;
         }
 
         .sensor-row {
@@ -96,7 +106,7 @@
         .speaker-slot {
             width: 50px;
             height: 4px;
-            background-color: #d1d1d1;
+            background-color: #ffb6c1;
             border-radius: 3px;
         }
 
@@ -107,7 +117,7 @@
             left: 0;
             width: 100%;
             height: 24px;
-            background-color: #ffffff;
+            background-color: #fff9fb;
             z-index: 119;
             display: flex;
             justify-content: space-between;
@@ -115,8 +125,8 @@
             padding: 0 16px;
             font-size: 11px;
             font-weight: 500;
-            color: #111111;
-            border-bottom: 0.5px solid #f0f0f0;
+            color: #d87093;
+            border-bottom: 0.5px solid #ffe4e1;
         }
 
         .status-left, .status-right {
@@ -138,14 +148,14 @@
             flex: 1;
             margin-top: 84px; 
             margin-bottom: 75px;
-            background-color: #ffffff;
+            background-color: #fff9fb;
             overflow: hidden;
             display: flex;
             flex-direction: column;
         }
 
         .chat-screen {
-            background-color: #ffffff;
+            background-color: transparent;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -160,7 +170,7 @@
             padding: 8px 14px;
             background: #ffffff;
             z-index: 10;
-            border-bottom: 1px solid #dbdbdb;
+            border-bottom: 1px solid #ffe4e1;
             flex-shrink: 0;
         }
 
@@ -171,7 +181,7 @@
         }
 
         .back-icon {
-            color: #262626;
+            color: #d87093;
             font-size: 15px;
             cursor: pointer;
         }
@@ -181,8 +191,9 @@
             height: 32px;
             border-radius: 50%;
             overflow: hidden;
-            background: #efefef;
+            background: #ffe4e1;
             flex-shrink: 0;
+            border: 1px solid #ffb6c1;
         }
         .chat-avatar-header img {
             width: 100%;
@@ -193,7 +204,7 @@
         .chat-user-meta .name {
             font-size: 12px;
             font-weight: 600;
-            color: #262626;
+            color: #d87093;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -201,7 +212,7 @@
         }
         .chat-user-meta .status {
             font-size: 9px;
-            color: #8e8e8e;
+            color: #e9967a;
         }
 
         .chat-header-right {
@@ -211,27 +222,57 @@
         }
 
         .chat-header-right i {
-            color: #262626;
+            color: #d87093;
             font-size: 14px;
             cursor: pointer;
         }
 
-        /* [แก้ไขจุดนี้] เปลี่ยนจากการดันช่องว่าง เป็นการเรียงแชทจากล่างขึ้นบนพอดีจอ และรองรับการเลื่อนหากเนื้อหาล้น */
+        /* ส่วนเนื้อหาแชท */
         .chat-body {
-            padding: 12px;
+            padding: 10px 12px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end; 
+            justify-content: space-between; 
             flex: 1;
-            overflow-y: auto;
-            scroll-behavior: smooth;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* เพิ่มเอฟเฟกต์ดาวโปรยปรายด้านในหน้าจอแชท */
+        .chat-body::before {
+            content: "⭐";
+            position: absolute;
+            top: -20px;
+            left: 20%;
+            font-size: 12px;
+            animation: fallStar 5s linear infinite;
+            opacity: 0.7;
+            z-index: 1;
+        }
+        .chat-body::after {
+            content: "✨";
+            position: absolute;
+            top: -20px;
+            left: 70%;
+            font-size: 10px;
+            animation: fallStar 7s linear infinite 2s;
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        @keyframes fallStar {
+            0% { transform: translateY(-10px) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.8; }
+            100% { transform: translateY(450px) rotate(360deg); opacity: 0; }
         }
 
         .chat-flow-container {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
             width: 100%;
+            position: relative;
+            z-index: 2;
         }
 
         .message-row-received {
@@ -249,6 +290,7 @@
             overflow: hidden;
             flex-shrink: 0;
             margin-bottom: 2px;
+            border: 1px solid #ffb6c1;
         }
         .chat-avatar-msg img {
             width: 100%;
@@ -263,36 +305,37 @@
         }
 
         .message.received {
-            background: #efefef;
-            color: #262626;
-            padding: 8px 12px;
+            background: #ffe4e1;
+            color: #b03060;
+            padding: 7px 11px;
             border-radius: 16px;
             border-bottom-left-radius: 4px;
-            font-size: 12px;
+            font-size: 11.5px;
             line-height: 1.35;
             width: fit-content;
             word-wrap: break-word;
         }
 
         .message.sent {
-            background: #0095f6;
+            background: #ff69b4;
             color: #ffffff;
-            padding: 8px 12px;
+            padding: 7px 11px;
             border-radius: 16px;
             border-bottom-right-radius: 4px;
-            font-size: 12px;
+            font-size: 11.5px;
             line-height: 1.35;
             align-self: flex-end;
             width: fit-content;
             word-wrap: break-word;
+            box-shadow: 0 2px 5px rgba(255, 105, 180, 0.3);
         }
 
         .image-message-box {
-            background: #efefef;
+            background: #ffe4e1;
             border-radius: 16px;
             border-bottom-left-radius: 4px;
             padding: 4px;
-            width: 150px;
+            width: 145px;
             overflow: hidden;
         }
 
@@ -309,51 +352,51 @@
         .image-container img {
             width: 100%;
             height: auto;
-            max-height: 80px;
+            max-height: 75px;
             object-fit: cover;
             display: block;
         }
 
         .bank-message-box {
-            background: #efefef;
+            background: #ffe4e1;
             border-radius: 16px;
             border-bottom-left-radius: 4px;
-            padding: 8px 11px;
+            padding: 7px 10px;
             width: fit-content;
             display: flex;
             gap: 8px;
             align-items: center;
-            font-size: 11px;
+            font-size: 10.5px;
         }
 
         .bank-info .title {
             font-weight: 500;
-            color: #262626;
-            font-size: 10px;
+            color: #b03060;
+            font-size: 9.5px;
             margin-bottom: 1px;
         }
         .bank-info .num {
             font-family: monospace;
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 600;
-            color: #262626;
+            color: #b03060;
             letter-spacing: 0.5px;
         }
 
         .copy-btn {
-            background: #dbdbdb;
+            background: #ffb6c1;
             border: none;
-            padding: 5px 8px;
-            border-radius: 9px;
-            font-size: 10px;
-            color: #262626;
+            padding: 4px 7px;
+            border-radius: 8px;
+            font-size: 9.5px;
+            color: #ffffff;
             cursor: pointer;
             font-family: 'Prompt', sans-serif;
             font-weight: 500;
             white-space: nowrap;
         }
         .copy-btn:active {
-            background: #0095f6;
+            background: #ff69b4;
             color: #fff;
         }
 
@@ -363,29 +406,31 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            border-top: 1px solid #dbdbdb;
+            border-top: 1px solid #ffe4e1;
             flex-shrink: 0;
+            z-index: 2;
         }
 
         .chat-input-wrapper {
             flex: 1;
             display: flex;
             align-items: center;
-            background: #efefef;
+            background: #fff0f5;
             border-radius: 18px;
             padding: 4px 10px;
             gap: 6px;
+            border: 1px solid #ffb6c1;
         }
 
         .camera-circle-btn {
             width: 24px;
             height: 24px;
-            background: #dbdbdb;
+            background: #ffb6c1;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #262626;
+            color: #ffffff;
             font-size: 10px;
             flex-shrink: 0;
         }
@@ -393,7 +438,7 @@
         .chat-input-field {
             flex: 1;
             font-size: 12px;
-            color: #262626;
+            color: #b03060;
             outline: none;
             border: none;
             background: transparent;
@@ -403,7 +448,7 @@
         .send-btn {
             background: transparent;
             border: none;
-            color: #0095f6;
+            color: #ff69b4;
             font-weight: 600;
             font-size: 12px;
             cursor: pointer;
@@ -418,25 +463,25 @@
             left: 0;
             width: 100%;
             height: 75px;
-            background-color: #ffffff;
+            background-color: #fff9fb;
             z-index: 120;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-top: 0.5px solid #f0f0f0;
+            border-top: 0.5px solid #ffe4e1;
         }
 
         .home-button-ring {
             width: 44px;
             height: 44px;
-            border: 2px solid #d1d5db;
+            border: 2px solid #ffb6c1;
             border-radius: 50%;
             background: #ffffff;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+            box-shadow: inset 0 1px 3px rgba(255,182,193,0.3);
         }
     </style>
 </head>
@@ -494,7 +539,7 @@
                         </div>
                     </div>
 
-                    <!-- พื้นที่เนื้อหาแชทจัดเรียงจากล่างขึ้นบนพอดีหน้าจอ -->
+                    <!-- พื้นที่เนื้อหาแชทแบบกระจายตัวพอดีหน้าจอ -->
                     <div class="chat-body">
                         <div class="chat-flow-container">
                             <!-- ข้อความทักทาย -->
@@ -538,7 +583,7 @@
 
                                     <div class="bank-message-box">
                                         <div class="bank-info">
-                                            <div class="title"><i class="fas fa-university" style="color:#2563eb;"></i> กสิกรไทย (KBANK)</div>
+                                            <div class="title"><i class="fas fa-university" style="color:#d87093;"></i> กสิกรไทย (KBANK)</div>
                                             <div class="num">123-4-56789-0</div>
                                         </div>
                                         <button class="copy-btn" onclick="copyText('1234567890', this)">คัดลอก</button>
@@ -546,7 +591,7 @@
 
                                     <div class="bank-message-box">
                                         <div class="bank-info">
-                                            <div class="title"><i class="fas fa-wallet" style="color:#f97316;"></i> TrueMoney Wallet</div>
+                                            <div class="title"><i class="fas fa-wallet" style="color:#ff69b4;"></i> TrueMoney Wallet</div>
                                             <div class="num">081-234-5678</div>
                                         </div>
                                         <button class="copy-btn" onclick="copyText('0812345678', this)">คัดลอก</button>
@@ -554,6 +599,9 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- ตัวเว้นพื้นที่ด้านล่างให้สมดุล -->
+                        <div></div>
                     </div>
 
                     <div class="chat-footer">
