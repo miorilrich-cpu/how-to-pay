@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cute IG DM Mockup</title>
+    <title>Cute IG DM - iPhone 6 Style</title>
     <!-- ไอคอนจาก FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- ฟอนต์ Google Fonts (Prompt) -->
@@ -18,7 +18,7 @@
         }
 
         body {
-            background-color: #fff0f5; /* พื้นหลังชมพูอ่อนพาสเทล */
+            background-color: #fff0f5;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,100 +26,117 @@
             padding: 20px;
         }
 
-        /* --- ตัวเครื่อง iPhone 11 ดีไซน์ละมุน --- */
+        /* --- ตัวเครื่อง iPhone 6 (มีขอบบน-ล่าง และปุ่มโฮม) --- */
         .iphone-device {
             position: relative;
-            width: 410px;
-            height: 840px;
+            width: 395px;
+            height: 780px;
             background: linear-gradient(135deg, #ffd1dc 0%, #ffb6c1 100%);
-            border-radius: 52px;
+            border-radius: 48px;
             box-shadow: 
                 0 30px 60px rgba(255, 182, 193, 0.4),
                 inset 0 0 0 2px rgba(255, 255, 255, 0.9),
-                inset 0 0 0 6px #ffc0cb;
+                inset 0 0 0 5px #ffc0cb;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        /* ปุ่มด้านข้าง iPhone 11 */
+        /* ปุ่มด้านข้าง iPhone 6 */
         .side-button {
             position: absolute;
             background: #ffb6c1;
-            border-radius: 4px;
+            border-radius: 3px;
         }
-        .volume-up { left: -9px; top: 165px; width: 4px; height: 34px; }
-        .volume-down { left: -9px; top: 215px; width: 4px; height: 34px; }
-        .power-button { right: -9px; top: 190px; width: 4px; height: 70px; }
+        .volume-up { left: -7px; top: 140px; width: 3px; height: 30px; }
+        .volume-down { left: -7px; top: 185px; width: 3px; height: 30px; }
+        .silent-switch { left: -7px; top: 95px; width: 3px; height: 20px; }
+        .power-button { right: -7px; top: 150px; width: 3px; height: 45px; }
 
-        /* กรอบหน้าจอสีดำด้านใน (Bezel) */
+        /* กรอบหน้าจอสีขาว/ดำด้านใน (Bezel ของ iPhone 6 ทรงดั้งเดิม) */
         .iphone-screen-frame {
             position: relative;
-            width: 386px;
-            height: 816px;
-            background-color: #000000;
-            border-radius: 42px;
+            width: 365px;
+            height: 752px;
+            background-color: #ffffff;
+            border-radius: 36px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            padding: 10px;
-            box-shadow: inset 0 0 4px rgba(255,255,255,0.2);
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
         }
 
-        /* หน้าจอแสดงผลด้านในสุด (สีขาวนวลสะอาดตา) */
+        /* ขอบลำโพงและกล้องหน้าด้านบนของ iPhone 6 */
+        .iphone6-top-speaker {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 48px;
+            background-color: #ffffff;
+            z-index: 120;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 0.5px solid #ffe4e1;
+        }
+
+        .sensor-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 4px;
+        }
+
+        .camera-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #333333;
+            border-radius: 50%;
+        }
+
+        .speaker-slit {
+            width: 50px;
+            height: 4px;
+            background-color: #cccccc;
+            border-radius: 3px;
+        }
+
+        /* Status Bar จำลองตามเรฟเฟอเรนซ์ (ไอคอนเครือข่าย แบต 46%) */
+        .status-bar-top {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 16px;
+            font-size: 11px;
+            color: #666666;
+            font-weight: 500;
+        }
+
+        .status-right {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* หน้าจอแสดงผลด้านในสุด */
         .screen-content-area {
             position: relative;
             width: 100%;
-            height: 100%;
+            flex: 1;
+            margin-top: 48px;
+            margin-bottom: 50px; /* เว้นที่ให้ปุ่มโฮมด้านล่าง */
             background-color: #fff9fb;
-            border-radius: 35px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
         }
 
-        /* Notch (รอยบาก) ด้านบน */
-        .notch {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 150px;
-            height: 25px;
-            background-color: #000000;
-            border-bottom-left-radius: 14px;
-            border-bottom-right-radius: 14px;
-            z-index: 100;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .speaker {
-            width: 45px;
-            height: 4px;
-            background-color: #333333;
-            border-radius: 3px;
-            position: absolute;
-            top: 7px;
-        }
-
-        .camera {
-            width: 10px;
-            height: 10px;
-            background-color: #111111;
-            border-radius: 50%;
-            position: absolute;
-            top: 6px;
-            right: 32px;
-            border: 1px solid #222;
-        }
-
-        /* --- หน้าจอแชทสไตล์น่ารัก --- */
+        /* --- หน้าจอแชท (ข้อมูลเดิมทั้งหมด 100% ไม่ถูกแก้) --- */
         .chat-screen {
             background-color: #fff9fb;
             flex: 1;
-            margin-top: 25px;
             display: flex;
             flex-direction: column;
             overflow-y: auto;
@@ -241,7 +258,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ฟองข้อความฝั่งซ้าย (ร้านค้า - ชมพูอ่อนพาสเทล) */
+        /* ฟองข้อความฝั่งซ้าย */
         .message.received {
             background: #ffe4e1;
             color: #555555;
@@ -256,7 +273,7 @@
             box-shadow: 0 2px 5px rgba(255, 182, 193, 0.15);
         }
 
-        /* ฟองข้อความฝั่งขวา (ตัวเรา - ชมพูเข้ม/ม่วงพาสเทลน่ารักๆ) */
+        /* ฟองข้อความฝั่งขวา */
         .message.sent {
             background: linear-gradient(135deg, #ff8da1 0%, #d8b4fe 100%);
             color: #ffffff;
@@ -336,7 +353,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* ปุ่มคัดลอกสไตล์น่ารัก */
+        /* ปุ่มคัดลอก */
         .copy-btn {
             background: #ffb6c1;
             border: none;
@@ -400,7 +417,6 @@
             font-family: 'Prompt', sans-serif;
         }
 
-        /* ปุ่มส่งข้อความ */
         .send-btn {
             background: transparent;
             border: none;
@@ -416,49 +432,63 @@
             opacity: 0.6;
         }
 
-        .footer-right-icons {
+        /* ขอบล่าง iPhone 6 พร้อมปุ่มโฮมวงกลม */
+        .iphone6-bottom-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #ffffff;
+            z-index: 120;
             display: flex;
-            gap: 12px;
-            color: #ffb6c1;
-            font-size: 18px;
             align-items: center;
+            justify-content: center;
+            border-top: 0.5px solid #ffe4e1;
         }
 
-        /* Home Indicator (ขีดด้านล่างจอ iPhone) */
-        .home-indicator {
-            width: 120px;
-            height: 4px;
-            background-color: #000000;
-            border-radius: 100px;
-            position: absolute;
-            bottom: 6px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 100;
-            opacity: 0.3;
+        .home-button-circle {
+            width: 36px;
+            height: 36px;
+            border: 2px solid #ffb6c1;
+            border-radius: 50%;
+            background: #fff9fb;
+            cursor: pointer;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
         }
     </style>
 </head>
 <body>
 
-    <!-- บอดี้ตัวเครื่อง iPhone 11 พาสเทล -->
+    <!-- บอดี้ตัวเครื่อง iPhone 6 -->
     <div class="iphone-device">
         <!-- ปุ่มข้างเครื่อง -->
+        <div class="side-button silent-switch"></div>
         <div class="side-button volume-up"></div>
         <div class="side-button volume-down"></div>
         <div class="side-button power-button"></div>
 
-        <!-- กรอบหน้าจอสีดำ (Bezel) -->
+        <!-- กรอบหน้าจอ (Bezel) -->
         <div class="iphone-screen-frame">
-            <!-- พื้นที่หน้าจอแสดงผล -->
-            <div class="screen-content-area">
-                <!-- Notch (รอยบาก) ด้านบน -->
-                <div class="notch">
-                    <div class="speaker"></div>
-                    <div class="camera"></div>
+            
+            <!-- ขอบบน iPhone 6 (ลำโพง กล้อง และ Status Bar) -->
+            <div class="iphone6-top-speaker">
+                <div class="sensor-row">
+                    <div class="camera-dot"></div>
+                    <div class="speaker-slit"></div>
                 </div>
+                <div class="status-bar-top">
+                    <span>14:49</span>
+                    <div class="status-right">
+                        <i class="fas fa-signal" style="font-size: 10px;"></i>
+                        <i class="fas fa-wifi" style="font-size: 10px;"></i>
+                        <span>46% <i class="fas fa-battery-three-quarters"></i></span>
+                    </div>
+                </div>
+            </div>
 
-                <!-- หน้าจอแชทภายใน -->
+            <!-- พื้นที่หน้าจอแสดงผลตรงกลาง -->
+            <div class="screen-content-area">
                 <div class="chat-screen">
                     <!-- Header แชท -->
                     <div class="chat-header">
@@ -550,18 +580,18 @@
                             <div class="camera-circle-btn">
                                 <i class="fas fa-camera"></i>
                             </div>
-                            <!-- ช่องพิมพ์ที่มีข้อความค้างไว้ -->
                             <input type="text" id="chatInput" class="chat-input-field" value="ขอช่องทางการโอนหน่อยค้าบ">
-                            
-                            <!-- ปุ่มส่ง -->
                             <button class="send-btn" onclick="sendMessage()">ส่ง</button>
                         </div>
                     </div>
                 </div>
-
-                <!-- Home Indicator ขีดด้านล่างจอไอโฟน -->
-                <div class="home-indicator"></div>
             </div>
+
+            <!-- ขอบล่าง iPhone 6 พร้อมปุ่มโฮม (Home Button) -->
+            <div class="iphone6-bottom-bar">
+                <div class="home-button-circle" onclick="sendMessage()"></div>
+            </div>
+
         </div>
     </div>
 
@@ -573,17 +603,12 @@
             
             if(textValue === "") return;
 
-            // อัปเดตข้อความในฟองฝั่งขวา
             document.getElementById('sentMessageBubble').innerText = textValue;
-
-            // แสดงส่วนรูปภาพและเลขบัญชี
             const interactiveContent = document.getElementById('interactiveContent');
             interactiveContent.style.display = 'flex';
             
-            // ล้างข้อความในช่องพิมพ์
             inputField.value = '';
             
-            // เลื่อนหน้าจอแชทลงมาด้านล่างสุดอัตโนมัติ
             const chatBody = document.getElementById('chatBody');
             chatBody.scrollTop = chatBody.scrollHeight;
         }
