@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cute IG DM - Precise iPhone 6 Layout</title>
+    <title>Classic iPhone 6 - IG DM</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -16,7 +16,7 @@
         }
 
         body {
-            background-color: #fff0f5;
+            background-color: #f0f2f5;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -24,120 +24,34 @@
             padding: 30px 20px;
         }
 
-        .iphone-case-container {
-            position: relative;
-            margin-left: 30px;
-        }
-
-        /* โครงตัวเครื่อง iPhone 6 สีเงินละมุนตามเรฟ */
+        /* โครงตัวเครื่อง iPhone 6 คลาสสิก */
         .iphone-device {
             position: relative;
             width: 375px;
             height: 750px;
-            background: linear-gradient(135deg, #f5f5f7 0%, #e4e4e7 100%);
+            background: linear-gradient(135deg, #f5f5f7 0%, #d1d5db 100%);
             border-radius: 48px;
             box-shadow: 
-                0 25px 50px rgba(255, 182, 193, 0.4),
+                0 25px 50px rgba(0, 0, 0, 0.15),
                 inset 0 0 0 2px #ffffff,
-                inset 0 0 0 4px #d1d5db;
+                inset 0 0 0 4px #c0c4cc;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        /* หูแมวและอุ้งเท้าด้านข้าง (สไตล์ที่คุณเลือกก่อนหน้า) */
-        .cat-ear {
-            position: absolute;
-            top: -22px;
-            width: 55px;
-            height: 40px;
-            background: #ffffff;
-            border-top-left-radius: 30px;
-            border-top-right-radius: 30px;
-            box-shadow: 0 -5px 10px rgba(255, 182, 193, 0.3);
-            z-index: 5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .cat-ear::after {
-            content: '';
-            width: 30px;
-            height: 22px;
-            background: #ffb6c1;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            margin-top: 6px;
-        }
-        .cat-ear.left { left: 45px; transform: rotate(-8deg); }
-        .cat-ear.right { right: 45px; transform: rotate(8deg); }
-
-        .cat-paw-corner {
-            position: absolute;
-            bottom: 12px;
-            font-size: 18px;
-            z-index: 130;
-            filter: drop-shadow(0 2px 3px rgba(255, 182, 193, 0.5));
-        }
-        .paw-bottom-left { left: 16px; transform: rotate(-25deg); }
-        .paw-bottom-right { right: 16px; transform: rotate(25deg); }
-
-        .charm-strap {
-            position: absolute;
-            left: -48px;
-            bottom: 110px;
-            display: flex;
-            align-items: center;
-            z-index: 150;
-        }
-        .chain-dots {
-            width: 38px;
-            height: 8px;
-            background: radial-gradient(circle, #ffb6c1 45%, transparent 50%);
-            background-size: 8px 8px;
-        }
-        .paw-pendant {
-            width: 44px;
-            height: 44px;
-            background: linear-gradient(135deg, #ffc0cb 0%, #ff69b4 100%);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(255, 105, 180, 0.4);
-            border: 2px solid #ffffff;
-            position: relative;
-        }
-        .paw-pad-main {
-            width: 20px;
-            height: 17px;
-            background: #ffffff;
-            border-radius: 50% 50% 40% 40%;
-            position: absolute;
-            bottom: 8px;
-        }
-        .paw-toe-1, .paw-toe-2, .paw-toe-3 {
-            position: absolute;
-            width: 7px;
-            height: 8px;
-            background: #ffffff;
-            border-radius: 50%;
-            top: 7px;
-        }
-        .paw-toe-1 { left: 9px; }
-        .paw-toe-2 { left: 18.5px; top: 5px; }
-        .paw-toe-3 { right: 9px; }
-
+        /* ปุ่มด้านข้างตัวเครื่อง */
         .side-button {
             position: absolute;
-            background: #d1d5db;
+            background: #c0c4cc;
             border-radius: 2px;
         }
+        .silent-switch { left: -4px; top: 90px; width: 3px; height: 18px; }
         .volume-up { left: -4px; top: 130px; width: 3px; height: 32px; }
         .volume-down { left: -4px; top: 175px; width: 3px; height: 32px; }
         .power-button { right: -4px; top: 135px; width: 3px; height: 45px; }
 
-        /* กรอบหน้าจอสีขาวด้านในแบบ iPhone 6 (ตามเรฟเป๊ะๆ) */
+        /* กรอบหน้าจอสีขาวด้านในแบบ iPhone 6 */
         .iphone-screen-frame {
             position: relative;
             width: 345px;
@@ -150,7 +64,7 @@
             box-shadow: inset 0 0 6px rgba(0,0,0,0.06);
         }
 
-        /* --- ขอบบน (Bezel) สัดส่วนตามเรฟ --- */
+        /* ขอบบน iPhone 6 (กล้อง + ลำโพงรี) */
         .iphone6-top-bezel {
             position: absolute;
             top: 0;
@@ -171,7 +85,6 @@
             align-items: center;
             justify-content: center;
             gap: 12px;
-            margin-bottom: 8px;
         }
 
         .camera-dot {
@@ -188,30 +101,22 @@
             border-radius: 3px;
         }
 
-        .sensor-circle {
-            width: 8px;
-            height: 8px;
-            background-color: #3b3b3b;
-            border-radius: 50%;
-            display: none; /* ปรับตามเรฟที่มีรูปร่างเรียบสะอาด */
-        }
-
-        /* พื้นที่หน้าจอแสดงผลแชท (จำกัดกรอบให้อยู่ระหว่างขอบบนและขอบล่างตามเรฟ) */
+        /* พื้นที่แสดงผลแชท */
         .screen-content-area {
             position: relative;
             width: 100%;
             flex: 1;
             margin-top: 75px;
             margin-bottom: 75px;
-            background-color: #fff9fb;
+            background-color: #ffffff;
             overflow: hidden;
             display: flex;
             flex-direction: column;
         }
 
-        /* --- หน้าจอแชทภายใน (เนื้อหาของคุณครบถ้วน) --- */
+        /* หน้าจอแชทภายใน */
         .chat-screen {
-            background-color: #fff9fb;
+            background-color: #ffffff;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -232,7 +137,7 @@
             position: sticky;
             top: 0;
             z-index: 10;
-            border-bottom: 1px solid #ffe4e1;
+            border-bottom: 1px solid #dbdbdb;
         }
 
         .chat-header-left {
@@ -242,7 +147,7 @@
         }
 
         .back-icon {
-            color: #ff69b4;
+            color: #262626;
             font-size: 15px;
             cursor: pointer;
         }
@@ -252,9 +157,8 @@
             height: 34px;
             border-radius: 50%;
             overflow: hidden;
-            background: #ffe4e1;
+            background: #efefef;
             flex-shrink: 0;
-            border: 1px solid #ffb6c1;
         }
         .chat-avatar-header img {
             width: 100%;
@@ -265,7 +169,7 @@
         .chat-user-meta .name {
             font-size: 13px;
             font-weight: 600;
-            color: #db7093;
+            color: #262626;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -273,7 +177,7 @@
         }
         .chat-user-meta .status {
             font-size: 10px;
-            color: #d8bfd8;
+            color: #8e8e8e;
         }
 
         .chat-header-right {
@@ -283,7 +187,7 @@
         }
 
         .chat-header-right i {
-            color: #ff69b4;
+            color: #262626;
             font-size: 15px;
             cursor: pointer;
         }
@@ -312,7 +216,6 @@
             overflow: hidden;
             flex-shrink: 0;
             margin-bottom: 2px;
-            border: 1px solid #ffb6c1;
         }
         .chat-avatar-msg img {
             width: 100%;
@@ -332,8 +235,8 @@
         }
 
         .message.received {
-            background: #ffe4e1;
-            color: #555555;
+            background: #efefef;
+            color: #262626;
             padding: 10px 14px;
             border-radius: 18px;
             border-bottom-left-radius: 4px;
@@ -341,11 +244,10 @@
             line-height: 1.4;
             width: fit-content;
             word-wrap: break-word;
-            box-shadow: 0 2px 5px rgba(255, 182, 193, 0.15);
         }
 
         .message.sent {
-            background: linear-gradient(135deg, #ff8da1 0%, #d8b4fe 100%);
+            background: #0095f6;
             color: #ffffff;
             padding: 10px 14px;
             border-radius: 18px;
@@ -357,7 +259,6 @@
             font-weight: 400;
             animation: fadeIn 0.35s ease;
             word-wrap: break-word;
-            box-shadow: 0 2px 5px rgba(255, 141, 161, 0.3);
         }
 
         #interactiveContent {
@@ -367,13 +268,12 @@
         }
 
         .image-message-box {
-            background: #ffe4e1;
+            background: #efefef;
             border-radius: 18px;
             border-bottom-left-radius: 4px;
             padding: 6px;
             width: 200px;
             overflow: hidden;
-            box-shadow: 0 2px 5px rgba(255, 182, 193, 0.15);
         }
 
         .image-container {
@@ -394,7 +294,7 @@
         }
 
         .bank-message-box {
-            background: #ffe4e1;
+            background: #efefef;
             border-radius: 18px;
             border-bottom-left-radius: 4px;
             padding: 10px 14px;
@@ -403,12 +303,11 @@
             gap: 14px;
             align-items: center;
             font-size: 12px;
-            box-shadow: 0 2px 5px rgba(255, 182, 193, 0.15);
         }
 
         .bank-info .title {
             font-weight: 500;
-            color: #b76e79;
+            color: #262626;
             font-size: 11px;
             margin-bottom: 2px;
         }
@@ -416,27 +315,26 @@
             font-family: monospace;
             font-size: 13px;
             font-weight: 600;
-            color: #444444;
+            color: #262626;
             letter-spacing: 0.5px;
         }
 
         .copy-btn {
-            background: #ffb6c1;
+            background: #dbdbdb;
             border: none;
             padding: 6px 10px;
             border-radius: 12px;
             font-size: 11px;
-            color: #ffffff;
+            color: #262626;
             cursor: pointer;
             font-family: 'Prompt', sans-serif;
             transition: all 0.2s;
             font-weight: 500;
             white-space: nowrap;
-            box-shadow: 0 2px 4px rgba(255, 182, 193, 0.4);
         }
         .copy-btn:active {
-            background: #ff69b4;
-            transform: scale(0.95);
+            background: #0095f6;
+            color: #fff;
         }
 
         .chat-footer {
@@ -445,15 +343,14 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            border-top: 1px solid #ffe4e1;
+            border-top: 1px solid #dbdbdb;
         }
 
         .chat-input-wrapper {
             flex: 1;
             display: flex;
             align-items: center;
-            background: #fff0f5;
-            border: 1px solid #ffb6c1;
+            background: #efefef;
             border-radius: 20px;
             padding: 5px 12px;
             gap: 8px;
@@ -462,12 +359,12 @@
         .camera-circle-btn {
             width: 26px;
             height: 26px;
-            background: #ffb6c1;
+            background: #dbdbdb;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #fff;
+            color: #262626;
             font-size: 11px;
             flex-shrink: 0;
         }
@@ -475,7 +372,7 @@
         .chat-input-field {
             flex: 1;
             font-size: 13px;
-            color: #555555;
+            color: #262626;
             outline: none;
             border: none;
             background: transparent;
@@ -485,7 +382,7 @@
         .send-btn {
             background: transparent;
             border: none;
-            color: #ff69b4;
+            color: #0095f6;
             font-weight: 600;
             font-size: 13px;
             cursor: pointer;
@@ -493,7 +390,7 @@
             padding: 2px 4px;
         }
 
-        /* --- ขอบล่าง (Bezel) พร้อมปุ่มโฮมกลมๆ ตามเรฟ --- */
+        /* ขอบล่าง iPhone 6 พร้อมปุ่มโฮมเกลี้ยงๆ ไม่มีกรอบสี่เหลี่ยมด้านใน */
         .iphone6-bottom-bezel {
             position: absolute;
             bottom: 0;
@@ -524,152 +421,123 @@
         .home-button-ring:active {
             background: #f3f4f6;
         }
-
-        .home-inner-square {
-            width: 14px;
-            height: 14px;
-            border: 1.5px solid #9ca3af;
-            border-radius: 4px;
-        }
     </style>
 </head>
 <body>
 
-    <div class="iphone-case-container">
-        <!-- หูแมว -->
-        <div class="cat-ear left"></div>
-        <div class="cat-ear right"></div>
+    <div class="iphone-device">
+        <!-- ปุ่มข้างตัวเครื่อง -->
+        <div class="side-button silent-switch"></div>
+        <div class="side-button volume-up"></div>
+        <div class="side-button volume-down"></div>
+        <div class="side-button power-button"></div>
 
-        <!-- สายห้อยพวงกุญแจอุ้งเท้า -->
-        <div class="charm-strap">
-            <div class="chain-dots"></div>
-            <div class="paw-pendant">
-                <div class="paw-toe-1"></div>
-                <div class="paw-toe-2"></div>
-                <div class="paw-toe-3"></div>
-                <div class="paw-pad-main"></div>
-            </div>
-        </div>
-
-        <div class="iphone-device">
-            <!-- ปุ่มข้างตัวเครื่อง -->
-            <div class="side-button volume-up"></div>
-            <div class="side-button volume-down"></div>
-            <div class="side-button power-button"></div>
-
-            <!-- อุ้งเท้าที่มุมล่าง -->
-            <div class="cat-paw-corner paw-bottom-left">🐾</div>
-            <div class="cat-paw-corner paw-bottom-right">🐾</div>
-
-            <!-- กรอบหน้าจอโทรศัพท์ -->
-            <div class="iphone-screen-frame">
-                
-                <!-- ขอบบน iPhone 6 ตามเรฟ (กล้อง + ลำโพงรี) -->
-                <div class="iphone6-top-bezel">
-                    <div class="sensor-row">
-                        <div class="camera-dot"></div>
-                        <div class="speaker-slot"></div>
-                    </div>
+        <!-- กรอบหน้าจอโทรศัพท์ -->
+        <div class="iphone-screen-frame">
+            
+            <!-- ขอบบน iPhone 6 -->
+            <div class="iphone6-top-bezel">
+                <div class="sensor-row">
+                    <div class="camera-dot"></div>
+                    <div class="speaker-slot"></div>
                 </div>
+            </div>
 
-                <!-- พื้นที่เนื้อหาแชท -->
-                <div class="screen-content-area">
-                    <div class="chat-screen">
-                        <div class="chat-header">
-                            <div class="chat-header-left">
-                                <i class="fas fa-chevron-left back-icon"></i>
-                                <div class="chat-avatar-header">
-                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
-                                </div>
-                                <div class="chat-user-meta">
-                                    <div class="name">wongsuda_shop ✨</div>
-                                    <div class="status">Active 5m ago</div>
-                                </div>
+            <!-- พื้นที่เนื้อหาแชท -->
+            <div class="screen-content-area">
+                <div class="chat-screen">
+                    <div class="chat-header">
+                        <div class="chat-header-left">
+                            <i class="fas fa-chevron-left back-icon"></i>
+                            <div class="chat-avatar-header">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
                             </div>
-                            <div class="chat-header-right">
-                                <i class="fas fa-phone"></i>
-                                <i class="fas fa-video"></i>
-                                <i class="fas fa-circle-info"></i>
+                            <div class="chat-user-meta">
+                                <div class="name">wongsuda_shop ✨</div>
+                                <div class="status">Active 5m ago</div>
+                            </div>
+                        </div>
+                        <div class="chat-header-right">
+                            <i class="fas fa-phone"></i>
+                            <i class="fas fa-video"></i>
+                            <i class="fas fa-circle-info"></i>
+                        </div>
+                    </div>
+
+                    <div class="chat-body" id="chatBody">
+                        <div class="message-row-received">
+                            <div class="chat-avatar-msg">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
+                            </div>
+                            <div class="received-content-group">
+                                <div class="message received">
+                                    สวัสดีค่ะคุณลูกค้า สนใจบริการตัวแทนดันกลุ่ม สอบถามรายละเอียดได้เลยน้า 💖🌷
+                                </div>
                             </div>
                         </div>
 
-                        <div class="chat-body" id="chatBody">
+                        <div id="interactiveContent">
+                            <div class="message sent" id="sentMessageBubble">
+                                ขอช่องทางการโอนหน่อยค้าบ
+                            </div>
+
+                            <div class="message-row-received">
+                                <div class="chat-avatar-msg">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
+                                </div>
+                                <div class="image-message-box">
+                                    <div class="image-container">
+                                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&fit=crop" alt="Shared Image">
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="message-row-received">
                                 <div class="chat-avatar-msg">
                                     <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
                                 </div>
                                 <div class="received-content-group">
                                     <div class="message received">
-                                        สวัสดีค่ะคุณลูกค้า สนใจบริการตัวแทนดันกลุ่ม สอบถามรายละเอียดได้เลยน้า 💖🌷
+                                        ได้เลยค่ะคุณลูกค้า 😊 ช่องทางการชำระเงินตามนี้เลยนะค้าบ 👇
                                     </div>
-                                </div>
-                            </div>
 
-                            <div id="interactiveContent">
-                                <div class="message sent" id="sentMessageBubble">
-                                    ขอช่องทางการโอนหน่อยค้าบ
-                                </div>
-
-                                <div class="message-row-received">
-                                    <div class="chat-avatar-msg">
-                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
+                                    <div class="bank-message-box">
+                                        <div class="bank-info">
+                                            <div class="title"><i class="fas fa-university" style="color:#2563eb;"></i> กสิกรไทย (KBANK)</div>
+                                            <div class="num">123-4-56789-0</div>
+                                        </div>
+                                        <button class="copy-btn" onclick="copyText('1234567890', this)">คัดลอก</button>
                                     </div>
-                                    <div class="image-message-box">
-                                        <div class="image-container">
-                                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&fit=crop" alt="Shared Image">
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="message-row-received">
-                                    <div class="chat-avatar-msg">
-                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
-                                    </div>
-                                    <div class="received-content-group">
-                                        <div class="message received">
-                                            ได้เลยค่ะคุณลูกค้า 😊 ช่องทางการชำระเงินตามนี้เลยนะค้าบ 👇
+                                    <div class="bank-message-box">
+                                        <div class="bank-info">
+                                            <div class="title"><i class="fas fa-wallet" style="color:#f97316;"></i> TrueMoney Wallet</div>
+                                            <div class="num">081-234-5678</div>
                                         </div>
-
-                                        <div class="bank-message-box">
-                                            <div class="bank-info">
-                                                <div class="title"><i class="fas fa-university" style="color:#2563eb;"></i> กสิกรไทย (KBANK)</div>
-                                                <div class="num">123-4-56789-0</div>
-                                            </div>
-                                            <button class="copy-btn" onclick="copyText('1234567890', this)">คัดลอก</button>
-                                        </div>
-
-                                        <div class="bank-message-box">
-                                            <div class="bank-info">
-                                                <div class="title"><i class="fas fa-wallet" style="color:#f97316;"></i> TrueMoney Wallet</div>
-                                                <div class="num">081-234-5678</div>
-                                            </div>
-                                            <button class="copy-btn" onclick="copyText('0812345678', this)">คัดลอก</button>
-                                        </div>
+                                        <button class="copy-btn" onclick="copyText('0812345678', this)">คัดลอก</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="chat-footer">
-                            <div class="chat-input-wrapper">
-                                <div class="camera-circle-btn">
-                                    <i class="fas fa-camera"></i>
-                                </div>
-                                <input type="text" id="chatInput" class="chat-input-field" value="ขอช่องทางการโอนหน่อยค้าบ">
-                                <button class="send-btn" onclick="sendMessage()">ส่ง</button>
+                    <div class="chat-footer">
+                        <div class="chat-input-wrapper">
+                            <div class="camera-circle-btn">
+                                <i class="fas fa-camera"></i>
                             </div>
+                            <input type="text" id="chatInput" class="chat-input-field" value="ขอช่องทางการโอนหน่อยค้าบ">
+                            <button class="send-btn" onclick="sendMessage()">ส่ง</button>
                         </div>
                     </div>
                 </div>
-
-                <!-- ขอบล่าง iPhone 6 พร้อมปุ่มโฮมกลมๆ ตามเรฟ -->
-                <div class="iphone6-bottom-bezel">
-                    <div class="home-button-ring" onclick="sendMessage()">
-                        <div class="home-inner-square"></div>
-                    </div>
-                </div>
-
             </div>
+
+            <!-- ขอบล่าง iPhone 6 พร้อมปุ่มโฮมเกลี้ยงๆ -->
+            <div class="iphone6-bottom-bezel">
+                <div class="home-button-ring" onclick="sendMessage()"></div>
+            </div>
+
         </div>
     </div>
 
@@ -691,10 +559,8 @@
             navigator.clipboard.writeText(text).then(() => {
                 let originalText = btn.innerText;
                 btn.innerText = 'คัดลอกแล้ว!';
-                btn.style.background = '#ff69b4';
                 setTimeout(() => {
                     btn.innerText = originalText;
-                    btn.style.background = '#ffb6c1';
                 }, 1500);
             });
         }
