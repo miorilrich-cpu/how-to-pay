@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classic iPhone 6 - IG DM</title>
+    <title>Classic iPhone 6 - IG DM (Fixed Screen)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -101,7 +101,7 @@
             border-radius: 3px;
         }
 
-        /* พื้นที่แสดงผลแชท */
+        /* พื้นที่แสดงผลแชท (ล็อกไม่ให้เลื่อนออกนอกกรอบ) */
         .screen-content-area {
             position: relative;
             width: 100%;
@@ -109,7 +109,7 @@
             margin-top: 75px;
             margin-bottom: 75px;
             background-color: #ffffff;
-            overflow: hidden;
+            overflow: hidden; /* ล็อกไม่ให้มี Scrollbar ภายนอก */
             display: flex;
             flex-direction: column;
         }
@@ -120,24 +120,19 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            overflow-y: auto;
+            overflow: hidden; /* ปิดการเลื่อนหน้าจอ */
             position: relative;
-        }
-
-        .chat-screen::-webkit-scrollbar {
-            display: none;
         }
 
         .chat-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px 14px;
+            padding: 8px 14px;
             background: #ffffff;
-            position: sticky;
-            top: 0;
             z-index: 10;
             border-bottom: 1px solid #dbdbdb;
+            flex-shrink: 0;
         }
 
         .chat-header-left {
@@ -153,8 +148,8 @@
         }
 
         .chat-avatar-header {
-            width: 34px;
-            height: 34px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             overflow: hidden;
             background: #efefef;
@@ -167,7 +162,7 @@
         }
 
         .chat-user-meta .name {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             color: #262626;
             white-space: nowrap;
@@ -176,42 +171,45 @@
             max-width: 160px;
         }
         .chat-user-meta .status {
-            font-size: 10px;
+            font-size: 9px;
             color: #8e8e8e;
         }
 
         .chat-header-right {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
         }
 
         .chat-header-right i {
             color: #262626;
-            font-size: 15px;
+            font-size: 14px;
             cursor: pointer;
         }
 
+        /* ตัวบอดี้แชท จัดระยะให้พอดีหน้าจอเป๊ะๆ */
         .chat-body {
-            padding: 14px 12px;
+            padding: 10px 12px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 8px;
             flex: 1;
+            justify-content: flex-end; /* ดันข้อความทั้งหมดให้เรียงขึ้นมาจากด้านล่างพอดีช่อง */
+            overflow: hidden;
         }
 
         .message-row-received {
             display: flex;
             align-items: flex-end;
-            gap: 8px;
+            gap: 6px;
             align-self: flex-start;
             max-width: 85%;
             animation: fadeIn 0.35s ease;
         }
 
         .chat-avatar-msg {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             border-radius: 50%;
             overflow: hidden;
             flex-shrink: 0;
@@ -226,22 +224,22 @@
         .received-content-group {
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 4px;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
+            from { opacity: 0; transform: translateY(6px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .message.received {
             background: #efefef;
             color: #262626;
-            padding: 10px 14px;
-            border-radius: 18px;
+            padding: 8px 12px;
+            border-radius: 16px;
             border-bottom-left-radius: 4px;
-            font-size: 13px;
-            line-height: 1.4;
+            font-size: 12px;
+            line-height: 1.35;
             width: fit-content;
             word-wrap: break-word;
         }
@@ -249,11 +247,11 @@
         .message.sent {
             background: #0095f6;
             color: #ffffff;
-            padding: 10px 14px;
-            border-radius: 18px;
+            padding: 8px 12px;
+            border-radius: 16px;
             border-bottom-right-radius: 4px;
-            font-size: 13px;
-            line-height: 1.4;
+            font-size: 12px;
+            line-height: 1.35;
             align-self: flex-end;
             width: fit-content;
             font-weight: 400;
@@ -264,21 +262,21 @@
         #interactiveContent {
             display: none;
             flex-direction: column;
-            gap: 12px;
+            gap: 8px;
         }
 
         .image-message-box {
             background: #efefef;
-            border-radius: 18px;
+            border-radius: 16px;
             border-bottom-left-radius: 4px;
-            padding: 6px;
-            width: 200px;
+            padding: 5px;
+            width: 170px;
             overflow: hidden;
         }
 
         .image-container {
             width: 100%;
-            border-radius: 14px;
+            border-radius: 12px;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -289,31 +287,32 @@
         .image-container img {
             width: 100%;
             height: auto;
+            max-height: 100px;
             object-fit: cover;
             display: block;
         }
 
         .bank-message-box {
             background: #efefef;
-            border-radius: 18px;
+            border-radius: 16px;
             border-bottom-left-radius: 4px;
-            padding: 10px 14px;
+            padding: 8px 12px;
             width: fit-content;
             display: flex;
-            gap: 14px;
+            gap: 10px;
             align-items: center;
-            font-size: 12px;
+            font-size: 11px;
         }
 
         .bank-info .title {
             font-weight: 500;
             color: #262626;
-            font-size: 11px;
-            margin-bottom: 2px;
+            font-size: 10px;
+            margin-bottom: 1px;
         }
         .bank-info .num {
             font-family: monospace;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             color: #262626;
             letter-spacing: 0.5px;
@@ -322,9 +321,9 @@
         .copy-btn {
             background: #dbdbdb;
             border: none;
-            padding: 6px 10px;
-            border-radius: 12px;
-            font-size: 11px;
+            padding: 5px 8px;
+            border-radius: 10px;
+            font-size: 10px;
             color: #262626;
             cursor: pointer;
             font-family: 'Prompt', sans-serif;
@@ -338,12 +337,13 @@
         }
 
         .chat-footer {
-            padding: 8px 12px 14px 12px;
+            padding: 8px 12px 10px 12px;
             background: #ffffff;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             border-top: 1px solid #dbdbdb;
+            flex-shrink: 0;
         }
 
         .chat-input-wrapper {
@@ -351,27 +351,27 @@
             display: flex;
             align-items: center;
             background: #efefef;
-            border-radius: 20px;
-            padding: 5px 12px;
-            gap: 8px;
+            border-radius: 18px;
+            padding: 4px 10px;
+            gap: 6px;
         }
 
         .camera-circle-btn {
-            width: 26px;
-            height: 26px;
+            width: 24px;
+            height: 24px;
             background: #dbdbdb;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #262626;
-            font-size: 11px;
+            font-size: 10px;
             flex-shrink: 0;
         }
 
         .chat-input-field {
             flex: 1;
-            font-size: 13px;
+            font-size: 12px;
             color: #262626;
             outline: none;
             border: none;
@@ -384,13 +384,13 @@
             border: none;
             color: #0095f6;
             font-weight: 600;
-            font-size: 13px;
+            font-size: 12px;
             cursor: pointer;
             font-family: 'Prompt', sans-serif;
             padding: 2px 4px;
         }
 
-        /* ขอบล่าง iPhone 6 พร้อมปุ่มโฮมเกลี้ยงๆ ไม่มีกรอบสี่เหลี่ยมด้านใน */
+        /* ขอบล่าง iPhone 6 พร้อมปุ่มโฮมเกลี้ยงๆ */
         .iphone6-bottom-bezel {
             position: absolute;
             bottom: 0;
@@ -550,9 +550,6 @@
             document.getElementById('sentMessageBubble').innerText = textValue;
             document.getElementById('interactiveContent').style.display = 'flex';
             inputField.value = '';
-            
-            const chatBody = document.getElementById('chatBody');
-            chatBody.scrollTop = chatBody.scrollHeight;
         }
 
         function copyText(text, btn) {
