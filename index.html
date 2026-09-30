@@ -295,6 +295,10 @@
             word-wrap: break-word;
         }
 
+        #sentMessageBubble {
+            display: none; /* ซ่อนไว้ก่อนจนกว่าจะกดส่ง */
+        }
+
         #interactiveContent {
             display: none;
             flex-direction: column;
@@ -545,10 +549,8 @@
                                 </div>
                             </div>
 
-                            <!-- ข้อความส่ง: จะคงอยู่ถาวรไม่หายไปไหนเมื่อกดส่ง -->
-                            <div class="message sent" id="sentMessageBubble">
-                                ขอช่องการโอน เจ้ามิ หน่อย💖
-                            </div>
+                            <!-- บับเบิลข้อความส่ง (จะถูกแสดงขึ้นมาเมื่อกดส่งข้อความ) -->
+                            <div class="message sent" id="sentMessageBubble"></div>
 
                             <div id="interactiveContent">
                                 <div class="message-row-received">
@@ -598,7 +600,8 @@
                             <div class="camera-circle-btn">
                                 <i class="fas fa-plus"></i>
                             </div>
-                            <input type="text" id="chatInput" class="chat-input-field" placeholder="ส่งข้อความ..." autofocus>
+                            <!-- ช่องพิมพ์เริ่มต้นจะมีข้อความ "ขอช่องการโอน เจ้ามิ หน่อย💖" รอไว้ -->
+                            <input type="text" id="chatInput" class="chat-input-field" value="ขอช่องการโอน เจ้ามิ หน่อย💖" autofocus>
                             <button class="send-btn" onclick="sendMessage()">ส่ง</button>
                         </div>
                     </div>
@@ -614,15 +617,24 @@
 
     <script>
         function sendMessage() {
-            // แสดงส่วนเนื้อหาที่ร้านตอบกลับมา (รูปภาพและเลขบัญชี)
+            const inputField = document.getElementById('chatInput');
+            const textValue = inputField.value.trim();
+            if(textValue === "") return;
+
+            // นำข้อความจากช่องพิมพ์ไปใส่ในบับเบิลด้านบน แล้วแสดงผลขึ้นมา
+            const sentBubble = document.getElementById('sentMessageBubble');
+            sentBubble.innerText = textValue;
+            sentBubble.style.display = 'block';
+            
+            // แสดงส่วนเนื้อหาที่ร้านตอบกลับมา
             document.getElementById('interactiveContent').style.display = 'flex';
             
             // เลื่อนหน้าจอแชทลงมาด้านล่างสุด
             const chatBody = document.getElementById('chatBody');
             chatBody.scrollTop = chatBody.scrollHeight;
 
-            // เคลียร์ข้อความเฉพาะใน "ช่องพิมพ์ด้านล่าง" ให้ว่างเปล่า (แต่ข้อความในบับเบิลด้านบนยังคงอยู่เหมือนเดิม)
-            document.getElementById('chatInput').value = "";
+            // เคลียร์ช่องพิมพ์ด้านล่างให้ว่างเปล่า
+            inputField.value = "";
         }
 
         // รองรับการกดปุ่ม Enter เพื่อส่งข้อความ
