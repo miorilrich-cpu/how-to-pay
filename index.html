@@ -296,7 +296,7 @@
         }
 
         #sentMessageBubble {
-            display: none; /* ซ่อนไว้ก่อนจนกว่าจะกดส่ง */
+            display: none; 
         }
 
         #interactiveContent {
@@ -421,6 +421,12 @@
             border: none;
             background: transparent;
             font-family: 'Prompt', sans-serif;
+        }
+
+        /* แต่งสีข้อความ Placeholder ให้สวยงามกลมกลืน */
+        .chat-input-field::placeholder {
+            color: #f4a2b9;
+            opacity: 1;
         }
 
         .send-btn {
@@ -549,7 +555,7 @@
                                 </div>
                             </div>
 
-                            <!-- บับเบิลข้อความส่ง (จะถูกแสดงขึ้นมาเมื่อกดส่งข้อความ) -->
+                            <!-- บับเบิลข้อความส่ง (จะปรากฏขึ้นมาเมื่อกดส่งข้อความ) -->
                             <div class="message sent" id="sentMessageBubble"></div>
 
                             <div id="interactiveContent">
@@ -600,8 +606,8 @@
                             <div class="camera-circle-btn">
                                 <i class="fas fa-plus"></i>
                             </div>
-                            <!-- ช่องพิมพ์เริ่มต้นจะมีข้อความ "ขอช่องการโอน เจ้ามิ หน่อย💖" รอไว้ -->
-                            <input type="text" id="chatInput" class="chat-input-field" value="ขอช่องการโอน เจ้ามิ หน่อย💖" autofocus>
+                            <!-- ใช้ Placeholder บังข้อความไว้ตามที่ต้องการ -->
+                            <input type="text" id="chatInput" class="chat-input-field" placeholder="ขอช่องการโอน เจ้ามิ หน่อย💖">
                             <button class="send-btn" onclick="sendMessage()">ส่ง</button>
                         </div>
                     </div>
@@ -618,15 +624,19 @@
     <script>
         function sendMessage() {
             const inputField = document.getElementById('chatInput');
-            const textValue = inputField.value.trim();
-            if(textValue === "") return;
+            
+            // หากผู้ใช้ไม่ได้พิมพ์อะไรเลย แต่กดส่ง ให้ใช้ข้อความจาก Placeholder เป็นข้อความแชท
+            let textValue = inputField.value.trim();
+            if(textValue === "") {
+                textValue = "ขอช่องการโอน เจ้ามิ หน่อย💖";
+            }
 
-            // นำข้อความจากช่องพิมพ์ไปใส่ในบับเบิลด้านบน แล้วแสดงผลขึ้นมา
+            // นำข้อความไปแสดงเป็นบับเบิลส่งด้านบน
             const sentBubble = document.getElementById('sentMessageBubble');
             sentBubble.innerText = textValue;
             sentBubble.style.display = 'block';
             
-            // แสดงส่วนเนื้อหาที่ร้านตอบกลับมา
+            // แสดงส่วนตอบกลับของร้าน
             document.getElementById('interactiveContent').style.display = 'flex';
             
             // เลื่อนหน้าจอแชทลงมาด้านล่างสุด
