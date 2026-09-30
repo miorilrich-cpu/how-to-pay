@@ -103,7 +103,7 @@
             border-radius: 3px;
         }
 
-        /* Status Bar: ซ้ายเครือข่าย, กลางนาฬิกา, ขวาแบตเตอรี่ */
+        /* Status Bar */
         .status-bar {
             position: absolute;
             top: 60px;
@@ -168,7 +168,7 @@
             display: none;
         }
 
-        /* ส่วนหัวหน้าร้าน: โลโก้อยู่มุมซ้ายบนตามเดิม */
+        /* ส่วนหัวหน้าร้าน */
         .store-header {
             display: flex;
             align-items: center;
@@ -218,9 +218,9 @@
             cursor: pointer;
         }
 
-        /* ส่วนแบนเนอร์ร้านค้า (อัตราส่วน 1122 x 495) */
+        /* ส่วนแบนเนอร์ร้านค้า */
         .banner-section {
-            padding: 10px 12px 4px 12px;
+            padding: 10px 14px 6px 14px;
             background: #ffffff;
             text-align: center;
         }
@@ -261,10 +261,15 @@
             background-color: #ff8fab;
         }
 
-        /* ปุ่มเช็คคิวเส้นปรุใต้แบนเนอร์ */
-        .queue-check-btn {
-            margin: 10px 14px 4px 14px;
+        /* 📌 ปุ่มเช็คคิวเส้นปรุ (ดีไซน์ชัดเจน ใต้แบนเนอร์) */
+        .queue-check-wrapper {
+            padding: 6px 14px;
             background: #ffffff;
+        }
+
+        .queue-check-btn {
+            width: 100%;
+            background: #fff0f3;
             border: 2px dashed #ff8fab;
             border-radius: 14px;
             padding: 10px 12px;
@@ -278,7 +283,7 @@
 
         .queue-check-btn:active {
             transform: scale(0.97);
-            background: #fff0f3;
+            background: #ffe5ec;
         }
 
         .queue-btn-left {
@@ -290,13 +295,18 @@
         .queue-icon-circle {
             width: 32px;
             height: 32px;
-            background: #ffe5ec;
+            background: #ffffff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #ff758c;
             font-size: 12px;
+            box-shadow: 0 1px 3px rgba(255, 182, 193, 0.3);
+        }
+
+        .queue-text-box {
+            text-align: left;
         }
 
         .queue-text-box .queue-title {
@@ -316,7 +326,7 @@
             color: #ff8fab;
         }
 
-        /* ส่วนบริการของเรา (3 การ์ดแนวนอน) */
+        /* ส่วนบริการของเรา */
         .section-container {
             padding: 12px 14px;
         }
@@ -388,7 +398,7 @@
             text-overflow: ellipsis;
         }
 
-        /* ส่วนตัวอย่างผลงาน (Portfolio Grid) */
+        /* ส่วนตัวอย่างผลงาน */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -446,7 +456,7 @@
             text-overflow: ellipsis;
         }
 
-        /* แถบเมนูด้านล่างหน้าจอ (Bottom Navigation) */
+        /* แถบเมนูด้านล่าง */
         .store-bottom-nav {
             position: absolute;
             bottom: 0;
@@ -517,7 +527,7 @@
             background: #fff0f3;
         }
 
-        /* Modal แจ้งเตือนเมื่อกด */
+        /* Modal แจ้งเตือน */
         .modal {
             display: none;
             position: absolute;
@@ -601,7 +611,7 @@
                 </div>
             </div>
 
-            <!-- Status Bar: ซ้ายเครือข่าย, กลางนาฬิกา, ขวาแบตเตอรี่ -->
+            <!-- Status Bar -->
             <div class="status-bar">
                 <div class="status-left">
                     <i class="fas fa-signal" style="font-size: 9px;"></i>
@@ -621,7 +631,7 @@
 
             <!-- หน้าจอเนื้อหาหน้าร้าน -->
             <div class="screen-content-area">
-                <!-- ส่วนหัวหน้าร้าน: โลโก้อยู่มุมซ้ายบนตามเดิม -->
+                <!-- ส่วนหัวหน้าร้าน -->
                 <div class="store-header">
                     <div class="store-header-left">
                         <div class="store-avatar-box">
@@ -637,7 +647,7 @@
                     </div>
                 </div>
 
-                <!-- แบนเนอร์ขนาดสัดส่วน 1122 x 495 -->
+                <!-- แบนเนอร์ -->
                 <div class="banner-section">
                     <div class="store-banner-container" onclick="openModal('ประกาศจากร้าน', 'ยินดีต้อนรับเข้าสู่ร้าน miori_shop ค่ะ สอบถามสินค้าทักแชทได้เลยน้า 💖')">
                         <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=1122&h=495&fit=crop" alt="Store Banner">
@@ -649,21 +659,23 @@
                     </div>
                 </div>
 
-                <!-- 📌 ปุ่มเช็คคิวเส้นปรุ (เพิ่มไว้ใต้แบนเนอร์เรียบร้อยแล้วค่ะ) -->
-                <div class="queue-check-btn" onclick="openModal('สถานะคิวงาน', '✨ คิวว่างปัจจุบัน: พร้อมรับงานจ้า\n📌 คิวที่กำลังทำ: 3 คิว (รอบส่งงานสัปดาห์นี้)')">
-                    <div class="queue-btn-left">
-                        <div class="queue-icon-circle">
-                            <i class="fas fa-clipboard-list"></i>
+                <!-- 📌 ปุ่มเช็คคิวเส้นปรุ (อยู่ใต้แบนเนอร์ชัดเจน) -->
+                <div class="queue-check-wrapper">
+                    <div class="queue-check-btn" onclick="openModal('สถานะคิวงาน', '✨ คิวว่างปัจจุบัน: พร้อมรับงานจ้า\n📌 คิวที่กำลังทำ: 3 คิว (รอบส่งงานสัปดาห์นี้)')">
+                        <div class="queue-btn-left">
+                            <div class="queue-icon-circle">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <div class="queue-text-box">
+                                <div class="queue-title">เช็คคิว / สถานะงาน 📋</div>
+                                <div class="queue-sub">คลิกเพื่อดูสถานะคิวปัจจุบันค่า</div>
+                            </div>
                         </div>
-                        <div class="queue-text-box">
-                            <div class="queue-title">เช็คคิว / สถานะงาน 📋</div>
-                            <div class="queue-sub">คลิกเพื่อดูสถานะคิวปัจจุบันค่า</div>
-                        </div>
+                        <i class="fas fa-chevron-right"></i>
                     </div>
-                    <i class="fas fa-chevron-right"></i>
                 </div>
 
-                <!-- ส่วนบริการของเรา (3 เมนูการ์ด) -->
+                <!-- ส่วนบริการของเรา -->
                 <div class="section-container" style="padding-bottom: 6px;">
                     <div class="section-header-flex">
                         <div class="section-title">
@@ -728,7 +740,7 @@
                 </div>
             </div>
 
-            <!-- แถบเมนูด้านล่างหน้าจอ (Bottom Navigation) -->
+            <!-- แถบเมนูด้านล่าง -->
             <div class="store-bottom-nav">
                 <button class="nav-tab active" onclick="switchTab(this)">
                     <i class="fas fa-home"></i>
@@ -761,7 +773,6 @@
     </div>
 
     <script>
-        // อัปเดตเวลาแบบเรียลไทม์
         function updateClock() {
             const now = new Date();
             const hours = String(now.getHours()).padStart(2, '0');
