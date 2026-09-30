@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classic iPhone 6 - IG DM (Pink Pastel Final)</title>
+    <title>Classic iPhone 6 - Storefront with Banner</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -158,305 +157,188 @@
             width: 100%;
             flex: 1;
             margin-top: 84px; 
-            margin-bottom: 75px;
-            background-color: #ffffff;
-            overflow: hidden;
+            margin-bottom: 55px;
+            background-color: #fff9fb;
+            overflow-y: auto;
             display: flex;
             flex-direction: column;
         }
 
-        .chat-screen {
-            background-color: #ffffff;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            position: relative;
+        .screen-content-area::-webkit-scrollbar {
+            display: none;
         }
 
-        .chat-header {
+        /* ส่วนหัวหน้าร้าน: โลโก้อยู่มุมซ้ายบน */
+        .store-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px 14px;
+            padding: 12px 14px;
             background: #ffffff;
-            z-index: 10;
             border-bottom: 1px solid #ffe4e6;
-            flex-shrink: 0;
         }
 
-        .chat-header-left {
+        .store-header-left {
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .back-icon {
+        .store-avatar-box {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 1.5px solid #ff8fab;
+            box-shadow: 0 2px 6px rgba(255, 143, 171, 0.2);
+            flex-shrink: 0;
+        }
+
+        .store-avatar-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .store-meta .store-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #b55272;
+            line-height: 1.2;
+        }
+
+        .store-meta .store-desc {
+            font-size: 9.5px;
+            color: #ff8fab;
+        }
+
+        .store-header-right i {
             color: #ff8fab;
             font-size: 14px;
             cursor: pointer;
         }
 
-        .chat-avatar-header {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            overflow: hidden;
+        /* ส่วนแบนเนอร์ร้านค้า (อัตราส่วนตามสัดส่วน 1122x495) */
+        .store-banner-container {
+            width: 100%;
+            /* คำนวณความสูงตามสัดส่วน 1122x495 (495 / 1122 * 100% ≈ 44.1%) บนความกว้าง 345px */
+            aspect-ratio: 1122 / 495;
             background: #ffe5ec;
-            flex-shrink: 0;
+            overflow: hidden;
+            position: relative;
+            border-bottom: 1px solid #ffe4e6;
         }
-        .chat-avatar-header img {
+
+        .store-banner-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .chat-user-meta .name {
-            font-size: 12px;
+        /* ส่วนรายการสินค้า / เมนูบริการ */
+        .section-container {
+            padding: 12px 14px;
+        }
+
+        .section-title {
+            font-size: 11.5px;
             font-weight: 600;
             color: #b55272;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #ffe4e6;
+            box-shadow: 0 2px 8px rgba(255, 182, 193, 0.1);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .product-card:active {
+            transform: scale(0.97);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 105px;
+            background: #ffe5ec;
+            overflow: hidden;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 9px;
+        }
+
+        .product-name {
+            font-size: 11px;
+            font-weight: 600;
+            color: #b55272;
+            margin-bottom: 3px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 160px;
-        }
-        .chat-user-meta .status {
-            font-size: 9px;
-            color: #ff8fab;
         }
 
-        .chat-header-right {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .chat-header-right i {
-            color: #ff8fab;
-            font-size: 13px;
-            cursor: pointer;
-        }
-
-        .chat-body {
-            padding: 14px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; 
-            flex: 1;
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-
-        .chat-flow-container {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            width: 100%;
-        }
-
-        .message-row-received {
-            display: flex;
-            align-items: flex-end;
-            gap: 6px;
-            align-self: flex-start;
-            max-width: 85%;
-            animation: fadeIn 0.35s ease;
-        }
-
-        .chat-avatar-msg {
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            overflow: hidden;
-            flex-shrink: 0;
-            margin-bottom: 2px;
-        }
-        .chat-avatar-msg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .received-content-group {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .message.received {
-            background: #ffe5ec;
-            color: #b55272;
-            padding: 9px 13px;
-            border-radius: 16px;
-            border-bottom-left-radius: 4px;
-            font-size: 11.5px;
-            line-height: 1.4;
-            width: fit-content;
-            word-wrap: break-word;
-        }
-
-        .message.sent {
-            background: linear-gradient(135deg, #ff8fab 0%, #ffb3c6 100%);
-            color: #ffffff;
-            padding: 9px 13px;
-            border-radius: 16px;
-            border-bottom-right-radius: 4px;
-            font-size: 11.5px;
-            line-height: 1.4;
-            align-self: flex-end;
-            width: fit-content;
-            font-weight: 400;
-            animation: fadeIn 0.35s ease;
-            word-wrap: break-word;
-        }
-
-        #sentMessageBubble {
-            display: none; 
-        }
-
-        #interactiveContent {
-            display: none;
-            flex-direction: column;
-            gap: 10px;
-            width: 100%;
-        }
-
-        .image-message-box {
-            background: #ffe5ec;
-            border-radius: 16px;
-            border-bottom-left-radius: 4px;
-            padding: 6px;
-            width: 190px;
-            overflow: hidden;
-        }
-
-        .image-container {
-            width: 100%;
-            height: 190px;
-            border-radius: 12px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #ffffff;
-        }
-
-        .image-container img {
-            width: 480px;
-            height: 480px;
-            max-width: none;
-            max-height: none;
-            object-fit: cover;
-            display: block;
-        }
-
-        .bank-message-box {
-            background: #ffe5ec;
-            border-radius: 16px;
-            border-bottom-left-radius: 4px;
-            padding: 10px 14px;
-            width: 100%;
-            max-width: 240px;
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-            align-items: center;
-            font-size: 11.5px;
-        }
-
-        .bank-info .title {
-            font-weight: 500;
-            color: #c75c82;
-            font-size: 10.5px;
-            margin-bottom: 2px;
-        }
-        .bank-info .num {
-            font-family: monospace;
-            font-size: 12.5px;
-            font-weight: 600;
-            color: #b55272;
-            letter-spacing: 0.5px;
-        }
-
-        .copy-btn {
-            background: #ffb3c6;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 10px;
-            font-size: 10.5px;
-            color: #ffffff;
-            cursor: pointer;
-            font-family: 'Prompt', sans-serif;
-            transition: all 0.2s;
-            font-weight: 500;
-            white-space: nowrap;
-        }
-        .copy-btn:active {
-            background: #ff8fab;
-        }
-
-        .chat-footer {
-            padding: 8px 12px 10px 12px;
-            background: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-top: 1px solid #ffe4e6;
-            flex-shrink: 0;
-        }
-
-        .chat-input-wrapper {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            background: #fff0f3;
-            border-radius: 20px;
-            padding: 5px 10px;
-            gap: 8px;
-        }
-
-        .camera-circle-btn {
-            width: 22px;
-            height: 22px;
-            background: #ffb3c6;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            font-size: 9px;
-            flex-shrink: 0;
-        }
-
-        .chat-input-field {
-            flex: 1;
-            font-size: 11.5px;
-            color: #b55272;
-            outline: none;
-            border: none;
-            background: transparent;
-            font-family: 'Prompt', sans-serif;
-        }
-
-        .chat-input-field::placeholder {
-            color: #d1a1b0;
-            opacity: 1;
-        }
-
-        .send-btn {
-            background: transparent;
-            border: none;
+        .product-price {
+            font-size: 10px;
             color: #ff758c;
             font-weight: 600;
-            font-size: 11.5px;
+        }
+
+        /* แถบเมนูด้านล่างหน้าจอ (Bottom Navigation) */
+        .store-bottom-nav {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 55px;
+            background: #ffffff;
+            border-top: 1px solid #ffe4e6;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 118;
+        }
+
+        .nav-tab {
+            background: none;
+            border: none;
             cursor: pointer;
+            color: #d1a1b0;
+            font-size: 9px;
+            text-align: center;
+            flex: 1;
             font-family: 'Prompt', sans-serif;
-            padding: 2px 4px;
+            transition: color 0.2s;
+        }
+
+        .nav-tab i {
+            font-size: 14px;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .nav-tab.active {
+            color: #ff758c;
+            font-weight: 600;
         }
 
         .iphone6-bottom-bezel {
@@ -471,6 +353,7 @@
             align-items: center;
             justify-content: center;
             border-top: 0.5px solid #ffe4e6;
+            pointer-events: none;
         }
 
         .home-button-ring {
@@ -484,10 +367,61 @@
             align-items: center;
             justify-content: center;
             box-shadow: inset 0 1px 2px rgba(255, 182, 193, 0.2);
+            pointer-events: auto;
             transition: background 0.1s;
         }
         .home-button-ring:active {
             background: #fff0f3;
+        }
+
+        /* Modal แจ้งเตือนเมื่อกดสินค้า */
+        .modal {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.25);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: #fff;
+            width: 100%;
+            max-width: 240px;
+            border-radius: 16px;
+            padding: 16px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(255, 182, 193, 0.4);
+            border: 1px solid #ffe4e6;
+        }
+
+        .modal-content h3 {
+            font-size: 13px;
+            color: #b55272;
+            margin-bottom: 6px;
+        }
+
+        .modal-content p {
+            font-size: 10.5px;
+            color: #d1a1b0;
+            margin-bottom: 14px;
+        }
+
+        .modal-btn {
+            background: linear-gradient(135deg, #ff8fab 0%, #ffb3c6 100%);
+            color: white;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 10.5px;
+            font-weight: 500;
+            font-family: 'Prompt', sans-serif;
         }
 
         .falling-star {
@@ -542,100 +476,108 @@
                 </div>
             </div>
 
+            <!-- หน้าจอเนื้อหาหน้าร้าน -->
             <div class="screen-content-area">
-                <div class="chat-screen">
-                    <div class="chat-header">
-                        <div class="chat-header-left">
-                            <i class="fas fa-chevron-left back-icon"></i>
-                            <div class="chat-avatar-header">
-                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
-                            </div>
-                            <div class="chat-user-meta">
-                                <div class="name">miori_shop 💖</div>
-                                <div class="status">Active 9m ago</div>
-                            </div>
+                <!-- ส่วนหัวหน้าร้าน: โลโก้อยู่มุมซ้ายบน -->
+                <div class="store-header">
+                    <div class="store-header-left">
+                        <div class="store-avatar-box">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Store Logo">
                         </div>
-                        <div class="chat-header-right">
-                            <i class="fas fa-phone"></i>
-                            <i class="fas fa-video"></i>
-                            <i class="fas fa-circle-info"></i>
+                        <div class="store-meta">
+                            <div class="store-title">miori_shop 💖</div>
+                            <div class="store-desc">บริการ & ออกแบบตัวละคร</div>
                         </div>
                     </div>
+                    <div class="store-header-right">
+                        <i class="fas fa-bell" onclick="openModal('การแจ้งเตือน', 'ไม่มีการแจ้งเตือนใหม่ในขณะนี้ค่า ✨')"></i>
+                    </div>
+                </div>
 
-                    <div class="chat-body" id="chatBody">
-                        <div class="chat-flow-container">
-                            <div class="message-row-received">
-                                <div class="chat-avatar-msg">
-                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
-                                </div>
-                                <div class="received-content-group">
-                                    <div class="message received">
-                                        สวัสดีค่ะคุณลูกค้า สนใจบริการตัวแทนดันกลุ่ม สอบถามรายละเอียดได้เลยน้า 🤍✨
-                                    </div>
-                                </div>
-                            </div>
+                <!-- ส่วนแบนเนอร์ร้านค้า (อัตราส่วน 1122 x 495) อยู่ใต้โลโก้ทันที -->
+                <div class="store-banner-container" onclick="openModal('ประกาศจากร้าน', 'ยินดีต้อนรับเข้าสู่ร้าน mori_shop ค่ะ สอบถามสินค้าทักแชทได้เลยน้า 💖')">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=1122&h=495&fit=crop" alt="Store Banner">
+                </div>
 
-                            <div class="message sent" id="sentMessageBubble"></div>
-
-                            <div id="interactiveContent">
-                                <div class="message-row-received">
-                                    <div class="chat-avatar-msg">
-                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
-                                    </div>
-                                    <div class="image-message-box">
-                                        <div class="image-container">
-                                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=480&h=480&fit=crop" alt="Shared Image">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="message-row-received">
-                                    <div class="chat-avatar-msg">
-                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
-                                    </div>
-                                    <div class="received-content-group">
-                                        <div class="message received">
-                                            ได้เลยค่ะคุณลูกค้า 😊 ช่องทางการชำระเงินตามนี้เลยนะค้าบ 👇
-                                        </div>
-
-                                        <div class="bank-message-box">
-                                            <div class="bank-info">
-                                                <div class="title"><i class="fas fa-university" style="color:#d87093;"></i> กสิกรไทย (KBANK)</div>
-                                                <div class="num">123-4-56789-0</div>
-                                            </div>
-                                            <button class="copy-btn" onclick="copyText('1234567890', this)">คัดลอก</button>
-                                        </div>
-
-                                        <div class="bank-message-box">
-                                            <div class="bank-info">
-                                                <div class="title"><i class="fas fa-wallet" style="color:#ff758c;"></i> TrueMoney Wallet</div>
-                                                <div class="num">081-234-5678</div>
-                                            </div>
-                                            <button class="copy-btn" onclick="copyText('0812345678', this)">คัดลอก</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div></div>
+                <!-- รายการสินค้า / บริการ -->
+                <div class="section-container">
+                    <div class="section-title">
+                        <i class="fas fa-store" style="color: #ff758c;"></i> สินค้าและบริการแนะนำ
                     </div>
 
-                    <div class="chat-footer">
-                        <div class="chat-input-wrapper">
-                            <div class="camera-circle-btn">
-                                <i class="fas fa-plus"></i>
+                    <div class="product-grid">
+                        <div class="product-card" onclick="openModal('บริการดันกลุ่ม VIP', 'บริการตัวแทนดันกลุ่มและดูแลระบบกลุ่มแบบพรีเมียม ราคาพิเศษสุดๆ!')">
+                            <div class="product-img">
+                                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300&h=300&fit=crop" alt="Service 1">
                             </div>
-                            <input type="text" id="chatInput" class="chat-input-field" value="ขอช่องการโอน เจ้ามิ หน่อย💖" placeholder="ส่งข้อความ…">
-                            <button class="send-btn" onclick="sendMessage()">ส่ง</button>
+                            <div class="product-info">
+                                <div class="product-name">บริการดันกลุ่ม VIP</div>
+                                <div class="product-price">฿150 / เดือน</div>
+                            </div>
+                        </div>
+
+                        <div class="product-card" onclick="openModal('Chibi Head Base', 'เทมเพลตฐานหัวตัวละคร Chibi ลายเส้นน่ารักใช้งานง่าย')">
+                            <div class="product-img">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop" alt="Service 2">
+                            </div>
+                            <div class="product-info">
+                                <div class="product-name">Chibi Head Base</div>
+                                <div class="product-price">฿59.-</div>
+                            </div>
+                        </div>
+
+                        <div class="product-card" onclick="openModal('Halloween Base Set', 'เบสโครงสร้างตัวละครพิเศษธีมฮาโลวีนสุดคิ้วท์')">
+                            <div class="product-img">
+                                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=300&h=300&fit=crop" alt="Service 3">
+                            </div>
+                            <div class="product-info">
+                                <div class="product-name">Halloween Base</div>
+                                <div class="product-price">฿89.-</div>
+                            </div>
+                        </div>
+
+                        <div class="product-card" onclick="openModal('Custom Request', 'สั่งทำพิเศษหรือสอบถามรายละเอียดเพิ่มเติมกับแอดมินได้เลยค่า')">
+                            <div class="product-img">
+                                <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?w=300&h=300&fit=crop" alt="Service 4">
+                            </div>
+                            <div class="product-info">
+                                <div class="product-name">Custom Request</div>
+                                <div class="product-price">สอบถามราคา</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="iphone6-bottom-bezel">
-                <div class="home-button-ring"></div>
+            <!-- แถบเมนูด้านล่างหน้าจอ (Bottom Navigation) -->
+            <div class="store-bottom-nav">
+                <button class="nav-tab active" onclick="switchTab(this)">
+                    <i class="fas fa-home"></i>
+                    <span>หน้าแรก</span>
+                </button>
+                <button class="nav-tab" onclick="switchTab(this); openModal('หมวดหมู่สินค้า', 'เลือกดูสินค้าทั้งหมดของทางร้านได้ที่นี่ค่ะ')">
+                    <i class="fas fa-th-large"></i>
+                    <span>สินค้า</span>
+                </button>
+                <button class="nav-tab" onclick="switchTab(this); openModal('ติดต่อเรา', 'ช่องทางติดต่อ: LINE หรือ Instagram miori_shop ค้าบ 💖')">
+                    <i class="fas fa-comment-dots"></i>
+                    <span>ติดต่อ</span>
+                </button>
             </div>
 
+            <div class="iphone6-bottom-bezel">
+                <div class="home-button-ring" onclick="alert('กลับสู่หน้าแรกของร้านค้า 🏠')"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal Popup -->
+    <div class="modal" id="storeModal">
+        <div class="modal-content">
+            <h3 id="modalTitle">หัวข้อสินค้า</h3>
+            <p id="modalDesc">รายละเอียดสินค้า...</p>
+            <button class="modal-btn" onclick="closeModal()">ตกลง</button>
         </div>
     </div>
 
@@ -650,48 +592,19 @@
         setInterval(updateClock, 1000);
         updateClock();
 
-        let hasSent = false;
-
-        function sendMessage() {
-            const inputField = document.getElementById('chatInput');
-            let textValue = inputField.value.trim();
-            if(!hasSent) {
-                if(textValue === "") {
-                    textValue = "ขอช่องการโอน เจ้ามิ หน่อย💖";
-                }
-
-                const sentBubble = document.getElementById('sentMessageBubble');
-                sentBubble.innerText = textValue;
-                sentBubble.style.display = 'block';
-                
-                document.getElementById('interactiveContent').style.display = 'flex';
-                
-                hasSent = true;
-                inputField.value = "";
-            } else {
-                if(textValue !== "") {
-                    inputField.value = "";
-                }
-            }
-            
-            const chatBody = document.getElementById('chatBody');
-            chatBody.scrollTop = chatBody.scrollHeight;
+        function openModal(title, desc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('storeModal').style.display = 'flex';
         }
 
-        document.getElementById('chatInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                sendMessage();
-            }
-        });
+        function closeModal() {
+            document.getElementById('storeModal').style.display = 'none';
+        }
 
-        function copyText(text, btn) {
-            navigator.clipboard.writeText(text).then(() => {
-                let originalText = btn.innerText;
-                btn.innerText = 'คัดลอกแล้ว!';
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                }, 1500);
-            });
+        function switchTab(element) {
+            document.querySelectorAll('.nav-tab').forEach(tab => tab.classList.remove('active'));
+            element.classList.add('active');
         }
 
         function createFallingStars() {
