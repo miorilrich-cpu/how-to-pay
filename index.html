@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classic iPhone 6 - IG DM (Pink Pastel)</title>
+    <title>Classic iPhone 6 - IG DM (Pink Pastel Final)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -103,6 +104,7 @@
             border-radius: 3px;
         }
 
+        /* Status Bar: ซ้ายเครือข่าย, กลางนาฬิกา, ขวาแบตเตอรี่ */
         .status-bar {
             position: absolute;
             top: 60px;
@@ -121,10 +123,28 @@
             border-bottom: 0.5px solid #ffe4e6;
         }
 
-        .status-left, .status-right {
+        .status-left {
             display: flex;
             align-items: center;
             gap: 5px;
+            z-index: 2;
+        }
+
+        .status-center {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 11.5px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            z-index: 1;
+        }
+
+        .status-right {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            z-index: 2;
         }
 
         .battery-box {
@@ -423,7 +443,6 @@
             font-family: 'Prompt', sans-serif;
         }
 
-        /* แต่งสี Placeholder "ส่งข้อความ…" ให้เป็นสีชมพูอ่อนอมเทา */
         .chat-input-field::placeholder {
             color: #d1a1b0;
             opacity: 1;
@@ -505,6 +524,7 @@
                 </div>
             </div>
 
+            <!-- Status Bar: ซ้ายเครือข่าย, กลางนาฬิกา, ขวาแบตเตอรี่ -->
             <div class="status-bar">
                 <div class="status-left">
                     <i class="fas fa-signal" style="font-size: 9px;"></i>
@@ -512,7 +532,7 @@
                     <i class="fas fa-wifi" style="font-size: 9px; margin-left: 2px;"></i>
                 </div>
                 <div class="status-center">
-                    <span>19:09</span>
+                    <span id="clock">19:09</span>
                 </div>
                 <div class="status-right">
                     <div class="battery-box">
@@ -555,7 +575,6 @@
                                 </div>
                             </div>
 
-                            <!-- บับเบิลข้อความส่ง (จะปรากฏขึ้นมาเมื่อกดส่งข้อความ) -->
                             <div class="message sent" id="sentMessageBubble"></div>
 
                             <div id="interactiveContent">
@@ -606,7 +625,6 @@
                             <div class="camera-circle-btn">
                                 <i class="fas fa-plus"></i>
                             </div>
-                            <!-- เริ่มต้นใส่ข้อความ "ขอช่องการโอน เจ้ามิ หน่อย💖" ไว้ และ Placeholder เป็น "ส่งข้อความ…" -->
                             <input type="text" id="chatInput" class="chat-input-field" value="ขอช่องการโอน เจ้ามิ หน่อย💖" placeholder="ส่งข้อความ…">
                             <button class="send-btn" onclick="sendMessage()">ส่ง</button>
                         </div>
@@ -622,43 +640,44 @@
     </div>
 
     <script>
+        // อัปเดตเวลาแบบเรียลไทม์
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('clock').innerText = `${hours}:${minutes}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
         let hasSent = false;
 
         function sendMessage() {
             const inputField = document.getElementById('chatInput');
-            
-            // ถ้ายังไม่เคยส่ง ให้ดึงข้อความในช่อง (หรือถ้าว่างให้ใช้ค่าเริ่มต้น) ไปแสดงด้านบน
             let textValue = inputField.value.trim();
             if(!hasSent) {
                 if(textValue === "") {
                     textValue = "ขอช่องการโอน เจ้ามิ หน่อย💖";
                 }
 
-                // นำข้อความไปแสดงเป็นบับเบิลส่งด้านบน
                 const sentBubble = document.getElementById('sentMessageBubble');
                 sentBubble.innerText = textValue;
                 sentBubble.style.display = 'block';
                 
-                // แสดงส่วนตอบกลับของร้าน
                 document.getElementById('interactiveContent').style.display = 'flex';
                 
-                // เปลี่ยนสถานะเป็นส่งแล้ว และเปลี่ยนช่องพิมพ์ให้เคลียร์ค่าเพื่อให้ Placeholder "ส่งข้อความ…" แสดงขึ้นมาแทน
                 hasSent = true;
                 inputField.value = "";
             } else {
-                // ถ้าส่งไปแล้ว รอบต่อไปพิมพ์ส่งปกติ
                 if(textValue !== "") {
-                    // สามารถเพิ่มโค้ดส่งข้อความทั่วไปตรงนี้ได้ถ้าต้องการ
                     inputField.value = "";
                 }
             }
             
-            // เลื่อนหน้าจอแชทลงมาด้านล่างสุด
             const chatBody = document.getElementById('chatBody');
             chatBody.scrollTop = chatBody.scrollHeight;
         }
 
-        // รองรับการกดปุ่ม Enter เพื่อส่งข้อความ
         document.getElementById('chatInput').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 sendMessage();
