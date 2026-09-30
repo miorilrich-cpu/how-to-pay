@@ -22,9 +22,9 @@
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            overflow: hidden;
         }
 
+        /* 📱 โครงตัวเครื่อง iPhone ตามต้นฉบับเป๊ะๆ (ไม่เปลี่ยนรูปร่าง) */
         .iphone-device {
             position: relative;
             width: 375px;
@@ -137,7 +137,7 @@
             gap: 3px;
         }
 
-        /* พื้นที่เลื่อนเนื้อหาหลัก */
+        /* 🔄 พื้นที่เนื้อหาภายในที่ถูกปรับให้เลื่อน (Scroll) ได้ และเว้นที่ให้แถบเมนูด้านล่างไม่บังเนื้อหา */
         .screen-content-area {
             position: absolute;
             top: 84px;
@@ -145,10 +145,11 @@
             left: 0;
             width: 100%;
             background-color: #fff9fb;
-            overflow-y: scroll; /* บังคับให้มี scrollbar เผื่อกรณีเนื้อหายาว */
+            overflow-y: auto;
             -webkit-overflow-scrolling: touch;
         }
 
+        /* แต่ง Scrollbar ให้ดูน่ารักเข้ากับธีมร้านค้า */
         .screen-content-area::-webkit-scrollbar {
             width: 4px;
         }
@@ -250,7 +251,7 @@
             background-color: #ff8fab;
         }
 
-        /* 📌 ปุ่มเช็คคิวเส้นปรุ (รับรองว่าเห็นแน่นอน) */
+        /* 📌 ปุ่มเช็คคิวเส้นปรุ */
         .queue-check-wrapper {
             padding: 8px 14px;
             background: #ffffff;
@@ -374,7 +375,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 10px;
-            padding-bottom: 20px;
+            padding-bottom: 25px;
         }
 
         .portfolio-card {
@@ -419,7 +420,7 @@
             color: #b55272;
         }
 
-        /* แถบเมนูด้านล่าง */
+        /* แถบเมนูด้านล่าง (ตรึงตำแหน่งไว้เหมือนเดิม) */
         .store-bottom-nav {
             position: absolute;
             bottom: 0;
@@ -541,7 +542,7 @@
                 </div>
             </div>
 
-            <!-- หน้าจอเนื้อหาหน้าร้าน (ปรับเลื่อนได้สมบูรณ์) -->
+            <!-- พื้นที่หน้าจอเนื้อหาที่สามารถเลื่อนขึ้น-ลงได้ -->
             <div class="screen-content-area">
                 
                 <!-- ส่วนหัวหน้าร้าน -->
@@ -572,7 +573,7 @@
                     </div>
                 </div>
 
-                <!-- 📌 ปุ่มเช็คคิวเส้นปรุ (วางอยู่ระหว่างแบนเนอร์และบริการ) -->
+                <!-- 📌 ปุ่มเช็คคิวเส้นปรุ -->
                 <div class="queue-check-wrapper">
                     <div class="queue-check-btn" onclick="openModal('สถานะคิวงาน', '✨ คิวว่างปัจจุบัน: พร้อมรับงานจ้า\n📌 คิวที่กำลังทำ: 3 คิว (รอบส่งงานสัปดาห์นี้)')">
                         <div class="queue-btn-left">
