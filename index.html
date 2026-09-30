@@ -24,7 +24,7 @@
             padding: 20px;
         }
 
-        /* 📱 โครงตัวเครื่อง iPhone คงขนาดดั้งเดิมเป๊ะๆ */
+        /* 📱 โครงตัวเครื่อง iPhone คงขนาดดั้งเดิม */
         .iphone-device {
             position: relative;
             width: 375px;
@@ -137,7 +137,7 @@
             gap: 3px;
         }
 
-        /* พื้นที่เนื้อหาภายในที่เลื่อนได้ โดยไม่เปลี่ยนขนาดตัวเครื่องภายนอก */
+        /* พื้นที่เนื้อหาภายในที่เลื่อนได้ */
         .screen-content-area {
             position: absolute;
             top: 84px;
@@ -206,9 +206,9 @@
             cursor: pointer;
         }
 
-        /* ส่วนแบนเนอร์ร้านค้า */
+        /* ส่วนแบนเนอร์ร้านค้า (ลบจุดไข่ปลาออกแล้ว) */
         .banner-section {
-            padding: 10px 14px 6px 14px;
+            padding: 10px 14px;
             background: #ffffff;
             text-align: center;
         }
@@ -230,26 +230,6 @@
             object-fit: cover;
         }
 
-        .banner-dots {
-            display: flex;
-            justify-content: center;
-            gap: 5px;
-            margin-top: 6px;
-        }
-
-        .dot {
-            width: 6px;
-            height: 6px;
-            background-color: #ffd1dc;
-            border-radius: 50%;
-        }
-
-        .dot.active {
-            width: 16px;
-            border-radius: 4px;
-            background-color: #ff8fab;
-        }
-
         /* 📌 ปุ่มเช็คคิวเส้นปรุ */
         .queue-check-wrapper {
             padding: 8px 14px;
@@ -267,7 +247,7 @@
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
-            box-shadow: 0 3px 8px rgba(255, 117, 140, 0.2);
+            box-shadow: 0 3px 8px rgba(255, 117, 140, 0.15);
             transition: all 0.2s ease;
         }
 
@@ -419,7 +399,7 @@
             color: #b55272;
         }
 
-        /* แถบเมนูด้านล่าง (ติดตรึงด้านล่าง) */
+        /* แถบเมนูด้านล่าง */
         .store-bottom-nav {
             position: absolute;
             bottom: 0;
@@ -560,15 +540,10 @@
                     </div>
                 </div>
 
-                <!-- แบนเนอร์ -->
+                <!-- แบนเนอร์ (ลบจุดไข่ปลาออกแล้ว) -->
                 <div class="banner-section">
                     <div class="store-banner-container" onclick="openModal('ประกาศจากร้าน', 'ยินดีต้อนรับเข้าสู่ร้าน miori_shop ค่ะ สอบถามสินค้าทักแชทได้เลยน้า 💖')">
                         <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=1122&h=495&fit=crop" alt="Store Banner">
-                    </div>
-                    <div class="banner-dots">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
                     </div>
                 </div>
 
