@@ -545,11 +545,12 @@
                                 </div>
                             </div>
 
-                            <div id="interactiveContent">
-                                <div class="message sent" id="sentMessageBubble">
-                                    ขอช่องการโอน เจ้ามิ หน่อย💖
-                                </div>
+                            <!-- ข้อความส่ง: จะคงอยู่ถาวรไม่หายไปไหนเมื่อกดส่ง -->
+                            <div class="message sent" id="sentMessageBubble">
+                                ขอช่องการโอน เจ้ามิ หน่อย💖
+                            </div>
 
+                            <div id="interactiveContent">
                                 <div class="message-row-received">
                                     <div class="chat-avatar-msg">
                                         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Avatar">
@@ -605,7 +606,7 @@
             </div>
 
             <div class="iphone6-bottom-bezel">
-                <div class="home-button-ring" onclick="sendMessage()"></div>
+                <div class="home-button-ring"></div>
             </div>
 
         </div>
@@ -613,20 +614,23 @@
 
     <script>
         function sendMessage() {
-            // เมื่อกดส่ง ให้ลบข้อความในบับเบิลฝั่งส่งออก (ทำให้ว่างเปล่า)
-            const sentBubble = document.getElementById('sentMessageBubble');
-            sentBubble.innerText = "";
-            
-            // แสดงส่วนเนื้อหาที่ซ่อนไว้ (รูปภาพและเลขบัญชีที่ร้านค้าตอบกลับมา)
+            // แสดงส่วนเนื้อหาที่ร้านตอบกลับมา (รูปภาพและเลขบัญชี)
             document.getElementById('interactiveContent').style.display = 'flex';
             
             // เลื่อนหน้าจอแชทลงมาด้านล่างสุด
             const chatBody = document.getElementById('chatBody');
             chatBody.scrollTop = chatBody.scrollHeight;
 
-            // เคลียร์ช่องพิมพ์ข้อความด้านล่างให้ว่าง
+            // เคลียร์ข้อความเฉพาะใน "ช่องพิมพ์ด้านล่าง" ให้ว่างเปล่า (แต่ข้อความในบับเบิลด้านบนยังคงอยู่เหมือนเดิม)
             document.getElementById('chatInput').value = "";
         }
+
+        // รองรับการกดปุ่ม Enter เพื่อส่งข้อความ
+        document.getElementById('chatInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
 
         function copyText(text, btn) {
             navigator.clipboard.writeText(text).then(() => {
