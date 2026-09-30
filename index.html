@@ -261,6 +261,61 @@
             background-color: #ff8fab;
         }
 
+        /* ปุ่มเช็คคิวเส้นปรุใต้แบนเนอร์ */
+        .queue-check-btn {
+            margin: 8px 12px 4px 12px;
+            background: #ffffff;
+            border: 2px dashed #ff8fab;
+            border-radius: 12px;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(255, 182, 193, 0.15);
+            transition: all 0.2s ease;
+        }
+
+        .queue-check-btn:active {
+            transform: scale(0.97);
+            background: #fff0f3;
+        }
+
+        .queue-btn-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .queue-icon-circle {
+            width: 30px;
+            height: 30px;
+            background: #ffe5ec;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff758c;
+            font-size: 12px;
+        }
+
+        .queue-text-box .queue-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: #b55272;
+            line-height: 1.2;
+        }
+
+        .queue-text-box .queue-sub {
+            font-size: 8.5px;
+            color: #ff8fab;
+        }
+
+        .queue-check-btn i.fa-chevron-right {
+            font-size: 10px;
+            color: #ff8fab;
+        }
+
         /* ส่วนบริการของเรา (3 การ์ดแนวนอน) */
         .section-container {
             padding: 12px 14px;
@@ -594,6 +649,20 @@
                     </div>
                 </div>
 
+                <!-- ปุ่มเช็คคิวเส้นปรุใต้แบนเนอร์ -->
+                <div class="queue-check-btn" onclick="openModal('สถานะคิวงาน', '✨ คิวว่างปัจจุบัน: พร้อมรับงานจ้า\n📌 คิวที่กำลังทำ: 3 คิว (รอบส่งงานสัปดาห์นี้)')">
+                    <div class="queue-btn-left">
+                        <div class="queue-icon-circle">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <div class="queue-text-box">
+                            <div class="queue-title">เช็คคิว / สถานะงาน 📋</div>
+                            <div class="queue-sub">คลิกเพื่อดูสถานะคิวปัจจุบันค่า</div>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+
                 <!-- ส่วนบริการของเรา (3 เมนูการ์ด) -->
                 <div class="section-container" style="padding-bottom: 6px;">
                     <div class="section-header-flex">
@@ -686,7 +755,7 @@
     <div class="modal" id="storeModal">
         <div class="modal-content">
             <h3 id="modalTitle">หัวข้อ</h3>
-            <p id="modalDesc">รายละเอียด...</p>
+            <p id="modalDesc" style="white-space: pre-line;">รายละเอียด...</p>
             <button class="modal-btn" onclick="closeModal()">ตกลง</button>
         </div>
     </div>
