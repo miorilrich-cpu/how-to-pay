@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classic iPhone 6 - Storefront with Banner</title>
+    <title>Classic iPhone 6 - Storefront Layout Style</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -168,12 +168,12 @@
             display: none;
         }
 
-        /* ส่วนหัวหน้าร้าน: โลโก้อยู่มุมซ้ายบน */
+        /* ส่วนหัวหน้าร้าน: โลโก้อยู่มุมซ้ายบนตามเดิม */
         .store-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 12px 14px;
+            padding: 10px 14px;
             background: #ffffff;
             border-bottom: 1px solid #ffe4e6;
         }
@@ -185,8 +185,8 @@
         }
 
         .store-avatar-box {
-            width: 38px;
-            height: 38px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             overflow: hidden;
             border: 1.5px solid #ff8fab;
@@ -201,32 +201,38 @@
         }
 
         .store-meta .store-title {
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 600;
             color: #b55272;
             line-height: 1.2;
         }
 
         .store-meta .store-desc {
-            font-size: 9.5px;
+            font-size: 9px;
             color: #ff8fab;
         }
 
         .store-header-right i {
             color: #ff8fab;
-            font-size: 14px;
+            font-size: 13px;
             cursor: pointer;
         }
 
-        /* ส่วนแบนเนอร์ร้านค้า (อัตราส่วนตามสัดส่วน 1122x495) */
+        /* ส่วนแบนเนอร์ร้านค้า (อัตราส่วน 1122 x 495) */
+        .banner-section {
+            padding: 10px 12px 4px 12px;
+            background: #ffffff;
+            text-align: center;
+        }
+
         .store-banner-container {
             width: 100%;
-            /* คำนวณความสูงตามสัดส่วน 1122x495 (495 / 1122 * 100% ≈ 44.1%) บนความกว้าง 345px */
             aspect-ratio: 1122 / 495;
             background: #ffe5ec;
+            border-radius: 14px;
             overflow: hidden;
             position: relative;
-            border-bottom: 1px solid #ffe4e6;
+            box-shadow: 0 4px 12px rgba(255, 182, 193, 0.2);
         }
 
         .store-banner-container img {
@@ -235,72 +241,154 @@
             object-fit: cover;
         }
 
-        /* ส่วนรายการสินค้า / เมนูบริการ */
+        .banner-dots {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 6px;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            background-color: #ffd1dc;
+            border-radius: 50%;
+        }
+
+        .dot.active {
+            width: 16px;
+            border-radius: 4px;
+            background-color: #ff8fab;
+        }
+
+        /* ส่วนบริการของเรา (3 การ์ดแนวนอน) */
         .section-container {
             padding: 12px 14px;
+        }
+
+        .section-header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
         }
 
         .section-title {
             font-size: 11.5px;
             font-weight: 600;
             color: #b55272;
-            margin-bottom: 10px;
             display: flex;
             align-items: center;
             gap: 6px;
         }
 
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-        .product-card {
-            background: #ffffff;
-            border-radius: 14px;
-            overflow: hidden;
-            border: 1px solid #ffe4e6;
-            box-shadow: 0 2px 8px rgba(255, 182, 193, 0.1);
-            transition: transform 0.2s;
+        .see-all {
+            font-size: 10px;
+            color: #ff8fab;
+            font-weight: 500;
             cursor: pointer;
         }
 
-        .product-card:active {
-            transform: scale(0.97);
+        .service-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 6px;
         }
 
-        .product-img {
-            width: 100%;
-            height: 105px;
+        .service-card {
+            background: #ffffff;
+            border: 1px solid #ffe4e6;
+            border-radius: 14px;
+            padding: 10px 6px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(255, 182, 193, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .service-card:active {
+            transform: scale(0.95);
+        }
+
+        .service-icon-circle {
+            width: 36px;
+            height: 36px;
             background: #ffe5ec;
-            overflow: hidden;
+            border-radius: 50%;
+            margin: 0 auto 6px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff758c;
+            font-size: 13px;
         }
 
-        .product-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .product-info {
-            padding: 9px;
-        }
-
-        .product-name {
-            font-size: 11px;
+        .service-name {
+            font-size: 9.5px;
             font-weight: 600;
             color: #b55272;
-            margin-bottom: 3px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
-        .product-price {
-            font-size: 10px;
-            color: #ff758c;
+        /* ส่วนตัวอย่างผลงาน (Portfolio Grid) */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .portfolio-card {
+            background: #ffffff;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #ffe4e6;
+            box-shadow: 0 2px 8px rgba(255, 182, 193, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .portfolio-card:active {
+            transform: scale(0.97);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 115px;
+            background: #ffe5ec;
+            overflow: hidden;
+        }
+
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-info {
+            padding: 8px;
+        }
+
+        .portfolio-label-tag {
+            display: inline-block;
+            background: #ffe5ec;
+            color: #b55272;
+            font-size: 8.5px;
+            padding: 2px 6px;
+            border-radius: 8px;
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+
+        .portfolio-title {
+            font-size: 10.5px;
             font-weight: 600;
+            color: #b55272;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         /* แถบเมนูด้านล่างหน้าจอ (Bottom Navigation) */
@@ -374,7 +462,7 @@
             background: #fff0f3;
         }
 
-        /* Modal แจ้งเตือนเมื่อกดสินค้า */
+        /* Modal แจ้งเตือนเมื่อกด */
         .modal {
             display: none;
             position: absolute;
@@ -478,7 +566,7 @@
 
             <!-- หน้าจอเนื้อหาหน้าร้าน -->
             <div class="screen-content-area">
-                <!-- ส่วนหัวหน้าร้าน: โลโก้อยู่มุมซ้ายบน -->
+                <!-- ส่วนหัวหน้าร้าน: โลโก้อยู่มุมซ้ายบนตามเดิม -->
                 <div class="store-header">
                     <div class="store-header-left">
                         <div class="store-avatar-box">
@@ -494,55 +582,77 @@
                     </div>
                 </div>
 
-                <!-- ส่วนแบนเนอร์ร้านค้า (อัตราส่วน 1122 x 495) อยู่ใต้โลโก้ทันที -->
-                <div class="store-banner-container" onclick="openModal('ประกาศจากร้าน', 'ยินดีต้อนรับเข้าสู่ร้าน mori_shop ค่ะ สอบถามสินค้าทักแชทได้เลยน้า 💖')">
-                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=1122&h=495&fit=crop" alt="Store Banner">
+                <!-- แบนเนอร์ขนาดสัดส่วน 1122 x 495 -->
+                <div class="banner-section">
+                    <div class="store-banner-container" onclick="openModal('ประกาศจากร้าน', 'ยินดีต้อนรับเข้าสู่ร้าน miori_shop ค่ะ สอบถามสินค้าทักแชทได้เลยน้า 💖')">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=1122&h=495&fit=crop" alt="Store Banner">
+                    </div>
+                    <div class="banner-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
                 </div>
 
-                <!-- รายการสินค้า / บริการ -->
-                <div class="section-container">
-                    <div class="section-title">
-                        <i class="fas fa-store" style="color: #ff758c;"></i> สินค้าและบริการแนะนำ
+                <!-- ส่วนบริการของเรา (3 เมนูการ์ด) -->
+                <div class="section-container" style="padding-bottom: 6px;">
+                    <div class="section-header-flex">
+                        <div class="section-title">
+                            <i class="fas fa-heart" style="color: #ff758c;"></i> บริการของเรา
+                        </div>
                     </div>
 
-                    <div class="product-grid">
-                        <div class="product-card" onclick="openModal('บริการดันกลุ่ม VIP', 'บริการตัวแทนดันกลุ่มและดูแลระบบกลุ่มแบบพรีเมียม ราคาพิเศษสุดๆ!')">
-                            <div class="product-img">
-                                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300&h=300&fit=crop" alt="Service 1">
+                    <div class="service-grid-3">
+                        <div class="service-card" onclick="openModal('รับทำป้าย', 'รับออกแบบและทำป้ายร้านค้าน่ารักๆ สไตล์มินิมอล สนใจทักแชทได้เลยค่า')">
+                            <div class="service-icon-circle">
+                                <i class="fas fa-paint-brush"></i>
                             </div>
-                            <div class="product-info">
-                                <div class="product-name">บริการดันกลุ่ม VIP</div>
-                                <div class="product-price">฿150 / เดือน</div>
+                            <div class="service-name">รับทำป้าย</div>
+                        </div>
+
+                        <div class="service-card" onclick="openModal('รับทำลายน้ำ', 'รับทำลายน้ำสำหรับใส่รูปภาพสินค้า ลายเส้นน่ารัก ป้องกันการก๊อปปี้')">
+                            <div class="service-icon-circle">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <div class="service-name">รับทำลายน้ำ</div>
+                        </div>
+
+                        <div class="service-card" onclick="openModal('ออกแบบกราฟิก', 'รับออกแบบกราฟิกทั่วไป โลโก้ แบนเนอร์ และสื่อโปรโมทต่างๆ')">
+                            <div class="service-icon-circle">
+                                <i class="fas fa-pen-nib"></i>
+                            </div>
+                            <div class="service-name">ออกแบบกราฟิก</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ส่วนตัวอย่างผลงาน -->
+                <div class="section-container">
+                    <div class="section-header-flex">
+                        <div class="section-title">
+                            <i class="fas fa-store" style="color: #ff758c;"></i> ตัวอย่างผลงาน
+                        </div>
+                        <div class="see-all" onclick="openModal('ผลงานทั้งหมด', 'สามารถดูผลงานเพิ่มเติมได้ที่อัลบั้มร้านค้าเลยนะคะ 💖')">ดูทั้งหมด ></div>
+                    </div>
+
+                    <div class="portfolio-grid">
+                        <div class="portfolio-card" onclick="openModal('Cute Sign 1', 'ตัวอย่างงานออกแบบป้ายร้านค้าน่ารักๆ โทนพาสเทล')">
+                            <div class="portfolio-img">
+                                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300&h=300&fit=crop" alt="Work 1">
+                            </div>
+                            <div class="portfolio-info">
+                                <span class="portfolio-label-tag">💖 น่ารักมาก</span>
+                                <div class="portfolio-title">Cute Sign 1</div>
                             </div>
                         </div>
 
-                        <div class="product-card" onclick="openModal('Chibi Head Base', 'เทมเพลตฐานหัวตัวละคร Chibi ลายเส้นน่ารักใช้งานง่าย')">
-                            <div class="product-img">
-                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop" alt="Service 2">
+                        <div class="portfolio-card" onclick="openModal('Thank You Card', 'ตัวอย่างการ์ดขอบคุณลูกค้า ดีไซน์พรีเมียม')">
+                            <div class="portfolio-img">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop" alt="Work 2">
                             </div>
-                            <div class="product-info">
-                                <div class="product-name">Chibi Head Base</div>
-                                <div class="product-price">฿59.-</div>
-                            </div>
-                        </div>
-
-                        <div class="product-card" onclick="openModal('Halloween Base Set', 'เบสโครงสร้างตัวละครพิเศษธีมฮาโลวีนสุดคิ้วท์')">
-                            <div class="product-img">
-                                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=300&h=300&fit=crop" alt="Service 3">
-                            </div>
-                            <div class="product-info">
-                                <div class="product-name">Halloween Base</div>
-                                <div class="product-price">฿89.-</div>
-                            </div>
-                        </div>
-
-                        <div class="product-card" onclick="openModal('Custom Request', 'สั่งทำพิเศษหรือสอบถามรายละเอียดเพิ่มเติมกับแอดมินได้เลยค่า')">
-                            <div class="product-img">
-                                <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?w=300&h=300&fit=crop" alt="Service 4">
-                            </div>
-                            <div class="product-info">
-                                <div class="product-name">Custom Request</div>
-                                <div class="product-price">สอบถามราคา</div>
+                            <div class="portfolio-info">
+                                <span class="portfolio-label-tag">✨ Thank You</span>
+                                <div class="portfolio-title">Thank You</div>
                             </div>
                         </div>
                     </div>
@@ -575,8 +685,8 @@
     <!-- Modal Popup -->
     <div class="modal" id="storeModal">
         <div class="modal-content">
-            <h3 id="modalTitle">หัวข้อสินค้า</h3>
-            <p id="modalDesc">รายละเอียดสินค้า...</p>
+            <h3 id="modalTitle">หัวข้อ</h3>
+            <p id="modalDesc">รายละเอียด...</p>
             <button class="modal-btn" onclick="closeModal()">ตกลง</button>
         </div>
     </div>
